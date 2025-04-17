@@ -173,34 +173,42 @@ body, div, p {
      
       <link rel="icon" type="image/x-icon" href="">
 
-      <style>
-        h1, h2, h3, h4, h5, h6 {
-          font-family: Fraunces, Inter, system-ui, sans-serif;
-        }
-        body {
-          font-family: Nunito, Inter, system-ui, sans-serif;
-        }
-        nav a{
-          font-size: 20px;
-        }
-        nav a:hover{
-          color: #9c5f14;
-        }
-        .hoverdown__container{
-          transition: all 0.5s ease-in;
-          overflow: hidden;
-        }
-        .hoverdown__container.close{
-          height: 1px;
-        }
-        .hoverdown__container.open{
-          height: fit-content;
-        }
-        .hoverdown__item{
-          max-width: 620px;
-          margin: 0 auto;
-        }
-      </style>
+    <style>
+    h1, h2, h3, h4, h5, h6 {
+      font-family: Fraunces, Inter, system-ui, sans-serif;
+    }
+    body {
+      font-family: Nunito, Inter, system-ui, sans-serif;
+    }
+    nav a {
+      font-size: 20px;
+    }
+    nav a:hover {
+      color: #9c5f14;
+    }
+    .mega-menu {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-in-out;
+      z-index: 40;
+    }
+    .mega-menu.open {
+      max-height: calc(100vh - 80px);
+    }
+    .mobile-submenu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .mobile-submenu.open {
+      max-height: 200px;
+    }
+  </style>
    <style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Fraunces, Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0}.visible{visibility:visible}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.-left-2{left:-0.5rem}.bottom-0{bottom:0px}.bottom-10{bottom:2.5rem}.bottom-6{bottom:1.5rem}.left-0{left:0px}.left-1\/2{left:50%}.right-0{right:0px}.right-10{right:2.5rem}.right-4{right:1rem}.right-6{right:1.5rem}.top-0{top:0px}.top-4{top:1rem}.z-0{z-index:0}.z-10{z-index:10}.z-20{z-index:20}.z-50{z-index:50}.mx-4{margin-left:1rem;margin-right:1rem}.mx-auto{margin-left:auto;margin-right:auto}.my-6{margin-top:1.5rem;margin-bottom:1.5rem}.mb-1{margin-bottom:0.25rem}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-1{margin-left:0.25rem}.ml-2{margin-left:0.5rem}.mr-2{margin-right:0.5rem}.mr-3{margin-right:0.75rem}.mr-4{margin-right:1rem}.mt-1{margin-top:0.25rem}.mt-10{margin-top:2.5rem}.mt-12{margin-top:3rem}.mt-16{margin-top:4rem}.mt-2{margin-top:0.5rem}.mt-20{margin-top:5rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.aspect-\[2\/3\]{aspect-ratio:2/3}.h-10{height:2.5rem}.h-12{height:3rem}.h-16{height:4rem}.h-3{height:0.75rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-64{height:16rem}.h-8{height:2rem}.h-80{height:20rem}.h-96{height:24rem}.h-auto{height:auto}.h-full{height:100%}.h-screen{height:100vh}.max-h-\[90vh\]{max-height:90vh}.min-h-screen{min-height:100vh}.w-12{width:3rem}.w-16{width:4rem}.w-3{width:0.75rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-8{width:2rem}.w-auto{width:auto}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-4xl{max-width:56rem}.max-w-md{max-width:28rem}.max-w-xl{max-width:36rem}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.scale-95{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes bounce{0%, 100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,0.2,1)}}.animate-bounce{animation:bounce 1s infinite}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-12{gap:3rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.gap-x-5{column-gap:1.25rem}.gap-y-2{row-gap:0.5rem}.space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.5rem * var(--tw-space-x-reverse));margin-left:calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-6 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1.5rem * var(--tw-space-x-reverse));margin-left:calc(1.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-auto{overflow:auto}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.scroll-smooth{scroll-behavior:smooth}.whitespace-nowrap{white-space:nowrap}.rounded{border-radius:0.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-l-2{border-left-width:2px}.border-t{border-top-width:1px}.border-neutral-200{--tw-border-opacity:1;border-color:rgb(229 229 229 / var(--tw-border-opacity, 1))}.border-neutral-300{--tw-border-opacity:1;border-color:rgb(212 212 212 / var(--tw-border-opacity, 1))}.border-neutral-600{--tw-border-opacity:1;border-color:rgb(82 82 82 / var(--tw-border-opacity, 1))}.border-neutral-800{--tw-border-opacity:1;border-color:rgb(38 38 38 / var(--tw-border-opacity, 1))}.border-white{--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity, 1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-neutral-100{--tw-bg-opacity:1;background-color:rgb(245 245 245 / var(--tw-bg-opacity, 1))}.bg-neutral-200{--tw-bg-opacity:1;background-color:rgb(229 229 229 / var(--tw-bg-opacity, 1))}.bg-neutral-50{--tw-bg-opacity:1;background-color:rgb(250 250 250 / var(--tw-bg-opacity, 1))}.bg-neutral-700{--tw-bg-opacity:1;background-color:rgb(64 64 64 / var(--tw-bg-opacity, 1))}.bg-neutral-800{--tw-bg-opacity:1;background-color:rgb(38 38 38 / var(--tw-bg-opacity, 1))}.bg-neutral-900{--tw-bg-opacity:1;background-color:rgb(23 23 23 / var(--tw-bg-opacity, 1))}.bg-red-100{--tw-bg-opacity:1;background-color:rgb(254 226 226 / var(--tw-bg-opacity, 1))}.bg-red-600{--tw-bg-opacity:1;background-color:rgb(220 38 38 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-yellow-500{--tw-bg-opacity:1;background-color:rgb(234 179 8 / var(--tw-bg-opacity, 1))}.bg-opacity-0{--tw-bg-opacity:0}.bg-opacity-10{--tw-bg-opacity:0.1}.bg-opacity-100{--tw-bg-opacity:1}.bg-opacity-30{--tw-bg-opacity:0.3}.bg-opacity-50{--tw-bg-opacity:0.5}.bg-gradient-to-t{background-image:linear-gradient(to top, var(--tw-gradient-stops))}.from-black\/70{--tw-gradient-from:rgb(0 0 0 / 0.7) var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.object-cover{object-fit:cover}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.pb-2{padding-bottom:0.5rem}.pb-6{padding-bottom:1.5rem}.pl-8{padding-left:2rem}.pt-12{padding-top:3rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.italic{font-style:italic}.leading-tight{line-height:1.25}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-green-500{--tw-text-opacity:1;color:rgb(34 197 94 / var(--tw-text-opacity, 1))}.text-neutral-300{--tw-text-opacity:1;color:rgb(212 212 212 / var(--tw-text-opacity, 1))}.text-neutral-400{--tw-text-opacity:1;color:rgb(163 163 163 / var(--tw-text-opacity, 1))}.text-neutral-500{--tw-text-opacity:1;color:rgb(115 115 115 / var(--tw-text-opacity, 1))}.text-neutral-600{--tw-text-opacity:1;color:rgb(82 82 82 / var(--tw-text-opacity, 1))}.text-neutral-700{--tw-text-opacity:1;color:rgb(64 64 64 / var(--tw-text-opacity, 1))}.text-neutral-800{--tw-text-opacity:1;color:rgb(38 38 38 / var(--tw-text-opacity, 1))}.text-neutral-900{--tw-text-opacity:1;color:rgb(23 23 23 / var(--tw-text-opacity, 1))}.text-red-500{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.text-red-800{--tw-text-opacity:1;color:rgb(153 27 27 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-400{--tw-text-opacity:1;color:rgb(250 204 21 / var(--tw-text-opacity, 1))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.placeholder-neutral-400::placeholder{--tw-placeholder-opacity:1;color:rgb(163 163 163 / var(--tw-placeholder-opacity, 1))}.opacity-0{opacity:0}.opacity-30{opacity:0.3}.opacity-60{opacity:0.6}.opacity-75{opacity:0.75}.opacity-100{opacity:1}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.invert{--tw-invert:invert(100%);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.ease-in-out{transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)}.hover\:bg-neutral-100:hover{--tw-bg-opacity:1;background-color:rgb(245 245 245 / var(--tw-bg-opacity, 1))}.hover\:bg-neutral-200:hover{--tw-bg-opacity:1;background-color:rgb(229 229 229 / var(--tw-bg-opacity, 1))}.hover\:bg-neutral-800:hover{--tw-bg-opacity:1;background-color:rgb(38 38 38 / var(--tw-bg-opacity, 1))}.hover\:bg-white:hover{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.hover\:bg-opacity-100:hover{--tw-bg-opacity:1}.hover\:text-neutral-900:hover{--tw-text-opacity:1;color:rgb(23 23 23 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:opacity-100:hover{opacity:1}.focus\:not-sr-only:focus{position:static;width:auto;height:auto;padding:0;margin:0;overflow:visible;clip:auto;white-space:normal}.focus\:absolute:focus{position:absolute}.focus\:left-0:focus{left:0px}.focus\:top-0:focus{top:0px}.focus\:z-50:focus{z-index:50}.focus\:bg-white:focus{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.focus\:p-4:focus{padding:1rem}.focus\:text-black:focus{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-neutral-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(115 115 115 / var(--tw-ring-opacity, 1))}.group:hover .group-hover\:scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:bg-opacity-30{--tw-bg-opacity:0.3}.group:hover .group-hover\:opacity-100{opacity:1}@media (min-width: 640px){.sm\:w-auto{width:auto}.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}}@media (min-width: 768px){.md\:mb-0{margin-bottom:0px}.md\:block{display:block}.md\:flex{display:flex}.md\:hidden{display:none}.md\:h-\[500px\]{height:500px}.md\:h-auto{height:auto}.md\:w-1\/3{width:33.333333%}.md\:w-2\/3{width:66.666667%}.md\:w-2\/5{width:40%}.md\:w-3\/5{width:60%}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:justify-start{justify-content:flex-start}.md\:gap-6{gap:1.5rem}.md\:space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.md\:py-24{padding-top:6rem;padding-bottom:6rem}.md\:text-right{text-align:right}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}.md\:text-5xl{font-size:3rem;line-height:1}}@media (min-width: 1024px){.lg\:block{display:block}.lg\:w-1\/2{width:50%}.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.lg\:grid-cols-6{grid-template-columns:repeat(6, minmax(0, 1fr))}.lg\:flex-row{flex-direction:row}.lg\:text-6xl{font-size:3.75rem;line-height:1}}</style></head>
    <body class="antialiased text-gray-800 min-h-screen flex flex-col">
       <!-- Skip to main content link for accessibility -->
@@ -212,56 +220,37 @@ body, div, p {
       <main id="main-content" class="flex-1 relative h-full">
         <div id="RolloutPageContent">
 <div>
-  <header id="header" class="bg-white shadow-sm fixed w-full top-0 z-50">
-    <div class="container mx-auto ">
-      <nav class="flex justify-between md:justify-center md:flex-col items-center">
+   <header id="header" class="bg-white shadow-sm fixed w-full top-0 z-50">
+    <div class=" mx-auto relative">
+      <nav class="flex justify-between md:justify-center gap-4 items-center py-4 px-4">
         <!-- Logo -->
-        <div class=" md:hidden hidden flex items-center">
+        <div class="flex items-center">
           <a href="#" class="text-2xl font-bold text-neutral-800">
             <img src="https://cdn.penguin.co.in/wp-content/themes/penguin/img/penguin_logo_new.png" alt="Penguin Random House India" class="h-12 w-auto" onerror="this.onerror=null; this.src='https://placehold.co/300x66?text=Penguin'; this.classList.add('h-10')">
           </a>
         </div>
 
         <!-- Desktop Navigation -->
-        <div class="hidden md:flex space-x-6 items-center p-4">
-            <a href="#" class="text-2xl font-bold text-neutral-800">
-              <img src="https://cdn.penguin.co.in/wp-content/themes/penguin/img/penguin_logo_new.png" alt="Penguin Random House India" class="h-12 w-auto" onerror="this.onerror=null; this.src='https://placehold.co/300x66?text=Penguin'; this.classList.add('h-10')">
-            </a>
-            <a href="#" class="text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Home</a>
-            <a href="#about-us" class="text-neutral-700 hover:text-neutral-900 transition-colors duration-300">About Us</a>
-            
-            <a href="#books" data-id="booklinks" class="hoverdown text-neutral-700 hover:text-neutral-900 transition-colors duration-300 inline-flex items-center">
-              Books
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </a>
-            <a href="#Authors" data-id="authorlinks" class="hoverdown text-neutral-700 hover:text-neutral-900 transition-colors duration-300 inline-flex items-center">
-              Authors
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </a>
+        <div class="hidden md:flex space-x-6 items-center">
+          <a href="#" class="text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Home</a>
+          <a href="#about-us" class="text-neutral-700 hover:text-neutral-900 transition-colors duration-300">About Us</a>
+          
+          <a href="#books" class="nav-dropdown text-neutral-700 hover:text-neutral-900 transition-colors duration-300 inline-flex items-center" data-target="books-dropdown">
+            Books
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+          
+          <a href="#authors" class="nav-dropdown text-neutral-700 hover:text-neutral-900 transition-colors duration-300 inline-flex items-center" data-target="authors-dropdown">
+            Authors
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
               
-            <a href="#coming-soon" class="text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Coming Soon</a>
-            <a href="#contact-us" class="text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Contact Us</a>
-            
-        </div>
-        <div class="hoverdown__container w-screen bg-white border-t close">
-          <div class="hoverdown__item py-2 hidden" id="booklinks">
-            <ul class="space-y-2">
-              <li><a href="#book1" class="text-neutral-700 hover:text-neutral-900 transition-colors duration-300">book1</a></li>
-              <li><a href="#book2" class="text-neutral-700 hover:text-neutral-900 transition-colors duration-300">book2</a></li>
-              <li><a href="#book3" class="text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Children's Books</a></li>
-            </ul>
-          </div>
-          <div class="hoverdown__item py-2 hidden" id="authorlinks">
-            <ul class="space-y-2">
-              <li><a href="#author1" class="text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Author 1</a></li>
-              <li><a href="#author2" class="text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Author 2</a></li>
-              <li><a href="#author3" class="text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Famous Authors</a></li>
-            </ul>
-          </div>
+          <a href="#coming-soon" class="text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Coming Soon</a>
+          <a href="#contact-us" class="text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Contact Us</a>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -272,55 +261,141 @@ body, div, p {
         </button>
       </nav>
 
+      <!-- Mega Menu Dropdowns for Desktop -->
+      <div id="books-dropdown" class="mega-menu">
+        <div class="w-screen mx-auto py-8 border-t">
+          <div class="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Fiction</h3>
+              <ul class="space-y-2">
+                <li><a href="#" class="text-neutral-700 hover:text-neutral-900">Literary Fiction</a></li>
+                <li><a href="#" class="text-neutral-700 hover:text-neutral-900">Thrillers</a></li>
+                <li><a href="#" class="text-neutral-700 hover:text-neutral-900">Science Fiction</a></li>
+                <li><a href="#" class="text-neutral-700 hover:text-neutral-900">Fantasy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="authors-dropdown" class="mega-menu ">
+        <div class="w-screen mx-auto py-8 border-t">
+          <div class="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Featured Authors</h3>
+              <ul class="space-y-2">
+                <li><a href="#" class="text-neutral-700 hover:text-neutral-900">Author 1</a></li>
+                <li><a href="#" class="text-neutral-700 hover:text-neutral-900">Author 2</a></li>
+                <li><a href="#" class="text-neutral-700 hover:text-neutral-900">Author 3</a></li>
+                <li><a href="#" class="text-neutral-700 hover:text-neutral-900">Author 4</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Mobile Navigation -->
-      <div id="mobile-menu" class="md:hidden hidden mt-4 pb-2">
-        <div class="flex flex-col space-y-3">
-            <a href="#" class="text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Home</a>
-            <a href="#about-us" class="text-neutral-700 hover:text-neutral-900 transition-colors duration-300">About Us</a>
-            <a href="#books" class="text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Books</a>
-            <a href="#coming-soon" class="text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Coming Soon</a>
-            <a href="#contact-us" class="text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Contact Us</a>
-            
+      <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+        <div class="flex flex-col p-4">
+          <a href="#" class="py-2 text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Home</a>
+          <a href="#about-us" class="py-2 text-neutral-700 hover:text-neutral-900 transition-colors duration-300">About Us</a>
+          
+          <!-- Mobile Books Dropdown -->
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle w-full text-left py-2 flex justify-between items-center text-neutral-700" data-target="mobile-books-menu">
+              <span>Books</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="mobile-books-menu" class="mobile-submenu pl-4">
+              <a href="#" class="block py-2 text-neutral-700">Fiction</a>
+              <a href="#" class="block py-2 text-neutral-700">Non-Fiction</a>
+              <a href="#" class="block py-2 text-neutral-700">Children's Books</a>
+            </div>
+          </div>
+          
+          <!-- Mobile Authors Dropdown -->
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle w-full text-left py-2 flex justify-between items-center text-neutral-700" data-target="mobile-authors-menu">
+              <span>Authors</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="mobile-authors-menu" class="mobile-submenu pl-4">
+              <a href="#" class="block py-2 text-neutral-700">Author 1</a>
+              <a href="#" class="block py-2 text-neutral-700">Author 2</a>
+              <a href="#" class="block py-2 text-neutral-700">Famous Authors</a>
+            </div>
+          </div>
+          
+          <a href="#coming-soon" class="py-2 text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Coming Soon</a>
+          <a href="#contact-us" class="py-2 text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Contact Us</a>
         </div>
       </div>
     </div>
   </header>
 
-  <script>
-    // Mobile menu toggle functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const mobileMenuButton = document.getElementById('mobile-menu-button');
-      const mobileMenu = document.getElementById('mobile-menu');
+<script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+      mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+    });
+
+    // Desktop mega menu hover functionality
+    const navDropdowns = document.querySelectorAll('.nav-dropdown');
+    const megaMenus = document.querySelectorAll('.mega-menu');
+    
+    navDropdowns.forEach(dropdown => {
+      const targetId = dropdown.getAttribute('data-target');
+      const targetMenu = document.getElementById(targetId);
       
-      if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', function() {
-          const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-          mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
-          mobileMenu.classList.toggle('hidden');
-          
-          // Change hamburger icon to X when menu is open
-          const svg = mobileMenuButton.querySelector('svg');
-          if (svg) {
-            if (isExpanded) {
-              svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
-            } else {
-              svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
-            }
-          }
-        });
+      dropdown.addEventListener('mouseenter', () => {
+        // Close all mega menus first
+        megaMenus.forEach(menu => menu.classList.remove('open'));
+        // Open the target menu
+        targetMenu.classList.add('open');
+      });
+    });
+
+    // Close mega menu when mouse leaves the mega menu
+    megaMenus.forEach(menu => {
+      menu.addEventListener('mouseleave', () => {
+        menu.classList.remove('open');
+      });
+    });
+
+    // Mobile submenu toggles
+    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+    
+    mobileDropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const targetId = toggle.getAttribute('data-target');
+        const targetSubmenu = document.getElementById(targetId);
+        const arrow = toggle.querySelector('svg');
         
-        // Close mobile menu when clicking on a link
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-          link.addEventListener('click', function() {
-            mobileMenu.classList.add('hidden');
-            mobileMenuButton.setAttribute('aria-expanded', 'false');
-            const svg = mobileMenuButton.querySelector('svg');
-            if (svg) {
-              svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
-            }
-          });
-        });
+        // Toggle the submenu
+        targetSubmenu.classList.toggle('open');
+        
+        // Rotate the arrow icon
+        if (targetSubmenu.classList.contains('open')) {
+          arrow.classList.add('rotate-180');
+        } else {
+          arrow.classList.remove('rotate-180');
+        }
+      });
+    });
+
+    // Close mega menus when clicking outside
+    document.addEventListener('click', (event) => {
+      if (!event.target.closest('.nav-dropdown') && !event.target.closest('.mega-menu')) {
+        megaMenus.forEach(menu => menu.classList.remove('open'));
       }
     });
   </script>
@@ -520,7 +595,7 @@ body, div, p {
 </div>
 
 <div>
-  <section id="books" class="py-16 bg-neutral-50">
+  <section id="books" class="py-16 ">
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">Books</h2>
@@ -544,7 +619,7 @@ body, div, p {
         <!-- Book 1 -->
         <div class="book-card">
           <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200 rounded-md shadow-sm mb-3">
+            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]" >
               <img src="https://cdn.penguin.co.in/wp-content/uploads/2025/03/9780143475811-1-240x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </div>
             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -559,7 +634,7 @@ body, div, p {
         <!-- Book 2 -->
         <div class="book-card">
           <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200 rounded-md shadow-sm mb-3">
+            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]">
               <img src="https://cdn.penguin.co.in/wp-content/uploads/2025/04/9780670099528-297x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </div>
             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -574,7 +649,7 @@ body, div, p {
         <!-- Book 3 -->
         <div class="book-card">
           <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200 rounded-md shadow-sm mb-3">
+            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]">
               <img src="https://cdn.penguin.co.in/wp-content/uploads/2025/03/9780143474555-188x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </div>
             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -589,7 +664,7 @@ body, div, p {
         <!-- Book 4 -->
         <div class="book-card">
           <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200 rounded-md shadow-sm mb-3">
+            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]">
               <img src="https://cdn.penguin.co.in/wp-content/uploads/2025/02/9780143473763-195x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </div>
             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -604,7 +679,7 @@ body, div, p {
         <!-- Book 5 -->
         <div class="book-card">
           <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200 rounded-md shadow-sm mb-3">
+            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]">
               <img src="https://cdn.penguin.co.in/wp-content/uploads/2025/03/9780143474685-1-188x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </div>
             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -619,7 +694,7 @@ body, div, p {
         <!-- Book 6 -->
         <div class="book-card">
           <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200 rounded-md shadow-sm mb-3">
+            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]">
               <img src="https://cdn.penguin.co.in/wp-content/uploads/2025/01/9780143474708-1-196x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </div>
             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -634,7 +709,7 @@ body, div, p {
         <!-- Book 7 -->
         <div class="book-card hidden md:block">
           <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200 rounded-md shadow-sm mb-3">
+            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]">
               <img src="https://cdn.penguin.co.in/wp-content/uploads/2023/06/9781782277538-195x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </div>
             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -649,7 +724,7 @@ body, div, p {
         <!-- Book 8 -->
         <div class="book-card hidden md:block">
           <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200 rounded-md shadow-sm mb-3">
+            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]">
               <img src="https://cdn.penguin.co.in/wp-content/uploads/2023/06/9781846276033-196x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </div>
             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -664,7 +739,7 @@ body, div, p {
         <!-- Book 9 -->
         <div class="book-card hidden lg:block">
           <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200 rounded-md shadow-sm mb-3">
+            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]">
               <img src="https://cdn.penguin.co.in/wp-content/uploads/2024/03/9780670097937-186x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </div>
             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -679,7 +754,7 @@ body, div, p {
         <!-- Book 10 -->
         <div class="book-card hidden lg:block">
           <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200 rounded-md shadow-sm mb-3">
+            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]">
               <img src="https://cdn.penguin.co.in/wp-content/uploads/2025/03/9780670097418-205x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </div>
             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -694,7 +769,7 @@ body, div, p {
         <!-- Book 11 -->
         <div class="book-card hidden lg:block">
           <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200 rounded-md shadow-sm mb-3">
+            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]">
               <img src="https://cdn.penguin.co.in/wp-content/uploads/2023/08/9780670096121-196x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </div>
             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -709,7 +784,7 @@ body, div, p {
         <!-- Book 12 -->
         <div class="book-card hidden lg:block">
           <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200 rounded-md shadow-sm mb-3">
+            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]">
               <img src="https://cdn.penguin.co.in/wp-content/uploads/2025/04/9780143472391-214x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
             </div>
             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -1045,7 +1120,7 @@ body, div, p {
       <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         <!-- Book 1 -->
         <div class="upcoming-book-card">
-          <div class="relative aspect-[2/3] overflow-hidden bg-neutral-100 rounded-md shadow-sm mb-3">
+          <div class="relative aspect-[2/3] overflow-hidden bg-neutral-100 rounded-md shadow-sm mb-3 shadow-[1px_1px_5px_#333]">
             <div class="absolute inset-0 flex items-center justify-center">
               <img src="https://cdn.penguin.co.in/wp-content/uploads/2023/06/9781782277538-195x300.jpg" alt="Upcoming book cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Coming+Soon'" class="w-full h-full object-cover opacity-60">
               <div class="absolute inset-0 bg-black bg-opacity-30"></div>
@@ -1061,7 +1136,7 @@ body, div, p {
         
         <!-- Book 2 -->
         <div class="upcoming-book-card">
-          <div class="relative aspect-[2/3] overflow-hidden bg-neutral-100 rounded-md shadow-sm mb-3">
+          <div class="relative aspect-[2/3] overflow-hidden bg-neutral-100 rounded-md shadow-sm mb-3 shadow-[1px_1px_5px_#333]">
             <div class="absolute inset-0 flex items-center justify-center">
               <img src="https://cdn.penguin.co.in/wp-content/uploads/2023/06/9781846276033-196x300.jpg" alt="Upcoming book cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Coming+Soon'" class="w-full h-full object-cover opacity-60">
               <div class="absolute inset-0 bg-black bg-opacity-30"></div>
@@ -1077,7 +1152,7 @@ body, div, p {
         
         <!-- Book 3 -->
         <div class="upcoming-book-card">
-          <div class="relative aspect-[2/3] overflow-hidden bg-neutral-100 rounded-md shadow-sm mb-3">
+          <div class="relative aspect-[2/3] overflow-hidden bg-neutral-100 rounded-md shadow-sm mb-3 shadow-[1px_1px_5px_#333]">
             <div class="absolute inset-0 flex items-center justify-center">
               <img src="https://cdn.penguin.co.in/wp-content/uploads/2024/03/9780670097937-186x300.jpg" alt="Upcoming book cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Coming+Soon'" class="w-full h-full object-cover opacity-60">
               <div class="absolute inset-0 bg-black bg-opacity-30"></div>
@@ -1093,7 +1168,7 @@ body, div, p {
         
         <!-- Book 4 -->
         <div class="upcoming-book-card">
-          <div class="relative aspect-[2/3] overflow-hidden bg-neutral-100 rounded-md shadow-sm mb-3">
+          <div class="relative aspect-[2/3] overflow-hidden bg-neutral-100 rounded-md shadow-sm mb-3 shadow-[1px_1px_5px_#333]">
             <div class="absolute inset-0 flex items-center justify-center">
               <img src="https://cdn.penguin.co.in/wp-content/uploads/2025/03/9780670097418-205x300.jpg" alt="Upcoming book cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Coming+Soon'" class="w-full h-full object-cover opacity-60">
               <div class="absolute inset-0 bg-black bg-opacity-30"></div>
@@ -1790,32 +1865,6 @@ body, div, p {
     </button>
   </footer>
 
-  <script>
-if (window.innerWidth > 1024) { // Adjusted for desktop screens
-  function mouseIn(elem) {
-    const ddid = elem.getAttribute('data-id');
-    const dd = document.getElementById(ddid);
-    document.querySelector('.hoverdown__container').classList.remove('close');
-    dd.classList.remove('hidden');
-  }
-  function mouseOut(elem) {
-    const ddid = elem.getAttribute('data-id');
-    const dd = document.getElementById(ddid);
-    document.querySelector('.hoverdown__container').classList.add('close');
-    dd.classList.add('hidden');
-  }
-  const hoverdown = document.querySelectorAll('.hoverdown');
-
-  hoverdown.forEach((hd) => {
-    hd.addEventListener("mouseenter", (e) => {
-      mouseIn(hd);
-    });
-    hd.addEventListener("mouseleave", (e) => {
-      mouseOut(hd);
-    });
-    });
-}
-</script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   if (window.innerWidth > 1024) { // Ensure this runs only on desktop
