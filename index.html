@@ -603,7 +603,7 @@ body, div, p {
       </div>
 
       <!-- Book Category Navigation -->
-      <div class="flex justify-center mb-10 overflow-x-auto pb-2">
+      <!-- <div class="flex justify-center mb-10 overflow-x-auto pb-2">
         <div class="flex space-x-2 md:space-x-4">
           <button class="category-btn active whitespace-nowrap px-4 py-2 bg-neutral-900 text-white rounded-md">All Books</button>
           <button class="category-btn whitespace-nowrap px-4 py-2 bg-white border border-neutral-200 text-neutral-700 rounded-md hover:bg-neutral-100">Fiction</button>
@@ -612,197 +612,61 @@ body, div, p {
           <button class="category-btn whitespace-nowrap px-4 py-2 bg-white border border-neutral-200 text-neutral-700 rounded-md hover:bg-neutral-100">Classics</button>
           <button class="category-btn whitespace-nowrap px-4 py-2 bg-white border border-neutral-200 text-neutral-700 rounded-md hover:bg-neutral-100">Biography</button>
         </div>
-      </div>
+      </div> -->
 
       <!-- Books Grid -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
-        <!-- Book 1 -->
-        <div class="book-card">
-          <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]" >
-              <img src="https://cdn.penguin.co.in/wp-content/uploads/2025/03/9780143475811-1-240x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-            </div>
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
-              <button class="quick-view-btn px-3 py-2 bg-white text-neutral-900 rounded-md text-sm font-medium shadow-md">Quick View</button>
-            </div>
-          </div>
-          <h3 class="text-neutral-900 font-medium text-sm leading-tight mb-1">The Satvic Revolution</h3>
-          <p class="text-neutral-600 text-xs mb-2">Subah Saraf, Harshvardhan Saraf</p>
-          <p class="text-neutral-900 font-bold text-sm">₹399</p>
+   <div class="max-w-[1240px] mx-auto px-4 py-6">
+  <!-- Book Card -->
+  <div class="flex flex-col md:flex-row justify-center items-start gap-6 md:gap-12">
+    <!-- Book Image -->
+    <div class="book-card w-full md:w-[300px]">
+      <div class="relative group">
+        <div class="aspect-[2/3] overflow-hidden bg-neutral-200 mb-4 shadow-[0_4px_10px_rgba(0,0,0,0.15)] rounded-lg">
+          <img
+            src="https://cdn.penguin.co.in/wp-content/uploads/2025/04/9780670099528-297x300.jpg"
+            alt="Masala Lab Book Cover"
+            onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
         </div>
-
-        <!-- Book 2 -->
-        <div class="book-card">
-          <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]">
-              <img src="https://cdn.penguin.co.in/wp-content/uploads/2025/04/9780670099528-297x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-            </div>
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
-              <button class="quick-view-btn px-3 py-2 bg-white text-neutral-900 rounded-md text-sm font-medium shadow-md">Quick View</button>
-            </div>
-          </div>
-          <h3 class="text-neutral-900 font-medium text-sm leading-tight mb-1">Masala Lab</h3>
-          <p class="text-neutral-600 text-xs mb-2">Krish Ashok</p>
-          <p class="text-neutral-900 font-bold text-sm">₹499</p>
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+          
         </div>
-
-        <!-- Book 3 -->
-        <div class="book-card">
-          <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]">
-              <img src="https://cdn.penguin.co.in/wp-content/uploads/2025/03/9780143474555-188x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-            </div>
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
-              <button class="quick-view-btn px-3 py-2 bg-white text-neutral-900 rounded-md text-sm font-medium shadow-md">Quick View</button>
-            </div>
-          </div>
-          <h3 class="text-neutral-900 font-medium text-sm leading-tight mb-1">Focus on What Matters</h3>
-          <p class="text-neutral-600 text-xs mb-2">Darius Foroux</p>
-          <p class="text-neutral-900 font-bold text-sm">₹350</p>
-        </div>
-
-        <!-- Book 4 -->
-        <div class="book-card">
-          <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]">
-              <img src="https://cdn.penguin.co.in/wp-content/uploads/2025/02/9780143473763-195x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-            </div>
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
-              <button class="quick-view-btn px-3 py-2 bg-white text-neutral-900 rounded-md text-sm font-medium shadow-md">Quick View</button>
-            </div>
-          </div>
-          <h3 class="text-neutral-900 font-medium text-sm leading-tight mb-1">What You Are Looking for is in the Library</h3>
-          <p class="text-neutral-600 text-xs mb-2">Michiko Aoyama</p>
-          <p class="text-neutral-900 font-bold text-sm">₹299</p>
-        </div>
-
-        <!-- Book 5 -->
-        <div class="book-card">
-          <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]">
-              <img src="https://cdn.penguin.co.in/wp-content/uploads/2025/03/9780143474685-1-188x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-            </div>
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
-              <button class="quick-view-btn px-3 py-2 bg-white text-neutral-900 rounded-md text-sm font-medium shadow-md">Quick View</button>
-            </div>
-          </div>
-          <h3 class="text-neutral-900 font-medium text-sm leading-tight mb-1">Heal Your Gut, Mind &amp; Emotions</h3>
-          <p class="text-neutral-600 text-xs mb-2">Dimple Jangda</p>
-          <p class="text-neutral-900 font-bold text-sm">₹450</p>
-        </div>
-
-        <!-- Book 6 -->
-        <div class="book-card">
-          <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]">
-              <img src="https://cdn.penguin.co.in/wp-content/uploads/2025/01/9780143474708-1-196x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-            </div>
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
-              <button class="quick-view-btn px-3 py-2 bg-white text-neutral-900 rounded-md text-sm font-medium shadow-md">Quick View</button>
-            </div>
-          </div>
-          <h3 class="text-neutral-900 font-medium text-sm leading-tight mb-1">Surrounded by Idiots</h3>
-          <p class="text-neutral-600 text-xs mb-2">Thomas Erikson</p>
-          <p class="text-neutral-900 font-bold text-sm">₹399</p>
-        </div>
-
-        <!-- Book 7 -->
-        <div class="book-card hidden md:block">
-          <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]">
-              <img src="https://cdn.penguin.co.in/wp-content/uploads/2023/06/9781782277538-195x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-            </div>
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
-              <button class="quick-view-btn px-3 py-2 bg-white text-neutral-900 rounded-md text-sm font-medium shadow-md">Quick View</button>
-            </div>
-          </div>
-          <h3 class="text-neutral-900 font-medium text-sm leading-tight mb-1">Build, Don't Talk</h3>
-          <p class="text-neutral-600 text-xs mb-2">Raj Shamani</p>
-          <p class="text-neutral-900 font-bold text-sm">₹350</p>
-        </div>
-
-        <!-- Book 8 -->
-        <div class="book-card hidden md:block">
-          <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]">
-              <img src="https://cdn.penguin.co.in/wp-content/uploads/2023/06/9781846276033-196x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-            </div>
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
-              <button class="quick-view-btn px-3 py-2 bg-white text-neutral-900 rounded-md text-sm font-medium shadow-md">Quick View</button>
-            </div>
-          </div>
-          <h3 class="text-neutral-900 font-medium text-sm leading-tight mb-1">The Housemaid</h3>
-          <p class="text-neutral-600 text-xs mb-2">Freida McFadden</p>
-          <p class="text-neutral-900 font-bold text-sm">₹399</p>
-        </div>
-
-        <!-- Book 9 -->
-        <div class="book-card hidden lg:block">
-          <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]">
-              <img src="https://cdn.penguin.co.in/wp-content/uploads/2024/03/9780670097937-186x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-            </div>
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
-              <button class="quick-view-btn px-3 py-2 bg-white text-neutral-900 rounded-md text-sm font-medium shadow-md">Quick View</button>
-            </div>
-          </div>
-          <h3 class="text-neutral-900 font-medium text-sm leading-tight mb-1">The Anxious Generation</h3>
-          <p class="text-neutral-600 text-xs mb-2">Jonathan Haidt</p>
-          <p class="text-neutral-900 font-bold text-sm">₹499</p>
-        </div>
-
-        <!-- Book 10 -->
-        <div class="book-card hidden lg:block">
-          <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]">
-              <img src="https://cdn.penguin.co.in/wp-content/uploads/2025/03/9780670097418-205x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-            </div>
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
-              <button class="quick-view-btn px-3 py-2 bg-white text-neutral-900 rounded-md text-sm font-medium shadow-md">Quick View</button>
-            </div>
-          </div>
-          <h3 class="text-neutral-900 font-medium text-sm leading-tight mb-1">The Thursday Murder Club</h3>
-          <p class="text-neutral-600 text-xs mb-2">Richard Osman</p>
-          <p class="text-neutral-900 font-bold text-sm">₹450</p>
-        </div>
-
-        <!-- Book 11 -->
-        <div class="book-card hidden lg:block">
-          <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]">
-              <img src="https://cdn.penguin.co.in/wp-content/uploads/2023/08/9780670096121-196x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-            </div>
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
-              <button class="quick-view-btn px-3 py-2 bg-white text-neutral-900 rounded-md text-sm font-medium shadow-md">Quick View</button>
-            </div>
-          </div>
-          <h3 class="text-neutral-900 font-medium text-sm leading-tight mb-1">Then She Was Gone</h3>
-          <p class="text-neutral-600 text-xs mb-2">Lisa Jewell</p>
-          <p class="text-neutral-900 font-bold text-sm">₹399</p>
-        </div>
-
-        <!-- Book 12 -->
-        <div class="book-card hidden lg:block">
-          <div class="relative group">
-            <div class="aspect-[2/3] overflow-hidden bg-neutral-200  mb-3 shadow-[1px_1px_5px_#333]">
-              <img src="https://cdn.penguin.co.in/wp-content/uploads/2025/04/9780143472391-214x300.jpg" alt="Book Cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Book+Cover'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-            </div>
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center opacity-0 group-hover:opacity-100">
-              <button class="quick-view-btn px-3 py-2 bg-white text-neutral-900 rounded-md text-sm font-medium shadow-md">Quick View</button>
-            </div>
-          </div>
-          <h3 class="text-neutral-900 font-medium text-sm leading-tight mb-1">Stop Overthinking</h3>
-          <p class="text-neutral-600 text-xs mb-2">Nick Trenton</p>
-          <p class="text-neutral-900 font-bold text-sm">₹350</p>
-        </div>
-      </div>
-
-      <!-- View More Button -->
-      <div class="text-center mt-10">
-        <button class="px-6 py-3 bg-white border border-neutral-300 text-neutral-800 rounded-md font-medium hover:bg-neutral-100 transition duration-300">View All Books</button>
       </div>
     </div>
 
+    <!-- Details -->
+    <div class="flex-1 w-full md:max-w-[400px]">
+      <h3 class="text-neutral-900 font-semibold text-lg md:text-xl leading-tight mb-2">Masala Lab</h3>
+      <p class="text-neutral-600 text-sm mb-2">By Krish Ashok</p>
+      <div class="flex items-center gap-2 mb-3">
+        <div class="flex text-yellow-400">
+          ★★★★★
+        </div>
+        <span class="text-neutral-500 text-sm">(5.0 / 5)</span>
+      </div>
+      <p class="text-neutral-900 font-bold text-lg mb-3">₹499</p>
+      <p class="text-neutral-600 text-sm mb-4 line-clamp-3">
+        A delightful exploration of the science behind Indian cooking, blending culinary arts with chemistry to demystify kitchen techniques.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <button class="px-4 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700 transition-colors w-full sm:w-auto">
+          Buy now
+        </button>
+        <button class="px-4 py-2 border border-neutral-300 text-neutral-900 rounded-md text-sm font-medium hover:bg-neutral-100 transition-colors w-full sm:w-auto">
+          view details
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- View More Button -->
+  <div class="text-center mt-10">
+    <button class="px-6 py-3 bg-white border border-neutral-300 text-neutral-800 rounded-md font-medium hover:bg-neutral-100 transition duration-300">
+      View All Books
+    </button>
+  </div>
+</div>
     <!-- Book Details Modal -->
     <div id="book-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden" aria-modal="true" aria-hidden="true">
       <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-auto p-6 relative mx-4">
@@ -866,8 +730,8 @@ body, div, p {
             </div>
             
             <div class="flex flex-col sm:flex-row gap-3">
-              <button class="px-6 py-3 bg-neutral-900 text-white font-medium rounded-md hover:bg-neutral-800 transition duration-300">Add to Cart</button>
-              <button class="px-6 py-3 border border-neutral-300 text-neutral-800 font-medium rounded-md hover:bg-neutral-100 transition duration-300">Add to Wishlist</button>
+              <button class="px-6 py-3 bg-neutral-900 text-white font-medium rounded-md hover:bg-neutral-800 transition duration-300">Buy Now</button>
+              <button class="px-6 py-3 border border-neutral-300 text-neutral-800 font-medium rounded-md hover:bg-neutral-100 transition duration-300">view product</button>
             </div>
           </div>
         </div>
@@ -1116,84 +980,7 @@ body, div, p {
         </div>
       </div>
       
-      <!-- Upcoming Books Grid -->
-      <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        <!-- Book 1 -->
-        <div class="upcoming-book-card">
-          <div class="relative aspect-[2/3] overflow-hidden bg-neutral-100 rounded-md shadow-sm mb-3 shadow-[1px_1px_5px_#333]">
-            <div class="absolute inset-0 flex items-center justify-center">
-              <img src="https://cdn.penguin.co.in/wp-content/uploads/2023/06/9781782277538-195x300.jpg" alt="Upcoming book cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Coming+Soon'" class="w-full h-full object-cover opacity-60">
-              <div class="absolute inset-0 bg-black bg-opacity-30"></div>
-              <div class="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center text-center p-4">
-                <span class="bg-red-600 text-white px-3 py-1 text-xs font-semibold rounded-full mb-2">Coming May 2024</span>
-                <h3 class="text-white font-bold text-lg mb-1">The Silent Observer</h3>
-                <p class="text-white text-sm mb-3">Arundhati Roy</p>
-                <button class="notify-btn px-3 py-1 bg-white text-neutral-900 rounded text-sm font-medium">Notify Me</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Book 2 -->
-        <div class="upcoming-book-card">
-          <div class="relative aspect-[2/3] overflow-hidden bg-neutral-100 rounded-md shadow-sm mb-3 shadow-[1px_1px_5px_#333]">
-            <div class="absolute inset-0 flex items-center justify-center">
-              <img src="https://cdn.penguin.co.in/wp-content/uploads/2023/06/9781846276033-196x300.jpg" alt="Upcoming book cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Coming+Soon'" class="w-full h-full object-cover opacity-60">
-              <div class="absolute inset-0 bg-black bg-opacity-30"></div>
-              <div class="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center text-center p-4">
-                <span class="bg-red-600 text-white px-3 py-1 text-xs font-semibold rounded-full mb-2">Coming May 2024</span>
-                <h3 class="text-white font-bold text-lg mb-1">Mountains Beyond Mountains</h3>
-                <p class="text-white text-sm mb-3">Amitav Ghosh</p>
-                <button class="notify-btn px-3 py-1 bg-white text-neutral-900 rounded text-sm font-medium">Notify Me</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Book 3 -->
-        <div class="upcoming-book-card">
-          <div class="relative aspect-[2/3] overflow-hidden bg-neutral-100 rounded-md shadow-sm mb-3 shadow-[1px_1px_5px_#333]">
-            <div class="absolute inset-0 flex items-center justify-center">
-              <img src="https://cdn.penguin.co.in/wp-content/uploads/2024/03/9780670097937-186x300.jpg" alt="Upcoming book cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Coming+Soon'" class="w-full h-full object-cover opacity-60">
-              <div class="absolute inset-0 bg-black bg-opacity-30"></div>
-              <div class="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center text-center p-4">
-                <span class="bg-red-600 text-white px-3 py-1 text-xs font-semibold rounded-full mb-2">Coming June 2024</span>
-                <h3 class="text-white font-bold text-lg mb-1">The Last Monsoon</h3>
-                <p class="text-white text-sm mb-3">Pankaj Mishra</p>
-                <button class="notify-btn px-3 py-1 bg-white text-neutral-900 rounded text-sm font-medium">Notify Me</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Book 4 -->
-        <div class="upcoming-book-card">
-          <div class="relative aspect-[2/3] overflow-hidden bg-neutral-100 rounded-md shadow-sm mb-3 shadow-[1px_1px_5px_#333]">
-            <div class="absolute inset-0 flex items-center justify-center">
-              <img src="https://cdn.penguin.co.in/wp-content/uploads/2025/03/9780670097418-205x300.jpg" alt="Upcoming book cover" onerror="this.onerror=null; this.src='https://placehold.co/240x300?text=Coming+Soon'" class="w-full h-full object-cover opacity-60">
-              <div class="absolute inset-0 bg-black bg-opacity-30"></div>
-              <div class="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center text-center p-4">
-                <span class="bg-red-600 text-white px-3 py-1 text-xs font-semibold rounded-full mb-2">Coming June 2024</span>
-                <h3 class="text-white font-bold text-lg mb-1">Whispers of the Himalayas</h3>
-                <p class="text-white text-sm mb-3">Ruskin Bond</p>
-                <button class="notify-btn px-3 py-1 bg-white text-neutral-900 rounded text-sm font-medium">Notify Me</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Subscribe Banner -->
-      <div class="mt-12 bg-neutral-900 text-white p-8 rounded-lg">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 class="text-xl font-bold mb-2">Never Miss a New Release</h3>
-            <p>Subscribe to our newsletter and be the first to know about upcoming books.</p>
-          </div>
-          <button id="newsletter-subscribe-btn" class="whitespace-nowrap px-6 py-3 bg-white text-neutral-900 font-semibold rounded-md hover:bg-neutral-100 transition duration-300">Subscribe Now</button>
-        </div>
-      </div>
-    </div>
+     
 
     <!-- Notification Modal -->
     <div id="notification-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden" aria-modal="true" aria-hidden="true">
@@ -1228,164 +1015,6 @@ body, div, p {
     </div>
   </section>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Elements
-      const notifyButtons = document.querySelectorAll('.notify-btn');
-      const featuredNotifyBtn = document.getElementById('notify-btn-featured');
-      const notificationModal = document.getElementById('notification-modal');
-      const closeModalBtn = document.getElementById('close-notification-modal');
-      const notificationForm = document.getElementById('notification-form');
-      const newsletterSubscribeBtn = document.getElementById('newsletter-subscribe-btn');
-      const body = document.body;
-      
-      let lastFocusedElement = null;
-      let selectedBook = '';
-      
-      // Function to open modal
-      function openModal(bookTitle) {
-        // Store last focused element to return focus later
-        lastFocusedElement = document.activeElement;
-        
-        selectedBook = bookTitle || 'this book';
-        
-        // Update modal title with book name if provided
-        const modalTitle = notificationModal.querySelector('h3');
-        if (modalTitle) {
-          modalTitle.textContent = `Get Notified About "${selectedBook}"`;
-        }
-        
-        // Show modal and lock body scroll
-        notificationModal.classList.remove('hidden');
-        notificationModal.setAttribute('aria-hidden', 'false');
-        body.style.overflow = 'hidden';
-        
-        // Focus on first input for accessibility
-        const firstInput = notificationModal.querySelector('input');
-        if (firstInput) {
-          setTimeout(() => {
-            firstInput.focus();
-          }, 100);
-        }
-        
-        // Trap focus inside modal
-        trapFocus(notificationModal);
-      }
-      
-      // Function to close modal
-      function closeModal() {
-        notificationModal.classList.add('hidden');
-        notificationModal.setAttribute('aria-hidden', 'true');
-        body.style.overflow = '';
-        
-        // Return focus to the element that opened the modal
-        if (lastFocusedElement) {
-          lastFocusedElement.focus();
-        }
-      }
-      
-      // Function to trap focus inside modal
-      function trapFocus(element) {
-        const focusableElements = element.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-        const firstFocusableElement = focusableElements[0];
-        const lastFocusableElement = focusableElements[focusableElements.length - 1];
-        
-        element.addEventListener('keydown', function(e) {
-          if (e.key === 'Tab') {
-            if (e.shiftKey) {
-              if (document.activeElement === firstFocusableElement) {
-                e.preventDefault();
-                lastFocusableElement.focus();
-              }
-            } else {
-              if (document.activeElement === lastFocusableElement) {
-                e.preventDefault();
-                firstFocusableElement.focus();
-              }
-            }
-          } else if (e.key === 'Escape') {
-            closeModal();
-          }
-        });
-      }
-      
-      // Add event listeners to notify buttons
-      notifyButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          const bookCard = this.closest('.upcoming-book-card');
-          let bookTitle = 'this book';
-          
-          if (bookCard) {
-            const titleElement = bookCard.querySelector('h3');
-            if (titleElement) {
-              bookTitle = titleElement.textContent;
-            }
-          }
-          
-          openModal(bookTitle);
-        });
-      });
-      
-      // Featured notify button
-      if (featuredNotifyBtn) {
-        featuredNotifyBtn.addEventListener('click', function() {
-          const titleElement = this.closest('.bg-neutral-50').querySelector('h3');
-          let bookTitle = titleElement ? titleElement.textContent : 'The Silent Observer';
-          openModal(bookTitle);
-        });
-      }
-      
-      // Newsletter subscribe button
-      if (newsletterSubscribeBtn) {
-        newsletterSubscribeBtn.addEventListener('click', function() {
-          openModal('all upcoming releases');
-        });
-      }
-      
-      // Close modal when close button is clicked
-      closeModalBtn.addEventListener('click', closeModal);
-      
-      // Close modal when clicking on backdrop
-      notificationModal.addEventListener('click', function(e) {
-        if (e.target === notificationModal) {
-          closeModal();
-        }
-      });
-      
-      // Close modal when ESC key is pressed
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && !notificationModal.classList.contains('hidden')) {
-          closeModal();
-        }
-      });
-      
-      // Handle form submission
-      notificationForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const nameInput = document.getElementById('notification-name');
-        const emailInput = document.getElementById('notification-email');
-        
-        if (nameInput.value && emailInput.value) {
-          // Show success message (in a real implementation, this would send data to a server)
-          const formElement = this;
-          formElement.innerHTML = `
-            <div class="text-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-green-500 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <h4 class="text-xl font-bold text-neutral-900 mb-2">Thank You!</h4>
-              <p class="text-neutral-600 mb-6">You'll receive an email notification when "${selectedBook}" becomes available.</p>
-              <button type="button" id="close-success" class="w-full py-3 bg-neutral-900 text-white font-medium rounded-md hover:bg-neutral-800 transition duration-300">Close</button>
-            </div>
-          `;
-          
-          // Add event listener to new close button
-          document.getElementById('close-success').addEventListener('click', closeModal);
-        }
-      });
-    });
-  </script>
 </div>
 
 <div>
@@ -1397,52 +1026,12 @@ body, div, p {
       </div>
       
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <!-- Contact Form -->
+        
         <div>
           <div class="bg-white p-8 rounded-lg shadow-sm">
-            <h3 class="text-xl font-bold text-neutral-900 mb-6">Send Us a Message</h3>
-            
-            <form id="contact-form" class="space-y-6">
-              <div>
-                <label for="name" class="block text-sm font-medium text-neutral-700 mb-1">Full Name</label>
-                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-500" required="">
-              </div>
-              
-              <div>
-                <label for="email" class="block text-sm font-medium text-neutral-700 mb-1">Email Address</label>
-                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-500" required="">
-              </div>
-              
-              <div>
-                <label for="subject" class="block text-sm font-medium text-neutral-700 mb-1">Subject</label>
-                <select id="subject" name="subject" class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-500" required="">
-                  <option value="">Select a subject</option>
-                  <option value="General Inquiry">General Inquiry</option>
-                  <option value="Book Submission">Book Submission</option>
-                  <option value="Bulk Order">Bulk Order</option>
-                  <option value="Media Request">Media Request</option>
-                  <option value="Career Opportunity">Career Opportunity</option>
-                  <option value="Rights &amp; Permissions">Rights &amp; Permissions</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-              
-              <div>
-                <label for="message" class="block text-sm font-medium text-neutral-700 mb-1">Message</label>
-                <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-500" required=""></textarea>
-              </div>
-              
-              <div class="flex items-start">
-                <input type="checkbox" id="privacy-policy" name="privacy-policy" class="mt-1 mr-2" required="">
-                <label for="privacy-policy" class="text-sm text-neutral-600">
-                  I have read and agree to the <a href="#" class="text-neutral-900 underline">Privacy Policy</a> and consent to Penguin Random House India collecting my personal data.
-                </label>
-              </div>
-              
-              <button type="submit" id="submit-contact-form" class="px-6 py-3 bg-neutral-900 text-white font-medium rounded-md hover:bg-neutral-800 transition duration-300 w-full sm:w-auto">
-                Submit Message
-              </button>
-            </form>
+            <iframe data-tally-src="https://tally.so/embed/mOV65R?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="313" frameborder="0" marginheight="0" marginwidth="0" title="Contact form
+"></iframe>
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
           </div>
         </div>
         
@@ -1494,7 +1083,7 @@ body, div, p {
                 </div>
               </div>
               
-              <div class="flex items-start">
+              <!-- <div class="flex items-start">
                 <div class="mt-1 mr-4 text-neutral-900">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -1505,7 +1094,7 @@ body, div, p {
                   <p class="text-neutral-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
                   <p class="text-neutral-600">Saturday &amp; Sunday: Closed</p>
                 </div>
-              </div>
+              </div> -->
             </div>
             
             <div class="mt-6">
@@ -1530,23 +1119,6 @@ body, div, p {
             </div>
           </div>
           
-          <div class="bg-white rounded-lg overflow-hidden shadow-sm h-80">
-            <!-- Placeholder for map - in a real implementation, this would be an interactive map -->
-            <div class="relative h-full w-full bg-neutral-200">
-              <img src="https://images.unsplash.com/photo-1484981138541-3d074aa97716?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w2MzQ2fDB8MXxzZWFyY2h8Mnx8cHJvZmVzc2lvbmFsJTI1MjBwdWJsaXNoaW5nJTI1MjBob3VzZSUyNTIwY3VzdG9tZXIlMjUyMHNlcnZpY2UlMjUyMGRlc2slMjUyMHdpdGglMjUyMGJvb2tzJTI1MjBQZW5ndWluJTI1MjBSYW5kb20lMjUyMEhvdXNlJTI1MjBicmFuZGluZyUyNTIwZWxlZ2FudCUyNTIwbGl0ZXJhcnklMjUyMGF0bW9zcGhlcmV8ZW58MHwwfHx8MTc0NDc4Njk5Nnww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080?q=80" alt="Penguin Random House India Office Location" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/800x400?text=Map+Location'">
-              <div class="absolute inset-0 bg-black bg-opacity-10 flex items-center justify-center">
-                <div class="bg-white p-3 rounded-full shadow-lg">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                <p class="text-white text-sm">Photo by Brooke Lark</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
       
@@ -1595,53 +1167,200 @@ body, div, p {
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <!-- Newsletter Form -->
           <div class="bg-neutral-800 p-8 rounded-lg">
-            <h3 class="text-xl font-bold mb-4">Join Our Newsletter</h3>
-            <p class="text-neutral-300 mb-6">Subscribe to receive monthly updates about new releases, author interviews, and special promotions.</p>
-            
-            <form id="newsletter-form" class="space-y-4">
-              <div>
-                <label for="newsletter-name" class="block text-sm font-medium text-neutral-300 mb-1">Full Name</label>
-                <input type="text" id="newsletter-name" class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-md text-white placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-500" placeholder="Your Name" required="">
-              </div>
-              
-              <div>
-                <label for="newsletter-email" class="block text-sm font-medium text-neutral-300 mb-1">Email Address</label>
-                <input type="email" id="newsletter-email" class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-md text-white placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-500" placeholder="your.email@example.com" required="">
-              </div>
-              
-              <div>
-                <label class="block text-sm font-medium text-neutral-300 mb-2">Interests (Optional)</label>
-                <div class="grid grid-cols-2 gap-2">
-                  <div class="flex items-center">
-                    <input type="checkbox" id="interest-fiction" class="mr-2">
-                    <label for="interest-fiction" class="text-sm text-neutral-300">Fiction</label>
-                  </div>
-                  <div class="flex items-center">
-                    <input type="checkbox" id="interest-nonfiction" class="mr-2">
-                    <label for="interest-nonfiction" class="text-sm text-neutral-300">Non-Fiction</label>
-                  </div>
-                  <div class="flex items-center">
-                    <input type="checkbox" id="interest-children" class="mr-2">
-                    <label for="interest-children" class="text-sm text-neutral-300">Children's Books</label>
-                  </div>
-                  <div class="flex items-center">
-                    <input type="checkbox" id="interest-classics" class="mr-2">
-                    <label for="interest-classics" class="text-sm text-neutral-300">Classics</label>
-                  </div>
+            <!-- Begin Brevo Form -->
+<!-- START - We recommend to place the below code in head tag of your website html  -->
+<style>
+  @font-face {
+    font-display: block;
+    font-family: Roboto;
+    src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")
+  }
+
+  @font-face {
+    font-display: fallback;
+    font-family: Roboto;
+    font-weight: 600;
+    src: url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")
+  }
+
+  @font-face {
+    font-display: fallback;
+    font-family: Roboto;
+    font-weight: 700;
+    src: url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")
+  }
+
+  #sib-container input:-ms-input-placeholder {
+    text-align: left;
+    font-family: Helvetica, sans-serif;
+    color: #c0ccda;
+  }
+
+  #sib-container input::placeholder {
+    text-align: left;
+    font-family: Helvetica, sans-serif;
+    color: #c0ccda;
+  }
+
+  #sib-container textarea::placeholder {
+    text-align: left;
+    font-family: Helvetica, sans-serif;
+    color: #c0ccda;
+  }
+
+  #sib-container a {
+    text-decoration: underline;
+    color: #2BB2FC;
+  }
+</style>
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+<!--  END - We recommend to place the above code in head tag of your website html -->
+
+<!-- START - We recommend to place the below code where you want the form in your website html  -->
+<div class="sib-form" style="text-align: center;
+         background-color: #171717;                                 ">
+  <div id="sib-form-container" class="sib-form-container">
+    <div id="error-message" class="sib-form-message-panel" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;max-width:350px;">
+      <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+        <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+          <path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
+        </svg>
+        <span class="sib-form-message-panel__inner-text">
+                          Your subscription could not be saved. Please try again.
+                      </span>
+      </div>
+    </div>
+    <div></div>
+    <div id="success-message" class="sib-form-message-panel" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66;max-width:350px;">
+      <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+        <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+          <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
+        </svg>
+        <span class="sib-form-message-panel__inner-text">
+                          Your subscription has been successful.
+                      </span>
+      </div>
+    </div>
+    <div></div>
+    <div id="sib-container" class="sib-container--medium sib-container--vertical" style="text-align:center; background-color:rgba(23,23,23,1); max-width:350px; border-radius:3px; border-width:1px; border-color:#C0CCD9; border-style:solid; direction:ltr">
+      <form id="sib-form" method="POST" action="https://sibforms.com/serve/MUIFABN-yQuzzoe0pwRLgcaWNtuDbrq9PLPNyUgbos5OMTfVkXBCZkq2XnHx0_Sl2TCqQ5ZnwUrybOQeo7pY-BAvk344vZc5VmKHkyokr69Yukr-eHsnYOuWI1tJeZ-8Xivsb2nQvXHkcGTxzhiRQwb8f-K_3N_wgq9hloyC4cKih1rt1gvKsGl4ygwhxeEUrIhDwTn9BOH9xmDn" data-type="subscription">
+        <div style="padding: 8px 0;">
+          <div class="sib-form-block" style="font-size:32px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#ffffff; background-color:transparent; text-align:left">
+            <p>Newsletter</p>
+          </div>
+        </div>
+        <div style="padding: 8px 0;">
+          <div class="sib-form-block" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#ffffff; background-color:transparent; text-align:left">
+            <div class="sib-text-form-block">
+              <p>Subscribe to our newsletter and stay updated.</p>
+            </div>
+          </div>
+        </div>
+        <div style="padding: 8px 0;">
+          <div class="sib-input sib-form-block">
+            <div class="form__entry entry_block">
+              <div class="form__label-row ">
+
+                <div class="entry__field">
+                  <input class="input " type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="EMAIL" data-required="true" required />
                 </div>
               </div>
-              
-              <div class="flex items-start">
-                <input type="checkbox" id="newsletter-terms" class="mt-1 mr-2" required="">
-                <label for="newsletter-terms" class="text-sm text-neutral-300">
-                  I agree to receive email newsletters from Penguin Random House India. See our <a href="#" class="text-white underline">Privacy Policy</a>.
-                </label>
+
+              <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+              </label>
+              <label class="entry__specification" style="font-size:12px; text-align:left; font-family:Helvetica, sans-serif; color:#8390A4; text-align:left">
+                Provide your email address to subscribe. For e.g abc@xyz.com
+              </label>
+            </div>
+          </div>
+        </div>
+        <div style="padding: 8px 0;">
+          <div class="sib-optin sib-form-block">
+            <div class="form__entry entry_mcq">
+              <div class="form__label-row ">
+                <div class="entry__choice" style="">
+                  <label>
+                    <input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" />
+                    <span class="checkbox checkbox_tick_positive"
+            style="margin-left:"
+            ></span><span style="font-size:14px; text-align:left; font-family:Helvetica, sans-serif; color:#fdfeff; background-color:transparent;"><p>I agree to receive your newsletters and accept the data privacy statement.</p></span> </label>
+                </div>
               </div>
-              
-              <button type="submit" id="submit-newsletter-form" class="w-full py-3 bg-white text-neutral-900 font-medium rounded-md hover:bg-neutral-200 transition duration-300">
-                Subscribe Now
-              </button>
-            </form>
+              <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+              </label>
+              <label class="entry__specification" style="font-size:12px; text-align:left; font-family:Helvetica, sans-serif; color:#8390A4; text-align:left">
+                You may unsubscribe at any time using the link in our newsletter.
+              </label>
+            </div>
+          </div>
+        </div>
+        <div style="padding: 8px 0;">
+          <div class="sib-captcha sib-form-block">
+            <div class="form__entry entry_block">
+              <div class="form__label-row ">
+                <script>
+                  function handleCaptchaResponse() {
+                    var event = new Event('captchaChange');
+                    document.getElementById('sib-captcha').dispatchEvent(event);
+                  }
+                </script>
+                <div class="g-recaptcha sib-visible-recaptcha" id="sib-captcha" data-sitekey="6LfT_xsrAAAAALcX_ebRrZHa0LDF-ynX6re6nvk4" data-callback="handleCaptchaResponse" style="direction:ltr"></div>
+              </div>
+              <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+              </label>
+            </div>
+          </div>
+        </div>
+        <div style="padding: 8px 0;">
+          <div class="sib-form-block" style="text-align: center">
+            <button class="sib-form-block__button sib-form-block__button-with-loader" style="font-size:14px; text-align:center; font-family:Helvetica, sans-serif; color:#000000; background-color:#f9fafc; border-radius:4px; border-width:0px;" form="sib-form" type="submit">
+              <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
+                <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
+              </svg>
+              SUBSCRIBE
+            </button>
+          </div>
+        </div>
+
+        <input type="text" name="email_address_check" value="" class="input--hidden">
+        <input type="hidden" name="locale" value="en">
+      </form>
+    </div>
+  </div>
+</div>
+<!-- END - We recommend to place the above code where you want the form in your website html  -->
+
+<!-- START - We recommend to place the below code in footer or bottom of your website html  -->
+<script>
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+  window.LOCALE = 'en';
+  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+
+  window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
+
+  window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+
+
+
+
+  window.translation = {
+    common: {
+      selectedList: '{quantity} list selected',
+      selectedLists: '{quantity} lists selected',
+      selectedOption: '{quantity} selected',
+      selectedOptions: '{quantity} selected',
+    }
+  };
+
+  var AUTOHIDE = Boolean(0);
+</script>
+
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+
+<script src="https://www.google.com/recaptcha/api.js?hl=en"></script>
+
+<!-- END - We recommend to place the above code in footer or bottom of your website html  -->
+<!-- End Brevo Form -->
           </div>
           
           <!-- Newsletter Benefits Image -->
@@ -1919,7 +1638,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
-
+</script>
 </div>
       </main>
 
