@@ -196,7 +196,8 @@ body, div, p {
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex space-x-6 items-center">
-          <a href="#" class="text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Home</a>
+          <a href="/" class="text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Home</a>
+                
           <a href="#about-us" class="text-neutral-700 hover:text-neutral-900 transition-colors duration-300">About Us</a>
           
           <a href="#books" class="nav-dropdown text-neutral-700 hover:text-neutral-900 transition-colors duration-300 inline-flex items-center" data-target="books-dropdown">
@@ -231,12 +232,11 @@ body, div, p {
         <div class="w-screen mx-auto py-8 border-t">
           <div class="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 class="text-lg font-semibold mb-4">Fiction</h3>
+              <h3 class="text-lg font-semibold mb-4">Non-Fiction</h3>
+                
               <ul class="space-y-2">
-                <li><a href="#" class="text-neutral-700 hover:text-neutral-900">Literary Fiction</a></li>
-                <li><a href="#" class="text-neutral-700 hover:text-neutral-900">Thrillers</a></li>
-                <li><a href="#" class="text-neutral-700 hover:text-neutral-900">Science Fiction</a></li>
-                <li><a href="#" class="text-neutral-700 hover:text-neutral-900">Fantasy</a></li>
+                <li><a href="/books/albert-enum-kalaikalanjiyam.html" class="text-neutral-700 hover:text-neutral-900">Albert Enum ....</a></li>
+                
               </ul>
             </div>
           </div>
@@ -262,7 +262,8 @@ body, div, p {
       <!-- Mobile Navigation -->
       <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
         <div class="flex flex-col p-4">
-          <a href="#" class="py-2 text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Home</a>
+          <a href="/" class="py-2 text-neutral-700 hover:text-neutral-900 transition-colors duration-300">Home</a>
+                
           <a href="#about-us" class="py-2 text-neutral-700 hover:text-neutral-900 transition-colors duration-300">About Us</a>
           
           <!-- Mobile Books Dropdown -->
@@ -274,9 +275,8 @@ body, div, p {
               </svg>
             </button>
             <div id="mobile-books-menu" class="mobile-submenu pl-4">
-              <a href="#" class="block py-2 text-neutral-700">Fiction</a>
-              <a href="#" class="block py-2 text-neutral-700">Non-Fiction</a>
-              <a href="#" class="block py-2 text-neutral-700">Children's Books</a>
+              <a href="/books/albert-enum-kalaikalanjiyam.html" class="block py-2 text-neutral-700">Albert Enum ....</a>
+                
             </div>
           </div>
           
@@ -342,9 +342,9 @@ body, div, p {
           <section id="about-us" class="py-20 md:py-28 bg-white">
             <div class="container mx-auto px-4">
               <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-4xl md:text-5xl font-bold font-heading mb-6 text-secondary-default">About Penguin India</h2>
+                <h2 class="text-4xl md:text-5xl font-bold font-heading mb-6 text-secondary-default">About Alar veliyeedu</h2>
                 <p class="text-neutral-700 text-lg mb-5 leading-relaxed">
-                  Penguin Random House India is the largest English language trade publisher in the subcontinent, publishing over 250 new titles every year and with an active backlist of over 3000 titles.
+                  Alar veliyeedu is one of the fastest growing Tamil language book publisher in the Tamilnadu, publishing over 250 new titles every year and with an active backlist of over 3000 titles.
                 </p>
                 <p class="text-neutral-700 text-lg mb-5 leading-relaxed">
                   With a prestigious list including Booker Prize winners, Nobel laureates, and beloved authors, we are dedicated to publishing acclaimed fiction and non-fiction for adults and children.
@@ -376,14 +376,14 @@ body, div, p {
     <div class="book-card w-full md:w-[300px]">
       <div class="relative group">
         <div class="aspect-[2/3] overflow-hidden bg-neutral-200 mb-4 shadow-[0_4px_10px_rgba(0,0,0,0.15)] rounded-lg">
-          <img
-            src="./images/cver.webp"
-            alt="Masala Lab Book Cover"
-            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-          />
-        </div>
-        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
           
+          <a href="/books/albert-enum-kalaikalanjiyam.html" class="cursor-pointer">
+            <img
+              src="./images/cver.webp"
+              alt="Masala Lab Book Cover"
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </a>
         </div>
       </div>
     </div>
@@ -403,21 +403,20 @@ body, div, p {
         This book, "Albert Enum Kalaikalanjiyam", is a curated collection of essays highlighting Mr. Albert’s profound contributions to the world of art and literature. A must-read for enthusiasts of Tamil creative thought and cultural heritage.
       </p>
       <div class="flex flex-col sm:flex-row gap-3">
-        <button class="px-4 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700 transition-colors w-full sm:w-auto">
-          Buy now
-        </button>
-        <button class="px-4 py-2 border border-neutral-300 text-neutral-900 rounded-md text-sm font-medium hover:bg-neutral-100 transition-colors w-full sm:w-auto">
-          view details
-        </button>
+        <a href="/books/albert-enum-kalaikalanjiyam.html" class="cursor-pointer">
+          <button class="px-4 py-2 border border-neutral-300 text-neutral-900 rounded-md text-sm font-medium hover:bg-neutral-100 transition-colors w-full sm:w-auto">
+            view details
+          </button>
+        </a>
       </div>
     </div>
   </div>
 
   <!-- View More Button -->
   <div class="text-center mt-10">
-    <button class="px-6 py-3 bg-white border border-neutral-300 text-neutral-800 rounded-md font-medium hover:bg-neutral-100 transition duration-300">
+    <!-- <button class="px-6 py-3 bg-white border border-neutral-300 text-neutral-800 rounded-md font-medium hover:bg-neutral-100 transition duration-300">
       View All Books
-    </button>
+    </button> -->
   </div>
 </div>
     <!-- Book Details Modal -->
@@ -938,14 +937,28 @@ body, div, p {
 <!-- END - We recommend to place the above code in footer or bottom of your website html  -->
 <!-- End Brevo Form -->
           </div>
-          
-          <!-- Newsletter Benefits Image -->
-          <div class="hidden md:block relative h-full">
-            <img src="https://images.unsplash.com/photo-1484981138541-3d074aa97716?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w2MzQ2fDB8MXxzZWFyY2h8Mnx8cHJvZmVzc2lvbmFsJTI1MjBib29rJTI1MjBuZXdzbGV0dGVyJTI1MjBzdWJzY3JpcHRpb24lMjUyMGZvcm0lMjUyMHdpdGglMjUyMHN0YWNrZWQlMjUyMGJvb2tzJTI1MjBQZW5ndWluJTI1MjBSYW5kb20lMjUyMEhvdXNlJTI1MjBicmFuZGluZyUyNTIwZWxlZ2FudCUyNTIwbGl0ZXJhcnklMjUyMGFlc3RoZXRpY3xlbnwwfDB8fHwxNzQ0Nzg3MDc4fDA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080?q=80" alt="Elegantly arranged books on desk" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Newsletter'" class="w-full h-auto rounded-lg shadow-lg object-cover" width="5760" height="3840">
-            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-              <p class="text-white text-sm">Photo by Brooke Lark</p>
+          <div class=" p-8 bg-neutral-50 rounded-md shadow-lg">
+                <h3 class="text-lg font-semibold  text-black-600 mb-4">Why Sign Up?</h3>
+                <ul class="space-y-2 text-gray-700 text-md">
+                    <li class="flex items-start">
+                        <span class="w-4 h-4 text-black-500 mr-2 mt-1">●</span>
+                        <span>Get early access to new book releases and pre-order discounts.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="w-4 h-4 text-black-500 mr-2 mt-1">●</span>
+                        <span>Receive invitations to exclusive author events and book signings.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="w-4 h-4 text-black-500 mr-2 mt-1">●</span>
+                        <span>Enjoy special offers, including limited-time discounts on bestsellers.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="w-4 h-4 text-black-500 mr-2 mt-1">●</span>
+                        <span>Stay informed with monthly curated book recommendations.</span>
+                    </li>
+                </ul>
+                <div class="text-right mt-6"><em class="text-xl font-light text-grey italic font-[cursive] tracking-wider text-gray-800">- Alar Veliyeedu</em></div>
             </div>
-          </div>
         </div>
         
         
