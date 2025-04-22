@@ -1,0 +1,35 @@
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: Fraunces, Inter, system-ui, sans-serif;
+    }
+    body {
+      font-family: Nunito, Inter, system-ui, sans-serif;
+    }
+    nav a {
+      font-size: 20px;
+    }
+    nav a:hover {
+      color: #9c5f14;
+    }
+    .mega-menu {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-in-out;
+      z-index: 40;
+    }
+    .mega-menu.open {
+      max-height: calc(100vh - 80px);
+    }
+    .mobile-submenu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .mobile-submenu.open {
+      max-height: 200px;
+    }

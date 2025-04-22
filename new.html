@@ -1,311 +1,1409 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Satvic Revolution - Book Page Clone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="Explore Penguin Books India's collection of bestsellers, new releases, award-winning fiction, non-fiction, and children's books. Find your next great read from India's leading publisher.">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <!-- Base Font Styles -->
     <style>
-        /* Basic Reset & Body Styling */
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f8f8f8;
-            color: #333;
-        }
-
-        .book-page-container {
-            max-width: 900px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 30px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        /* Header Section (Image, Title, Author) */
-        .book-header {
-            display: flex;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
-            gap: 30px;
-            margin-bottom: 30px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .book-cover {
-            flex: 0 0 180px; /* Fixed width for cover */
-            max-width: 180px;
-            height: auto;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            border-radius: 4px;
-        }
-
-        .book-details {
-            flex: 1; /* Takes remaining space */
-            min-width: 250px; /* Ensure details don't get too squished */
-        }
-
-        .book-title {
-            font-size: 2.2em;
-            margin-top: 0;
-            margin-bottom: 10px;
-            color: #222;
-            line-height: 1.2;
-        }
-
-        .book-author {
-            font-size: 1.1em;
-            color: #555;
-            margin-bottom: 15px;
-        }
-
-        .book-author a {
-            color: #d9534f; /* Penguin-ish orange/red */
-            text-decoration: none;
-        }
-         .book-author a:hover {
-            text-decoration: underline;
-         }
-
-        .book-format, .book-price { /* Optional basic info */
-            font-size: 0.95em;
-            color: #666;
-            margin-bottom: 5px;
-        }
-
-
-        /* Tab System */
-        .tab-container {
-            margin-top: 20px;
-        }
-
-        .tab-buttons {
-            display: flex;
-            border-bottom: 2px solid #eee;
-            margin-bottom: 20px;
-        }
-
-        .tab-button {
-            padding: 12px 20px;
-            cursor: pointer;
-            border: none;
-            background-color: transparent;
-            font-size: 1em;
-            color: #555;
-            margin-right: 5px;
-            border-bottom: 3px solid transparent;
-            transition: all 0.3s ease;
-            position: relative;
-            top: 2px; /* Align with the container border */
-        }
-
-        .tab-button:hover {
-            color: #d9534f;
-        }
-
-        .tab-button.active {
-            border-bottom-color: #d9534f;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .tab-panel {
-            display: none; /* Hide panels by default */
-            padding: 15px 5px; /* Padding for content area */
-            animation: fadeIn 0.5s ease; /* Simple fade animation */
-        }
-
-        .tab-panel.active {
-            display: block; /* Show active panel */
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Content specific styling */
-         .tab-panel h3 {
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 1.4em;
-            color: #333;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 8px;
-         }
-
-        .tab-panel p {
-            margin-bottom: 15px;
-        }
-
-        .reviews-rating {
-            margin-bottom: 20px;
-        }
-        .star-rating { /* Basic stars */
-            font-size: 1.5em;
-            color: #f0ad4e; /* Yellowish for stars */
-            margin-bottom: 10px;
-        }
-        .review-item {
-            border-bottom: 1px dashed #eee;
-            padding-bottom: 15px;
-            margin-bottom: 15px;
-        }
-         .review-item:last-child {
-             border-bottom: none;
-             margin-bottom: 0;
-         }
-        .review-quote {
-             font-style: italic;
-             color: #444;
-        }
-         .review-author {
-             font-size: 0.9em;
-             color: #777;
-             text-align: right;
-             margin-top: 5px;
-         }
-
-        /* Responsive adjustments */
-        @media (max-width: 600px) {
-            .book-header {
-                flex-direction: column; /* Stack image and details vertically */
-                align-items: center;
-                text-align: center;
-            }
-            .book-cover {
-                margin-bottom: 20px;
-            }
-             .tab-buttons {
-                flex-wrap: wrap; /* Allow tabs to wrap */
-            }
-            .tab-button {
-                 padding: 10px 15px;
-                 font-size: 0.95em;
-            }
-             .book-title {
-                font-size: 1.8em;
-             }
-        }
-
+      h1, h2, h3, h4, h5, h6 {
+        font-family: "Fraunces", serif !important; /* Use serif for Fraunces */
+      }
+      body, div, p, a, span, li, button, input, textarea, label, select {
+        font-family: "Nunito", sans-serif !important;
+      }
     </style>
-</head>
-<body>
 
-    <div class="book-page-container">
+    <title>Penguin Books India - Discover Books, Authors & Literary Events</title>
+    <!-- SEO Description -->
+    <meta name="description" content="Explore Penguin Books India's collection of bestsellers, new releases, award-winning fiction, non-fiction, and children's books. Find your next great read from India's leading publisher.">
 
-        <section class="book-header">
-            <img src="https://via.placeholder.com/180x270.png?text=Book+Cover" alt="The Satvic Revolution Book Cover" class="book-cover">
-            <!-- Placeholder image - replace with actual cover URL if possible -->
-            <div class="book-details">
-                <h1 class="book-title">The Satvic Revolution</h1>
-                <p class="book-author">By <a href="#">Subah Saraf</a>, <a href="#">Harshvardhan Saraf</a></p>
-                <p class="book-format">Format: Paperback</p>
-                <!-- <p class="book-price">₹ 399.00</p> Add price/buy button if needed -->
-                 <p>Embark on a transformative journey towards holistic health and vibrant living with this essential guide.</p>
-            </div>
-        </section>
+    <!-- Performance optimization: Preload critical resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
 
-        <section class="tab-container">
-            <div class="tab-buttons">
-                <button class="tab-button active" data-tab="description">Book Description</button>
-                <button class="tab-button" data-tab="samples">Samples</button>
-                <button class="tab-button" data-tab="authors">Authors</button>
-                <button class="tab-button" data-tab="reviews">Reviews & Rating</button>
-            </div>
-
-            <div class="tab-content-area">
-                <!-- Book Description Panel -->
-                <div id="description" class="tab-panel active">
-                    <h3>About The Book</h3>
-                    <p>
-                        Are you ready to reclaim your health and vitality? <strong>The Satvic Revolution</strong> offers a groundbreaking approach to well-being, rooted in the timeless wisdom of nature and ancient Indian practices. Authors Subah Saraf and Harshvardhan Saraf, pioneers of the Satvic Movement, guide you step-by-step towards adopting a lifestyle that aligns with nature's rhythms.
-                    </p>
-                    <p>
-                        Discover the profound impact of Satvic principles—embracing fresh, natural, plant-based foods and simple, sustainable habits. This book empowers you with practical knowledge, delicious recipes, and actionable techniques to detoxify your body, boost your immunity, and cultivate lasting energy. It's more than just a diet book; it's a roadmap to a truly healthy, conscious, and joyful life.
-                    </p>
-                    <p>
-                        Whether you're seeking relief from chronic ailments or simply aspiring to elevate your overall wellness, <em>The Satvic Revolution</em> provides the essential tools and inspiration to ignite your personal health transformation.
-                    </p>
-                </div>
-
-                <!-- Samples Panel -->
-                <div id="samples" class="tab-panel">
-                    <h3>Look Inside</h3>
-                    <p>Get a glimpse into the transformative content of <em>The Satvic Revolution</em>. Here you would typically find:</p>
-                    <ul>
-                        <li>An excerpt from the Introduction or a key chapter.</li>
-                        <li>Sample recipes showcasing the Satvic approach to food.</li>
-                        <li>A preview of the lifestyle charts or practical guides included.</li>
-                    </ul>
-                    <p><em>(Sample content would be displayed here - e.g., first few pages as images or text)</em></p>
-                     <p>Reading a sample allows you to experience the authors' engaging style and understand the practical nature of the guidance offered within.</p>
-                </div>
-
-                <!-- Authors Panel -->
-                <div id="authors" class="tab-panel">
-                    <h3>About the Authors</h3>
-                    <p>
-                        <strong>Subah Saraf</strong> and <strong>Harshvardhan Saraf</strong> are the founders of the Satvic Movement, a non-profit health education platform dedicated to reconnecting people with the power of nature for holistic healing. Driven by their own personal health journeys and a deep understanding of natural wellness principles, they have inspired millions across the globe to adopt a healthier, more conscious lifestyle.
-                    </p>
-                    <p>
-                        Through workshops, online courses, and insightful content, Subah and Harshvardhan share practical, evidence-based knowledge on food, detoxification, and natural living. Their mission is to empower individuals to take charge of their health and experience the profound benefits of aligning with nature's laws. <em>The Satvic Revolution</em> encapsulates their core teachings, making this life-changing wisdom accessible to all.
-                    </p>
-                </div>
-
-                <!-- Reviews & Rating Panel -->
-                <div id="reviews" class="tab-panel">
-                    <h3>Reviews & Rating</h3>
-                    <div class="reviews-rating">
-                        <span class="star-rating">★★★★☆</span> (Average Rating: 4.5 based on 120 reviews)
-                        <p>See what readers are saying about <em>The Satvic Revolution</em>:</p>
-                    </div>
-                    <div class="review-list">
-                        <div class="review-item">
-                            <p class="review-quote">"Truly life-changing! The practical steps and delicious recipes made adopting a healthier lifestyle so much easier than I thought possible. Highly recommended."</p>
-                            <p class="review-author">- Anjali P.</p>
-                        </div>
-                        <div class="review-item">
-                            <p class="review-quote">"An essential guide for anyone serious about their health. The book clearly explains the 'why' behind the Satvic way and provides the 'how' with clarity and inspiration."</p>
-                            <p class="review-author">- Vikram S.</p>
-                        </div>
-                        <div class="review-item">
-                            <p class="review-quote">"I was skeptical at first, but the results speak for themselves. My energy levels are up, and chronic issues have significantly improved. Thank you, Subah and Harsh!"</p>
-                            <p class="review-author">- Priya M.</p>
-                        </div>
-                    </div>
-                     <p><em>(More reviews would be listed here)</em></p>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const tabButtons = document.querySelectorAll('.tab-button');
-            const tabPanels = document.querySelectorAll('.tab-panel');
-
-            tabButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const tabId = button.getAttribute('data-tab');
-
-                    // Deactivate all buttons and panels
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    tabPanels.forEach(panel => panel.classList.remove('active'));
-
-                    // Activate the clicked button and corresponding panel
-                    button.classList.add('active');
-                    const activePanel = document.getElementById(tabId);
-                    if (activePanel) {
-                        activePanel.classList.add('active');
-                    }
-                });
-            });
-        });
+    <!-- Header Scripts (Placeholder) -->
+    <script id="header-scripts">
+      if (window.scripts && window.scripts.head) {
+        document.getElementById('header-scripts').outerHTML = window.scripts.head;
+      }
     </script>
 
-</body>
+    <!-- Core CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: {
+                  DEFAULT: '#FF6B00', // Penguin Orange
+                  dark: '#E05E00',  // Darker orange for hover
+                  light: '#FFF2E6', // Very light orange tint
+                  50: '#fff7f0',    // Lighter shades if needed
+                  100: '#ffe8d1',
+                  // ... add other shades if necessary
+                },
+                secondary: {
+                  DEFAULT: '#1f2937', // Dark Gray (alternative to black)
+                  light: '#f3f4f6', // Light Gray
+                  medium: '#9ca3af', // Medium Gray
+                   // ... add shades as needed
+                },
+                accent: { // Define if you need a third distinct color
+                  DEFAULT: '#4a90e2', // Example: A contrasting blue
+                },
+              },
+              fontFamily: {
+                // Keep your font definitions, ensuring they match the <style> tags
+                heading: ['Fraunces', 'serif'],
+                body: ['Nunito', 'sans-serif'],
+                sans: ['Nunito', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'], // Ensure sans includes Nunito
+              },
+              spacing: {
+                '18': '4.5rem',
+                '22': '5.5rem',
+                '30': '7.5rem',
+              },
+              maxWidth: {
+                '8xl': '88rem',
+                '9xl': '96rem',
+              },
+              aspectRatio: {
+                'portrait': '2/3', // Standard book cover ratio
+                'landscape': '4/3',
+                'ultrawide': '21/9',
+              },
+            },
+          },
+          variants: {
+            extend: {
+              opacity: ['disabled'],
+              cursor: ['disabled'],
+              backgroundColor: ['active', 'disabled'],
+              textColor: ['active', 'disabled'],
+            },
+          },
+        }
+      });
+    </script>
+
+    <!-- Utilities and Components -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+    <!-- Removed ApexCharts as it wasn't used in the provided snippet -->
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Dynamic Meta Tags (Keep as is) -->
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="">
+    <meta name="google-site-verification" content="">
+    <meta name="baidu-verification" content="">
+    <meta name="yandex-verification" content="">
+    <meta name="bing-verification" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Penguin Books India Clone">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
+
+    <link rel="icon" type="image/x-icon" href=""> <!-- Add favicon link -->
+
+    <style>
+      /* Ensure font families are applied correctly */
+      h1, h2, h3, h4, h5, h6 { font-family: 'Fraunces', serif; }
+      body { font-family: 'Nunito', sans-serif; }
+
+      /* Navigation Specific Styles */
+      nav a {
+        font-size: 1rem; /* Slightly smaller for better fit */
+        font-weight: 500; /* Medium weight */
+        padding: 0.5rem 0; /* Add vertical padding */
+        position: relative; /* For underline effect */
+        transition: color 0.3s ease;
+      }
+      /* Underline hover effect */
+      nav a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #FF6B00; /* Use primary color */
+        transition: width 0.3s ease;
+      }
+      nav a:hover {
+        color: #FF6B00; /* Use primary color for text hover */
+      }
+      nav a:hover::after {
+        width: 80%; /* Adjust width of underline */
+      }
+
+      /* Mega Menu Styles (Keep existing, but check background/shadow) */
+      .mega-menu {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out, opacity 0.3s ease, visibility 0.3s ease; /* Add opacity/visibility */
+        opacity: 0;
+        visibility: hidden;
+        z-index: 40;
+        border-top: 1px solid #e5e7eb; /* Add subtle top border */
+      }
+      .mega-menu.open {
+        max-height: calc(100vh - 80px); /* Adjust based on header height */
+        opacity: 1;
+        visibility: visible;
+      }
+      .mega-menu h3 {
+        color: #1f2937; /* Darker heading */
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+      .mega-menu a {
+        font-size: 0.95rem;
+        color: #4b5563; /* Slightly darker gray */
+      }
+       .mega-menu a:hover {
+         color: #FF6B00; /* Primary color on hover */
+       }
+
+      /* Mobile Menu Styles (Keep existing) */
+      .mobile-submenu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+      .mobile-submenu.open {
+        max-height: 200px; /* Adjust as needed */
+      }
+      #mobile-menu a:hover, #mobile-menu button:hover {
+        color: #FF6B00; /* Primary color hover for mobile */
+      }
+
+      /* Button Styles */
+      .btn {
+          display: inline-block;
+          padding: 0.75rem 1.5rem; /* Slightly larger padding */
+          border-radius: 0.375rem; /* md */
+          font-weight: 600; /* Semibold */
+          text-align: center;
+          transition: all 0.3s ease;
+          cursor: pointer;
+          font-family: "Nunito", sans-serif; /* Ensure font */
+          font-size: 0.95rem;
+          line-height: 1.25; /* Ensure text vertical alignment */
+      }
+      .btn-primary {
+          background-color: #FF6B00; /* primary.DEFAULT */
+          color: white;
+          border: 1px solid transparent;
+      }
+      .btn-primary:hover {
+          background-color: #E05E00; /* primary.dark */
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      }
+      .btn-secondary {
+          background-color: white;
+          color: #1f2937; /* secondary.DEFAULT */
+          border: 1px solid #d1d5db; /* neutral-300 */
+      }
+      .btn-secondary:hover {
+          background-color: #f9fafb; /* neutral-50 */
+          border-color: #9ca3af; /* neutral-400 */
+      }
+      .btn-secondary-outline {
+          background-color: transparent;
+          color: #FF6B00; /* primary.DEFAULT */
+          border: 1px solid #FF6B00;
+      }
+      .btn-secondary-outline:hover {
+          background-color: rgba(255, 107, 0, 0.05); /* primary color with low alpha */
+      }
+      .btn-dark {
+          background-color: #1f2937; /* secondary.DEFAULT */
+          color: white;
+           border: 1px solid transparent;
+      }
+       .btn-dark:hover {
+          background-color: #374151; /* gray-700 */
+       }
+
+       /* Book Card Specific */
+       .book-card .aspect-portrait { aspect-ratio: 2/3; }
+       .book-card img { transition: transform 0.3s ease; }
+       .book-card:hover img { transform: scale(1.03); }
+       .book-card { transition: box-shadow 0.3s ease; }
+       .book-card:hover { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); }
+
+       /* Add smooth scroll padding top to account for fixed header */
+       :target {
+         scroll-margin-top: 100px; /* Adjust based on your header height */
+       }
+
+    </style>
+   <!-- Remove the extra Tailwind default CSS block as it's loaded via CDN -->
+
+</head>
+   <body class="antialiased text-secondary-default bg-white min-h-screen flex flex-col font-body">
+      <!-- Skip to main content link for accessibility -->
+      <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+         Skip to main content
+      </a>
+
+      <!-- Main content area -->
+      <main id="main-content" class="flex-1 relative h-full pt-16 md:pt-20"> <!-- Add padding top for fixed header -->
+
+        <!-- HEADER SECTION -->
+        <div>
+          <header id="header" class="bg-white shadow-md fixed w-full top-0 z-50 transition-shadow duration-300">
+            <div class="container mx-auto px-4">
+              <nav class="flex justify-between items-center py-3 md:py-4">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                  <a href="#" class="text-2xl font-bold text-secondary-default">
+                    <img src="https://cdn.penguin.co.in/wp-content/themes/penguin/img/penguin_logo_new.png" alt="Penguin Books India Logo" class="h-10 md:h-12 w-auto" onerror="this.onerror=null; this.src='https://placehold.co/200x48?text=Penguin'; this.classList.add('h-10')">
+                  </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-6 items-center">
+                  <a href="#banner" class="text-neutral-700">Home</a>
+                  <a href="#about-us" class="text-neutral-700">About Us</a>
+
+                  <a href="#books" class="nav-dropdown text-neutral-700 inline-flex items-center" data-target="books-dropdown">
+                    Books
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </a>
+
+                  <a href="#authors" class="nav-dropdown text-neutral-700 inline-flex items-center" data-target="authors-dropdown">
+                    Authors
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </a>
+
+                  <a href="#coming-soon" class="text-neutral-700">Coming Soon</a>
+                  <!-- <a href="#team" class="text-neutral-700">Our Team</a> --> <!-- Consider adding later if needed -->
+                  <a href="#contact-us" class="text-neutral-700">Contact Us</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden flex items-center p-2 rounded hover:bg-neutral-100" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-neutral-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                  </svg>
+                </button>
+              </nav>
+
+              <!-- Mega Menu Dropdowns (Desktop) - Keep structure, styles applied via <style> tag -->
+              <div id="books-dropdown" class="mega-menu">
+                 <div class="container mx-auto px-4 py-8">
+                   <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                     <div>
+                       <h3 class="text-lg font-semibold font-heading">Fiction</h3>
+                       <ul class="space-y-2 mt-3">
+                         <li><a href="#" class="text-neutral-600 hover:text-primary">Literary Fiction</a></li>
+                         <li><a href="#" class="text-neutral-600 hover:text-primary">Thrillers & Crime</a></li>
+                         <li><a href="#" class="text-neutral-600 hover:text-primary">Science Fiction</a></li>
+                         <li><a href="#" class="text-neutral-600 hover:text-primary">Fantasy</a></li>
+                          <li><a href="#" class="text-neutral-600 hover:text-primary">Romance</a></li>
+                       </ul>
+                     </div>
+                      <div>
+                       <h3 class="text-lg font-semibold font-heading">Non-Fiction</h3>
+                       <ul class="space-y-2 mt-3">
+                         <li><a href="#" class="text-neutral-600 hover:text-primary">Biography & Memoir</a></li>
+                         <li><a href="#" class="text-neutral-600 hover:text-primary">History</a></li>
+                         <li><a href="#" class="text-neutral-600 hover:text-primary">Business & Economics</a></li>
+                         <li><a href="#" class="text-neutral-600 hover:text-primary">Self-Help</a></li>
+                         <li><a href="#" class="text-neutral-600 hover:text-primary">Politics</a></li>
+                       </ul>
+                     </div>
+                      <div>
+                       <h3 class="text-lg font-semibold font-heading">Children's</h3>
+                       <ul class="space-y-2 mt-3">
+                         <li><a href="#" class="text-neutral-600 hover:text-primary">Picture Books</a></li>
+                         <li><a href="#" class="text-neutral-600 hover:text-primary">Young Readers</a></li>
+                         <li><a href="#" class="text-neutral-600 hover:text-primary">Young Adult (YA)</a></li>
+                         <li><a href="#" class="text-neutral-600 hover:text-primary">Activity Books</a></li>
+                         <li><a href="#" class="text-primary font-semibold">View All Categories</a></li>
+                       </ul>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+
+              <div id="authors-dropdown" class="mega-menu">
+                <div class="container mx-auto px-4 py-8">
+                  <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                      <h3 class="text-lg font-semibold font-heading">Featured Authors</h3>
+                      <ul class="space-y-2 mt-3">
+                        <li><a href="#" class="text-neutral-600 hover:text-primary">Arundhati Roy</a></li>
+                        <li><a href="#" class="text-neutral-600 hover:text-primary">Amitav Ghosh</a></li>
+                        <li><a href="#" class="text-neutral-600 hover:text-primary">Sudha Murty</a></li>
+                        <li><a href="#" class="text-neutral-600 hover:text-primary">Ruskin Bond</a></li>
+                         <li><a href="#" class="text-neutral-600 hover:text-primary">Chetan Bhagat</a></li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h3 class="text-lg font-semibold font-heading">Explore</h3>
+                      <ul class="space-y-2 mt-3">
+                         <li><a href="#" class="text-neutral-600 hover:text-primary">Author Interviews</a></li>
+                         <li><a href="#" class="text-neutral-600 hover:text-primary">New Voices</a></li>
+                         <li><a href="#" class="text-neutral-600 hover:text-primary">Award Winners</a></li>
+                         <li><a href="#" class="text-primary font-semibold">Browse All Authors</a></li>
+                      </ul>
+                    </div>
+                    <!-- Add a featured author image/promo if desired -->
+                     <div class="hidden md:block">
+                         <img src="https://via.placeholder.com/300x200?text=Featured+Author+Spotlight" alt="Author Spotlight" class="rounded-lg object-cover h-full">
+                     </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mobile Navigation (Keep structure, styles applied via <style> tag) -->
+              <div id="mobile-menu" class="md:hidden hidden bg-white border-t absolute top-full left-0 w-full shadow-lg">
+                <div class="flex flex-col p-4 space-y-1">
+                  <a href="#banner" class="block py-2 px-3 rounded hover:bg-neutral-100 text-neutral-700">Home</a>
+                  <a href="#about-us" class="block py-2 px-3 rounded hover:bg-neutral-100 text-neutral-700">About Us</a>
+
+                  <!-- Mobile Books Dropdown -->
+                  <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-toggle w-full text-left py-2 px-3 flex justify-between items-center text-neutral-700 hover:bg-neutral-100 rounded" data-target="mobile-books-menu">
+                      <span>Books</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    <div id="mobile-books-menu" class="mobile-submenu pl-6">
+                      <a href="#" class="block py-2 text-neutral-600 hover:text-primary">Fiction</a>
+                      <a href="#" class="block py-2 text-neutral-600 hover:text-primary">Non-Fiction</a>
+                      <a href="#" class="block py-2 text-neutral-600 hover:text-primary">Children's</a>
+                      <a href="#" class="block py-2 text-neutral-600 hover:text-primary">All Categories</a>
+                    </div>
+                  </div>
+
+                  <!-- Mobile Authors Dropdown -->
+                  <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-toggle w-full text-left py-2 px-3 flex justify-between items-center text-neutral-700 hover:bg-neutral-100 rounded" data-target="mobile-authors-menu">
+                      <span>Authors</span>
+                       <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    <div id="mobile-authors-menu" class="mobile-submenu pl-6">
+                      <a href="#" class="block py-2 text-neutral-600 hover:text-primary">Featured Authors</a>
+                      <a href="#" class="block py-2 text-neutral-600 hover:text-primary">Author Interviews</a>
+                      <a href="#" class="block py-2 text-neutral-600 hover:text-primary">Browse All Authors</a>
+                    </div>
+                  </div>
+
+                  <a href="#coming-soon" class="block py-2 px-3 rounded hover:bg-neutral-100 text-neutral-700">Coming Soon</a>
+                  <a href="#contact-us" class="block py-2 px-3 rounded hover:bg-neutral-100 text-neutral-700">Contact Us</a>
+                </div>
+              </div>
+            </div>
+          </header>
+
+          <!-- Header JavaScript -->
+          <script>
+             // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const bodyForMenu = document.body;
+
+            mobileMenuButton.addEventListener('click', () => {
+              const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+              mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+              mobileMenu.classList.toggle('hidden');
+              // Optional: Prevent body scroll when mobile menu is open
+              // bodyForMenu.classList.toggle('overflow-hidden');
+            });
+
+            // --- Desktop Mega Menu Logic ---
+            const navDropdowns = document.querySelectorAll('.nav-dropdown');
+            const megaMenus = document.querySelectorAll('.mega-menu');
+            let leaveTimeout;
+
+            navDropdowns.forEach(dropdown => {
+                const targetId = dropdown.getAttribute('data-target');
+                const targetMenu = document.getElementById(targetId);
+
+                dropdown.addEventListener('mouseenter', () => {
+                    clearTimeout(leaveTimeout); // Clear any pending close action
+                    // Close all *other* menus first
+                    megaMenus.forEach(menu => {
+                        if (menu !== targetMenu) {
+                           menu.classList.remove('open');
+                        }
+                    });
+                    // Open the target menu
+                    targetMenu.classList.add('open');
+                });
+
+                dropdown.addEventListener('mouseleave', () => {
+                   // Set a small delay before closing, allows moving mouse to menu
+                   leaveTimeout = setTimeout(() => {
+                       if (!targetMenu.matches(':hover')) { // Check if mouse is over the menu itself
+                           targetMenu.classList.remove('open');
+                       }
+                   }, 150); // Adjust delay (milliseconds) as needed
+                });
+
+                targetMenu.addEventListener('mouseenter', () => {
+                    clearTimeout(leaveTimeout); // Mouse entered menu, cancel closing
+                });
+
+                targetMenu.addEventListener('mouseleave', () => {
+                   // Close if mouse leaves the menu area
+                   leaveTimeout = setTimeout(() => {
+                       targetMenu.classList.remove('open');
+                   }, 150);
+                });
+            });
+
+
+            // --- Mobile Submenu Logic ---
+            const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+
+            mobileDropdownToggles.forEach(toggle => {
+              toggle.addEventListener('click', () => {
+                const targetId = toggle.getAttribute('data-target');
+                const targetSubmenu = document.getElementById(targetId);
+                const arrow = toggle.querySelector('svg');
+
+                // Close other open submenus (optional, for accordion style)
+                // document.querySelectorAll('.mobile-submenu.open').forEach(submenu => {
+                //   if (submenu !== targetSubmenu) {
+                //     submenu.classList.remove('open');
+                //     // Also reset arrow of other toggles
+                //     const otherToggle = document.querySelector(`[data-target="${submenu.id}"]`);
+                //     if (otherToggle) otherToggle.querySelector('svg').classList.remove('rotate-180');
+                //   }
+                // });
+
+                // Toggle the current submenu
+                targetSubmenu.classList.toggle('open');
+
+                // Rotate the arrow icon
+                arrow.classList.toggle('rotate-180');
+              });
+            });
+
+            // Close mega menus when clicking outside (useful for touchscreens maybe)
+            // document.addEventListener('click', (event) => {
+            //   if (!event.target.closest('.nav-dropdown') && !event.target.closest('.mega-menu')) {
+            //     megaMenus.forEach(menu => menu.classList.remove('open'));
+            //   }
+            // });
+
+          </script>
+        </div>
+
+        <!-- HERO BANNER SECTION -->
+        <div>
+          <section id="banner" class="relative w-full h-[75vh] md:h-[85vh] overflow-hidden bg-secondary-default">
+            <!-- Background Image -->
+            <div class="absolute inset-0 z-0">
+              <img src="./images/bannercover.webp" alt="Penguin Books Banner - Stack of books"
+                   onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1558901357-ca41 Dunn?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Ym9va3N8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1920&q=80'"
+                   class="w-full h-full object-cover opacity-60"> <!-- Reduced opacity slightly -->
+            </div>
+
+            <!-- Dark Overlay -->
+             <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+
+            <!-- Content -->
+            <div class="relative container mx-auto px-6 h-full flex flex-col justify-center items-center text-center z-20">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-heading text-white mb-4 leading-tight animate-fade-in-up">
+                    Discover Your Next Great Read
+                </h1>
+                <p class="text-lg md:text-xl text-neutral-200 max-w-3xl mx-auto mb-8 animate-fade-in-up animation-delay-300">
+                    Explore thousands of titles from bestselling authors, new releases, and timeless classics.
+                </p>
+                <a href="#books" class="btn btn-primary text-lg animate-fade-in-up animation-delay-600">
+                    Explore Books
+                </a>
+            </div>
+
+            <!-- Removed Scroll Down Arrow and Dots for simplicity -->
+          </section>
+           <!-- Basic Animation Styles (Add if needed) -->
+          <style>
+            @keyframes fadeInUp {
+              from { opacity: 0; transform: translateY(20px); }
+              to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-fade-in-up {
+              animation: fadeInUp 0.8s ease-out forwards;
+              opacity: 0; /* Start hidden */
+            }
+            .animation-delay-300 { animation-delay: 0.3s; }
+            .animation-delay-600 { animation-delay: 0.6s; }
+          </style>
+        </div>
+
+        <!-- ABOUT US SECTION -->
+        <div>
+          <section id="about-us" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-4">
+              <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold font-heading mb-6 text-secondary-default">About Penguin India</h2>
+                <p class="text-neutral-700 text-lg mb-5 leading-relaxed">
+                  Penguin Random House India is the largest English language trade publisher in the subcontinent, publishing over 250 new titles every year and with an active backlist of over 3000 titles.
+                </p>
+                <p class="text-neutral-700 text-lg mb-5 leading-relaxed">
+                  With a prestigious list including Booker Prize winners, Nobel laureates, and beloved authors, we are dedicated to publishing acclaimed fiction and non-fiction for adults and children.
+                </p>
+                <p class="text-neutral-600 text-base mb-8 italic">
+                  Our mission: To ignite a universal passion for reading by creating books for everyone.
+                </p>
+                 <a href="#contact-us" class="btn btn-secondary-outline">Learn More</a>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- BOOKS SECTION -->
+        <div>
+          <section id="books" class="py-20 md:py-28 bg-neutral-50"> <!-- Light background -->
+            <div class="container mx-auto px-4">
+              <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold font-heading text-secondary-default mb-4">Explore Our Collection</h2>
+                <p class="text-neutral-600 text-lg max-w-2xl mx-auto">Discover bestsellers, award-winners, and literary gems across genres.</p>
+              </div>
+
+              <!-- Books Grid -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-16">
+
+                <!-- Example Book Card 1 (Repeat this structure for more books) -->
+                <div class="book-card group bg-white rounded-lg shadow-sm overflow-hidden flex flex-col">
+                  <div class="relative">
+                     <div class="aspect-portrait overflow-hidden">
+                      <img src="./images/cver.webp" alt="Albert Enum Kalaikalanjiyam Book Cover"
+                           class="w-full h-full object-cover"
+                           onerror="this.onerror=null; this.src='https://placehold.co/300x450?text=Book+1'">
+                     </div>
+                     <!-- Optional: Quick View Button on Hover -->
+                     <!-- <button class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-70 text-white px-4 py-2 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 quick-view-btn">Quick View</button> -->
+                  </div>
+                  <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="font-semibold font-heading text-lg text-secondary-default leading-tight mb-1 flex-grow">Albert Enum Kalaikalanjiyam</h3>
+                    <p class="text-neutral-600 text-sm mb-2">Editor: S. Arputharaj</p>
+                    <div class="flex items-center gap-1 mb-3 text-sm">
+                      <div class="flex text-yellow-400"> ★★★★★ </div>
+                      <span class="text-neutral-500">(5.0)</span>
+                    </div>
+                    <p class="text-primary font-bold text-lg mb-4">₹499</p>
+                    <div class="mt-auto flex flex-col sm:flex-row gap-2">
+                        <button class="btn btn-primary w-full text-sm quick-buy-btn">Buy Now</button>
+                        <button class="btn btn-secondary w-full text-sm view-details-btn">Details</button>
+                    </div>
+                  </div>
+                </div>
+
+                 <!-- Example Book Card 2 -->
+                <div class="book-card group bg-white rounded-lg shadow-sm overflow-hidden flex flex-col">
+                   <div class="relative">
+                     <div class="aspect-portrait overflow-hidden bg-neutral-200">
+                       <img src="https://cdn.penguin.co.in/wp-content/uploads/2024/01/9780143466376-196x300.jpg" alt="Book Cover 2" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/300x450?text=Book+2'">
+                     </div>
+                   </div>
+                   <div class="p-4 flex flex-col flex-grow">
+                     <h3 class="font-semibold font-heading text-lg text-secondary-default leading-tight mb-1 flex-grow">Build, Don't Talk</h3>
+                     <p class="text-neutral-600 text-sm mb-2">by Raj Shamani</p>
+                     <div class="flex items-center gap-1 mb-3 text-sm">
+                       <div class="flex text-yellow-400"> ★★★★☆ </div>
+                       <span class="text-neutral-500">(4.2)</span>
+                     </div>
+                     <p class="text-primary font-bold text-lg mb-4">₹250</p>
+                     <div class="mt-auto flex flex-col sm:flex-row gap-2">
+                       <button class="btn btn-primary w-full text-sm quick-buy-btn">Buy Now</button>
+                       <button class="btn btn-secondary w-full text-sm view-details-btn">Details</button>
+                     </div>
+                   </div>
+                </div>
+
+                 <!-- Example Book Card 3 -->
+                 <div class="book-card group bg-white rounded-lg shadow-sm overflow-hidden flex flex-col">
+                    <div class="relative">
+                     <div class="aspect-portrait overflow-hidden bg-neutral-200">
+                       <img src="https://cdn.penguin.co.in/wp-content/uploads/2023/08/9780143455912-196x300.jpg" alt="Book Cover 3" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/300x450?text=Book+3'">
+                     </div>
+                    </div>
+                   <div class="p-4 flex flex-col flex-grow">
+                     <h3 class="font-semibold font-heading text-lg text-secondary-default leading-tight mb-1 flex-grow">Hidden Hindu 3</h3>
+                     <p class="text-neutral-600 text-sm mb-2">by Akshat Gupta</p>
+                     <div class="flex items-center gap-1 mb-3 text-sm">
+                       <div class="flex text-yellow-400"> ★★★★★ </div>
+                       <span class="text-neutral-500">(4.8)</span>
+                     </div>
+                     <p class="text-primary font-bold text-lg mb-4">₹299</p>
+                     <div class="mt-auto flex flex-col sm:flex-row gap-2">
+                       <button class="btn btn-primary w-full text-sm quick-buy-btn">Buy Now</button>
+                       <button class="btn btn-secondary w-full text-sm view-details-btn">Details</button>
+                     </div>
+                   </div>
+                 </div>
+
+                 <!-- Example Book Card 4 -->
+                 <div class="book-card group bg-white rounded-lg shadow-sm overflow-hidden flex flex-col">
+                    <div class="relative">
+                     <div class="aspect-portrait overflow-hidden bg-neutral-200">
+                       <img src="https://cdn.penguin.co.in/wp-content/uploads/2022/12/9780143451617-196x300.jpg" alt="Book Cover 4" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/300x450?text=Book+4'">
+                     </div>
+                    </div>
+                   <div class="p-4 flex flex-col flex-grow">
+                     <h3 class="font-semibold font-heading text-lg text-secondary-default leading-tight mb-1 flex-grow">Doglapan: The Hard Truths</h3>
+                     <p class="text-neutral-600 text-sm mb-2">by Ashneer Grover</p>
+                     <div class="flex items-center gap-1 mb-3 text-sm">
+                       <div class="flex text-yellow-400"> ★★★★☆ </div>
+                       <span class="text-neutral-500">(4.5)</span>
+                     </div>
+                     <p class="text-primary font-bold text-lg mb-4">₹499</p>
+                     <div class="mt-auto flex flex-col sm:flex-row gap-2">
+                       <button class="btn btn-primary w-full text-sm quick-buy-btn">Buy Now</button>
+                       <button class="btn btn-secondary w-full text-sm view-details-btn">Details</button>
+                     </div>
+                   </div>
+                 </div>
+                <!-- Add more book cards here -->
+
+              </div>
+
+              <!-- View More Button -->
+              <div class="text-center mt-10">
+                <button class="btn btn-secondary">
+                  View All Books
+                </button>
+              </div>
+            </div>
+
+            <!-- Book Details Modal (Keep structure, update button styles if needed) -->
+            <div id="book-modal" class="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center hidden p-4" aria-modal="true" aria-hidden="true">
+              <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-auto p-6 md:p-8 relative mx-auto shadow-xl">
+                <!-- Close Button -->
+                <button id="close-modal" class="absolute top-4 right-4 text-neutral-500 hover:text-primary transition-colors" aria-label="Close modal">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+
+                <!-- Modal Content -->
+                <div class="flex flex-col md:flex-row gap-8">
+                  <!-- Book Image -->
+                  <div class="md:w-1/3 flex-shrink-0">
+                    <div class="aspect-portrait bg-neutral-100 rounded-md overflow-hidden shadow-md">
+                      <img id="modal-book-image" src="https://placehold.co/300x450?text=Book+Cover" alt="Book Cover" class="w-full h-full object-cover">
+                    </div>
+                  </div>
+
+                  <!-- Book Details -->
+                  <div class="md:w-2/3">
+                    <h3 id="modal-book-title" class="text-3xl font-bold font-heading text-secondary-default mb-2">Book Title Here</h3>
+                    <p id="modal-book-author" class="text-neutral-600 text-lg mb-4">by Author Name</p>
+                    <div class="flex items-center mb-4">
+                      <div class="flex text-yellow-400">
+                        <!-- Render stars dynamically if possible -->
+                        ★★★★☆
+                      </div>
+                      <span class="ml-2 text-neutral-600 text-sm">(4.0 / 124 reviews)</span>
+                    </div>
+
+                    <p id="modal-book-price" class="text-3xl font-bold text-primary mb-6">₹XXX</p>
+
+                    <div class="border-t border-neutral-200 pt-4 mb-6">
+                      <h4 class="font-semibold font-heading text-secondary-default mb-2">Description:</h4>
+                      <p id="modal-book-description" class="text-neutral-700 leading-relaxed">Loading description... This is a placeholder for the book description. The actual description will be loaded dynamically.</p>
+                    </div>
+
+                     <div class="border-t border-neutral-200 pt-4 mb-6">
+                      <h4 class="font-semibold font-heading text-secondary-default mb-3">Book Details:</h4>
+                      <ul class="space-y-2 text-sm text-neutral-600">
+                        <li><span class="font-medium text-neutral-800 w-24 inline-block">Publisher:</span> Penguin India</li>
+                        <li><span class="font-medium text-neutral-800 w-24 inline-block">Language:</span> English</li>
+                        <li><span class="font-medium text-neutral-800 w-24 inline-block">Pages:</span> 256 pages</li>
+                        <li><span class="font-medium text-neutral-800 w-24 inline-block">ISBN-13:</span> 978-XXXX</li>
+                      </ul>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-3 mt-8">
+                      <button class="btn btn-primary flex-1">Buy Now</button>
+                      <button class="btn btn-secondary flex-1">Add to Wishlist</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Books Section Script (Keep structure) -->
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              // Quick view functionality (simplified example)
+              const bookCards = document.querySelectorAll('.book-card'); // Select the whole card now
+              const modal = document.getElementById('book-modal');
+              const closeModalBtn = document.getElementById('close-modal');
+              const modalBookImage = document.getElementById('modal-book-image');
+              const modalBookTitle = document.getElementById('modal-book-title');
+              const modalBookAuthor = document.getElementById('modal-book-author');
+              const modalBookPrice = document.getElementById('modal-book-price');
+              const modalBookDescription = document.getElementById('modal-book-description');
+              const body = document.body;
+              let lastFocusedElement = null;
+
+              function openModal(bookCard) {
+                lastFocusedElement = document.activeElement; // Store focus
+
+                // --- Get data from the clicked card ---
+                const imageSrc = bookCard.querySelector('img')?.src || 'https://placehold.co/300x450?text=No+Image';
+                const title = bookCard.querySelector('h3')?.textContent || 'No Title';
+                const author = bookCard.querySelector('p:nth-of-type(1)')?.textContent || 'Unknown Author'; // Adjust selector if needed
+                const price = bookCard.querySelector('.text-primary')?.textContent || 'N/A';
+                // Add logic to get description if available on card, otherwise use placeholder
+                const description = "This is a sample description. Replace with actual book synopsis when data is available. It highlights the key themes and narrative style of the book, enticing readers to learn more.";
+
+                // --- Populate modal ---
+                modalBookImage.src = imageSrc;
+                modalBookTitle.textContent = title;
+                modalBookAuthor.textContent = author;
+                modalBookPrice.textContent = price;
+                modalBookDescription.textContent = description; // Replace with actual description later
+
+                // --- Show modal ---
+                modal.classList.remove('hidden');
+                modal.setAttribute('aria-hidden', 'false');
+                body.style.overflow = 'hidden'; // Prevent background scroll
+                modal.focus(); // Focus the modal itself
+                trapFocus(modal); // Keep focus inside modal
+              }
+
+              function closeModalFunc() {
+                modal.classList.add('hidden');
+                modal.setAttribute('aria-hidden', 'true');
+                body.style.overflow = ''; // Restore scroll
+                if (lastFocusedElement) {
+                    lastFocusedElement.focus(); // Return focus
+                }
+              }
+
+               // Function to trap focus inside modal
+              function trapFocus(element) {
+                const focusableElements = element.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+                if (!focusableElements.length) return; // No focusable elements
+
+                const firstFocusableElement = focusableElements[0];
+                const lastFocusableElement = focusableElements[focusableElements.length - 1];
+
+                // Handle existing listener before adding a new one
+                element.removeEventListener('keydown', handleTrapFocus); // Remove previous if any
+                element.addEventListener('keydown', handleTrapFocus); // Add the current one
+
+                function handleTrapFocus(e) {
+                  if (e.key === 'Tab') {
+                    if (e.shiftKey) { // Shift + Tab
+                      if (document.activeElement === firstFocusableElement) {
+                        e.preventDefault();
+                        lastFocusableElement.focus();
+                      }
+                    } else { // Tab
+                      if (document.activeElement === lastFocusableElement) {
+                        e.preventDefault();
+                        firstFocusableElement.focus();
+                      }
+                    }
+                  } else if (e.key === 'Escape') {
+                    closeModalFunc();
+                  }
+                }
+              }
+
+              // Add listeners to "Details" buttons
+               bookCards.forEach(card => {
+                   const detailsButton = card.querySelector('.view-details-btn');
+                   if (detailsButton) {
+                       detailsButton.addEventListener('click', (e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          openModal(card);
+                       });
+                   }
+               });
+
+              // Close modal listeners
+              closeModalBtn.addEventListener('click', closeModalFunc);
+              modal.addEventListener('click', function(e) { // Click outside to close
+                if (e.target === modal) {
+                  closeModalFunc();
+                }
+              });
+              // ESC key handled by trapFocus function now
+
+            });
+          </script>
+        </div>
+
+        <!-- COMING SOON SECTION -->
+        <div>
+          <section id="coming-soon" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-4">
+              <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold font-heading text-secondary-default mb-4">Coming Soon</h2>
+                <p class="text-neutral-600 text-lg max-w-2xl mx-auto">Get a sneak peek at upcoming releases and pre-order your next favorite read.</p>
+              </div>
+
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+                <!-- Featured Upcoming Book -->
+                <div class="bg-neutral-50 rounded-lg overflow-hidden shadow-lg flex flex-col md:flex-row group">
+                  <div class="md:w-2/5 h-64 md:h-auto relative overflow-hidden">
+                    <img src="https://cdn.penguin.co.in/wp-content/uploads/2023/08/9780670096121-196x300.jpg" alt="Featured upcoming book cover: The Silent Observer"
+                         onerror="this.onerror=null; this.src='https://placehold.co/300x450?text=Coming+Soon'"
+                         class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
+                    <div class="absolute top-3 left-3 bg-primary text-white px-3 py-1 text-xs font-semibold rounded-full shadow">
+                      Highly Anticipated
+                    </div>
+                  </div>
+                  <div class="md:w-3/5 p-6 md:p-8 flex flex-col justify-between">
+                    <div>
+                       <span class="inline-block bg-red-100 text-red-800 px-3 py-1 text-xs font-semibold rounded-full mb-3">Coming May 15, 2024</span>
+                      <h3 class="text-2xl font-bold font-heading text-secondary-default mb-2">The Silent Observer</h3>
+                      <p class="text-neutral-600 text-base mb-4">By Arundhati Roy</p>
+                      <p class="text-neutral-700 mb-6 text-sm leading-relaxed">A captivating new novel about secrets, family ties, and the power of observation from the acclaimed Booker Prize-winning author.</p>
+                    </div>
+                     <button id="notify-btn-featured" class="btn btn-primary mt-4 w-full md:w-auto notify-me-btn">Notify Me</button>
+                  </div>
+                </div>
+
+                <!-- Coming Soon Timeline -->
+                <div class="bg-neutral-50 rounded-lg p-6 md:p-8 shadow-lg">
+                  <h3 class="text-2xl font-bold font-heading text-secondary-default mb-6">Release Calendar</h3>
+                  <div class="space-y-8">
+                    <!-- Timeline Item May -->
+                    <div class="relative pl-10">
+                      <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-primary ring-4 ring-primary-light"></div>
+                      <div class="absolute left-[7px] top-5 h-full w-px bg-neutral-300"></div>
+                      <div>
+                        <span class="text-sm font-semibold text-neutral-500 mb-1 block">May 2024</span>
+                        <div class="mt-1 space-y-3">
+                          <div>
+                            <h4 class="font-semibold text-secondary-default">The Silent Observer</h4>
+                            <p class="text-sm text-neutral-600">By Arundhati Roy</p>
+                          </div>
+                          <div>
+                            <h4 class="font-semibold text-secondary-default">Echoes of the Valley</h4>
+                            <p class="text-sm text-neutral-600">By Amitav Ghosh</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Timeline Item June -->
+                     <div class="relative pl-10">
+                      <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-primary ring-4 ring-primary-light"></div>
+                       <div class="absolute left-[7px] top-5 h-full w-px bg-neutral-300"></div>
+                      <div>
+                        <span class="text-sm font-semibold text-neutral-500 mb-1 block">June 2024</span>
+                        <div class="mt-1 space-y-3">
+                          <div>
+                            <h4 class="font-semibold text-secondary-default">The Last Monsoon</h4>
+                            <p class="text-sm text-neutral-600">By Pankaj Mishra</p>
+                          </div>
+                          <div>
+                            <h4 class="font-semibold text-secondary-default">Whispers of the Himalayas</h4>
+                            <p class="text-sm text-neutral-600">By Ruskin Bond</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Timeline Item July -->
+                    <div class="relative pl-10">
+                       <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-primary ring-4 ring-primary-light"></div>
+                       <!-- No vertical line for the last item -->
+                      <div>
+                        <span class="text-sm font-semibold text-neutral-500 mb-1 block">July 2024</span>
+                        <div class="mt-1 space-y-3">
+                          <div>
+                            <h4 class="font-semibold text-secondary-default">Chronicles of the Forgotten</h4>
+                            <p class="text-sm text-neutral-600">By Jhumpa Lahiri</p>
+                          </div>
+                           <button class="text-sm text-primary hover:underline mt-2">See full calendar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Notification Modal (Keep Structure, update button style) -->
+              <div id="notification-modal" class="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center hidden p-4" aria-modal="true" aria-hidden="true">
+                <div class="bg-white rounded-lg max-w-md w-full mx-auto p-6 md:p-8 relative shadow-xl">
+                  <!-- Close Button -->
+                  <button id="close-notification-modal" class="absolute top-4 right-4 text-neutral-500 hover:text-primary transition-colors" aria-label="Close modal">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+
+                  <!-- Modal Content -->
+                  <div class="text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-primary mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                    </svg>
+                    <h3 class="text-xl font-bold font-heading text-secondary-default mb-3">Get Release Notifications</h3>
+                    <p class="text-neutral-600 mb-6">Enter your email below and we'll let you know when <strong id="notify-book-title">this book</strong> is available.</p>
+
+                    <form id="notification-form" class="space-y-4">
+                      <div>
+                        <label for="notification-email" class="sr-only">Email Address</label>
+                        <input type="email" id="notification-email" placeholder="Your Email Address" class="w-full px-4 py-2.5 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm" required>
+                      </div>
+                       <div class="flex items-start text-left">
+                        <input type="checkbox" id="notification-terms" class="mt-1 mr-2 h-4 w-4 text-primary focus:ring-primary border-neutral-300 rounded" required>
+                        <label for="notification-terms" class="text-xs text-neutral-500">I agree to receive email notifications about this book release and occasional updates from Penguin India. <a href="/privacy" class="underline hover:text-primary">Privacy Policy</a>.</label>
+                      </div>
+                      <button type="submit" class="btn btn-primary w-full">Notify Me</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!-- Coming Soon Script -->
+             <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const notifyButtons = document.querySelectorAll('.notify-me-btn');
+                    const notificationModal = document.getElementById('notification-modal');
+                    const closeNotificationModalBtn = document.getElementById('close-notification-modal');
+                    const notificationForm = document.getElementById('notification-form');
+                    const notifyBookTitleSpan = document.getElementById('notify-book-title');
+                    const bodyForModal = document.body;
+                    let lastFocusedNotifyBtn = null;
+
+                    function openNotifyModal(button) {
+                         lastFocusedNotifyBtn = button;
+                         const bookCard = button.closest('.flex-col.md\\:flex-row'); // Adjust selector based on structure
+                         let bookTitle = "this book"; // Default
+                         if (bookCard) {
+                            const titleElement = bookCard.querySelector('h3');
+                             if (titleElement) bookTitle = `"${titleElement.textContent}"`;
+                         }
+                         notifyBookTitleSpan.innerHTML = bookTitle; // Use innerHTML for potential strong tags
+
+                         notificationModal.classList.remove('hidden');
+                         notificationModal.setAttribute('aria-hidden', 'false');
+                         bodyForModal.style.overflow = 'hidden';
+                         document.getElementById('notification-email').focus(); // Focus email input
+                         trapFocus(notificationModal); // Reuse trapFocus function
+                    }
+
+                     function closeNotifyModal() {
+                         notificationModal.classList.add('hidden');
+                         notificationModal.setAttribute('aria-hidden', 'true');
+                         bodyForModal.style.overflow = '';
+                         if (lastFocusedNotifyBtn) lastFocusedNotifyBtn.focus();
+                     }
+
+                    notifyButtons.forEach(button => {
+                        button.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            openNotifyModal(button);
+                        });
+                    });
+
+                    closeNotificationModalBtn.addEventListener('click', closeNotifyModal);
+
+                    notificationModal.addEventListener('click', (e) => {
+                        if (e.target === notificationModal) {
+                             closeNotifyModal();
+                        }
+                    });
+
+                    notificationForm.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                         // Add your form submission logic here (e.g., send data to backend/service)
+                         console.log('Notification form submitted for:', document.getElementById('notification-email').value);
+                         // Show a success message (or handle errors)
+                         alert('Thank you! We will notify you.'); // Simple alert for demo
+                         closeNotifyModal();
+                    });
+
+                    // Re-use trapFocus function defined in the Books section script
+                    // Ensure it's accessible here, either by defining it globally (less ideal)
+                    // or copying it here if needed.
+                });
+            </script>
+
+          </section>
+        </div>
+
+        <!-- CONTACT US SECTION -->
+        <div>
+          <section id="contact-us" class="py-20 md:py-28 bg-neutral-50"> <!-- Light background -->
+            <div class="container mx-auto px-4">
+              <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold font-heading text-secondary-default mb-4">Get In Touch</h2>
+                <p class="text-neutral-600 text-lg max-w-2xl mx-auto">We'd love to hear from you. Reach out with questions, feedback, or inquiries.</p>
+              </div>
+
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+                <!-- Contact Form (Tally) -->
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg h-full">
+                   <h3 class="text-2xl font-bold font-heading text-secondary-default mb-6">Send Us a Message</h3>
+                   <!-- Keep Tally embed code -->
+                  <iframe data-tally-src="https://tally.so/embed/mOV65R?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="380" frameborder="0" marginheight="0" marginwidth="0" title="Contact form"></iframe>
+                  <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg h-full">
+                  <h3 class="text-2xl font-bold font-heading text-secondary-default mb-6">Contact Information</h3>
+
+                  <div class="space-y-6">
+                    <div class="flex items-start">
+                      <div class="mt-1 mr-4 text-primary flex-shrink-0">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"> <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /> <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /> </svg>
+                      </div>
+                      <div>
+                        <h4 class="font-semibold text-secondary-default mb-1">Address</h4>
+                        <p class="text-neutral-600 leading-relaxed text-sm">
+                          Penguin Random House India Pvt. Ltd<br>
+                          7th Floor, Infinity Tower C, DLF Cyber City<br>
+                          Gurgaon 122002, Haryana, India
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="flex items-start">
+                      <div class="mt-1 mr-4 text-primary flex-shrink-0">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"> <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /> </svg>
+                      </div>
+                      <div>
+                        <h4 class="font-semibold text-secondary-default mb-1">Phone</h4>
+                        <p class="text-neutral-600 text-sm">+91 124 478 5600</p>
+                      </div>
+                    </div>
+
+                    <div class="flex items-start">
+                      <div class="mt-1 mr-4 text-primary flex-shrink-0">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"> <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /> </svg>
+                      </div>
+                      <div>
+                        <h4 class="font-semibold text-secondary-default mb-1">Email</h4>
+                        <a href="mailto:customer.service@penguinrandomhouse.in" class="text-neutral-600 hover:text-primary text-sm transition-colors">customer.service@penguinrandomhouse.in</a>
+                      </div>
+                    </div>
+                  </div>
+
+                   <!-- Social Links -->
+                   <div class="mt-8 pt-6 border-t border-neutral-200">
+                    <h4 class="font-semibold text-secondary-default mb-3">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                       <!-- Using Font Awesome for consistency -->
+                        <a href="#" aria-label="Facebook" class="text-neutral-500 hover:text-primary transition-colors"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" aria-label="Twitter" class="text-neutral-500 hover:text-primary transition-colors"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" aria-label="Instagram" class="text-neutral-500 hover:text-primary transition-colors"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" aria-label="LinkedIn" class="text-neutral-500 hover:text-primary transition-colors"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                        <a href="#" aria-label="YouTube" class="text-neutral-500 hover:text-primary transition-colors"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- NEWSLETTER SECTION -->
+        <div>
+         <section id="newsletter" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold font-heading text-secondary-default mb-4">Stay Connected</h2>
+                    <p class="text-neutral-600 text-lg max-w-2xl mx-auto">Subscribe to our newsletter for the latest book releases, author events, and exclusive offers.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <!-- Newsletter Form (Brevo) Container -->
+                    <div class="bg-secondary-default p-8 rounded-lg shadow-xl text-white">
+                       <!-- Keep Brevo embed code -->
+                        <div class="sib-form" style="text-align: center; background-color: #1f2937;">
+                            <div id="sib-form-container" class="sib-form-container">
+                                <div id="error-message" class="sib-form-message-panel" style="font-size:14px; text-align:left; font-family:Nunito, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949; max-width:100%;">
+                                    </div> <div id="success-message" class="sib-form-message-panel" style="font-size:14px; text-align:left; font-family:Nunito, sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66; max-width:100%;">
+                                    </div> <div id="sib-container" class="sib-container--medium sib-container--vertical" style="text-align:center; background-color:rgba(31, 41, 55, 1); max-width:100%; border-radius:3px; border-width:0px; border-color:#C0CCD9; border-style:solid; direction:ltr">
+                                    <form id="sib-form" method="POST" action="https://sibforms.com/serve/MUIFAAmMqqf3QSwzwFXJM9p9DUr_zDukcGPSsZoyMmj3dX2LKeEhyh5ppUQHPMnXoR6QPy3koBtYHk1gJYlTJieTA9mU7IXo0_sWiYqEJewjIFtmNn5vxAQFUWyDE-qeUjQbKaDTHGupb-GjB2hIXu4-FdaVRF6aMQuSc9eS0B-xo5E_qJM4HKE6naWAMeQN2OSYTFleW2w2ZOYJ" data-type="subscription">
+                                        <div style="padding: 8px 0;"> <div class="sib-form-block" style="font-size:24px; text-align:left; font-weight:700; font-family:Fraunces, serif; color:#ffffff; background-color:transparent; text-align:left"> <p>Join Our Newsletter</p> </div> </div>
+                                        <div style="padding: 8px 0;"> <div class="sib-form-block" style="font-size:15px; text-align:left; font-family:Nunito, sans-serif; color:#e5e7eb; background-color:transparent; text-align:left"> <div class="sib-text-form-block"> <p>Get updates delivered to your inbox.</p> </div> </div> </div>
+                                        <div style="padding: 8px 0;"> <div class="sib-input sib-form-block"> <div class="form__entry entry_block"> <div class="form__label-row "> <div class="entry__field"> <input class="input" style="font-family:Nunito, sans-serif; background-color:#374151; border: 1px solid #4b5563; color:#ffffff;" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="Your Email Address" data-required="true" required /> </div> </div> <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:Nunito, sans-serif; color:#ff6b6b; background-color:#2d0d0d; border-radius:3px; border-color:#ff4949;"></label> </div> </div> </div>
+                                        <div style="padding: 8px 0;"> <div class="sib-optin sib-form-block"> <div class="form__entry entry_mcq"> <div class="form__label-row "> <div class="entry__choice" style=""> <label> <input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" /> <span class="checkbox checkbox_tick_positive"></span><span style="font-size:12px; text-align:left; font-family:Nunito, sans-serif; color:#d1d5db; background-color:transparent;"><p>I agree to the privacy policy.</p></span> </label> </div> </div> <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:Nunito, sans-serif; color:#ff6b6b; background-color:#2d0d0d; border-radius:3px; border-color:#ff4949;"></label> </div> </div> </div>
+                                        <!-- Removed Captcha block for cleaner look, add back if needed -->
+                                        <div style="padding: 8px 0;"> <div class="sib-form-block" style="text-align: left"> <button class="sib-form-block__button sib-form-block__button-with-loader btn btn-primary w-full" style="font-size:15px; font-family:Nunito, sans-serif; color:#ffffff; background-color:#FF6B00; border-radius:4px; border-width:0px;" form="sib-form" type="submit"> <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512"> <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" /> </svg> SUBSCRIBE </button> </div> </div>
+                                        <input type="text" name="email_address_check" value="" class="input--hidden"> <input type="hidden" name="locale" value="en">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <script> /* Brevo scripts */ window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code'; window.LOCALE = 'en'; window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Invalid format."; window.REQUIRED_ERROR_MESSAGE = "This field is required. "; window.GENERIC_INVALID_MESSAGE = "Invalid format."; window.translation = { common: { selectedList: '{quantity} list selected', selectedLists: '{quantity} lists selected' } }; var AUTOHIDE = Boolean(0); </script>
+                        <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+                        <!-- Removed reCAPTCHA script call for cleaner look -->
+                    </div>
+
+                    <!-- Newsletter Benefits/Image -->
+                    <div class="hidden md:flex justify-center items-center h-full">
+                        <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+                             alt="Open book on a table"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Reading+Nook'"
+                             class="w-full h-auto max-h-[400px] rounded-lg shadow-lg object-cover">
+                    </div>
+                </div>
+
+                <!-- Testimonial -->
+                 <div class="mt-16 bg-primary-light p-8 rounded-lg shadow-md">
+                  <div class="flex flex-col items-center text-center max-w-2xl mx-auto">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-primary mb-4" fill="currentColor" viewBox="0 0 24 24"> <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/> </svg>
+                    <p class="text-lg italic text-secondary-default mb-4 leading-relaxed">"Subscribing to the Penguin newsletter was the best decision! I discover amazing authors and stay updated on literary events. It feels like getting a curated list from a well-read friend."</p>
+                    <p class="font-semibold text-neutral-800">— Priya Sharma, Avid Reader</p>
+                  </div>
+                </div>
+                </div>
+            </div>
+
+           <!-- Newsletter Success Modal (Keep structure, update button style) -->
+            <div id="newsletter-success-modal" class="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center hidden p-4 transition-opacity duration-300 ease-in-out" aria-modal="true" aria-hidden="true">
+              <div class="bg-white text-secondary-default rounded-lg max-w-md w-full mx-auto p-6 md:p-8 relative shadow-xl transform transition-transform duration-300 ease-in-out scale-95 opacity-0" id="newsletter-modal-content">
+                <!-- Close Button -->
+                <button id="close-newsletter-modal" class="absolute top-4 right-4 text-neutral-500 hover:text-primary transition-colors" aria-label="Close modal">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+
+                <!-- Modal Content -->
+                <div class="text-center">
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-green-500 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"> <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
+                  <h3 class="text-xl font-bold font-heading text-secondary-default mb-2">Subscription Successful!</h3>
+                  <p class="text-neutral-600 mb-6">Thank you! Check your inbox soon for exciting updates.</p>
+                  <button type="button" id="close-newsletter-btn" class="btn btn-primary w-full">Got it!</button>
+                </div>
+              </div>
+               <!-- Script for success modal animation (optional) -->
+               <script>
+                  // Assuming Brevo handles the actual success state and might trigger an event or callback
+                  // This is a basic demo of how to show the custom modal if you hook into Brevo's success
+                  function showNewsletterSuccess() {
+                     const modal = document.getElementById('newsletter-success-modal');
+                     const content = document.getElementById('newsletter-modal-content');
+                     modal.classList.remove('hidden');
+                     // Trigger reflow for transitions
+                     void modal.offsetWidth;
+                     modal.classList.add('opacity-100');
+                     content.classList.remove('scale-95', 'opacity-0');
+                     content.classList.add('scale-100', 'opacity-100');
+
+                     document.getElementById('close-newsletter-modal').onclick = hideNewsletterSuccess;
+                     document.getElementById('close-newsletter-btn').onclick = hideNewsletterSuccess;
+                      modal.onclick = (e) => { if (e.target === modal) hideNewsletterSuccess(); }
+                 }
+
+                 function hideNewsletterSuccess() {
+                     const modal = document.getElementById('newsletter-success-modal');
+                     const content = document.getElementById('newsletter-modal-content');
+                     modal.classList.remove('opacity-100');
+                     content.classList.remove('scale-100', 'opacity-100');
+                     content.classList.add('scale-95', 'opacity-0');
+                     setTimeout(() => { modal.classList.add('hidden'); }, 300); // Match duration
+                 }
+
+                 // Example trigger: You'd replace this with actual Brevo success handling
+                 // setTimeout(showNewsletterSuccess, 5000); // Demo: show after 5s
+               </script>
+            </div>
+          </section>
+        </div>
+
+        <!-- FOOTER SECTION -->
+        <div>
+         <footer id="footer" class="bg-secondary-default text-neutral-300 pt-16 pb-8">
+            <div class="container mx-auto px-4">
+                <!-- Footer Main Content -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                    <!-- Company Info -->
+                    <div>
+                        <div class="mb-6">
+                            <img src="https://cdn.penguin.co.in/wp-content/themes/penguin/img/penguin_logo_new.png" alt="Penguin Books India Logo - White" class="h-10 w-auto invert brightness-0 filter"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/150x40?text=Penguin+Logo&fg=ffffff&bg=1f2937'; this.classList.remove('invert','brightness-0','filter')">
+                        </div>
+                        <p class="text-neutral-400 text-sm mb-6 leading-relaxed">India's leading publisher, bringing stories and ideas to life since 1985.</p>
+                        <div class="flex space-x-5">
+                            <a href="#" aria-label="Facebook" class="text-neutral-400 hover:text-white transition-colors"><i class="fab fa-facebook-f fa-lg"></i></a>
+                            <a href="#" aria-label="Twitter" class="text-neutral-400 hover:text-white transition-colors"><i class="fab fa-twitter fa-lg"></i></a>
+                            <a href="#" aria-label="Instagram" class="text-neutral-400 hover:text-white transition-colors"><i class="fab fa-instagram fa-lg"></i></a>
+                            <a href="#" aria-label="LinkedIn" class="text-neutral-400 hover:text-white transition-colors"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                            <a href="#" aria-label="YouTube" class="text-neutral-400 hover:text-white transition-colors"><i class="fab fa-youtube fa-lg"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h3 class="text-lg font-semibold font-heading text-white mb-5">Explore</h3>
+                        <ul class="space-y-3 text-sm">
+                            <li><a href="#books" class="text-neutral-400 hover:text-white transition-colors">Books by Category</a></li>
+                            <li><a href="#authors" class="text-neutral-400 hover:text-white transition-colors">Our Authors</a></li>
+                            <li><a href="#" class="text-neutral-400 hover:text-white transition-colors">New Releases</a></li>
+                            <li><a href="#coming-soon" class="text-neutral-400 hover:text-white transition-colors">Coming Soon</a></li>
+                            <li><a href="#" class="text-neutral-400 hover:text-white transition-colors">Bestsellers</a></li>
+                            <li><a href="#" class="text-neutral-400 hover:text-white transition-colors">Events</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Company -->
+                    <div>
+                        <h3 class="text-lg font-semibold font-heading text-white mb-5">Company</h3>
+                        <ul class="space-y-3 text-sm">
+                            <li><a href="#about-us" class="text-neutral-400 hover:text-white transition-colors">About Penguin India</a></li>
+                            <li><a href="#" class="text-neutral-400 hover:text-white transition-colors">Careers</a></li>
+                            <li><a href="#" class="text-neutral-400 hover:text-white transition-colors">Press Room</a></li>
+                            <li><a href="#" class="text-neutral-400 hover:text-white transition-colors">Corporate Responsibility</a></li>
+                             <li><a href="#contact-us" class="text-neutral-400 hover:text-white transition-colors">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact & Newsletter -->
+                    <div>
+                         <h3 class="text-lg font-semibold font-heading text-white mb-5">Get In Touch</h3>
+                         <ul class="space-y-4 text-sm mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-neutral-400 mr-3 mt-1 flex-shrink-0 w-4 text-center"></i>
+                                <span class="text-neutral-400 leading-relaxed">Infinity Tower C, DLF Cyber City, Gurgaon 122002, India</span>
+                            </li>
+                            <li class="flex items-center">
+                               <i class="fas fa-envelope text-neutral-400 mr-3 flex-shrink-0 w-4 text-center"></i>
+                                <a href="mailto:customer.service@penguinrandomhouse.in" class="text-neutral-400 hover:text-white transition-colors">customer.service@penguinrandomhouse.in</a>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-phone-alt text-neutral-400 mr-3 flex-shrink-0 w-4 text-center"></i>
+                                <span class="text-neutral-400">+91 124 478 5600</span>
+                            </li>
+                         </ul>
+
+                         <h4 class="text-base font-semibold text-white mb-3">Newsletter</h4>
+                         <a href="#newsletter" class="btn btn-secondary w-full text-sm">
+                            Sign Up Now
+                         </a>
+                    </div>
+                </div>
+
+                <!-- Footer Divider -->
+                <div class="border-t border-neutral-700 my-8"></div>
+
+                <!-- Bottom Footer -->
+                <div class="flex flex-col md:flex-row justify-between items-center text-sm">
+                    <div class="text-neutral-500 mb-4 md:mb-0">
+                        © <span id="current-year"></span> Penguin Random House India. All rights reserved.
+                        <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+                    </div>
+
+                    <div class="flex flex-wrap justify-center md:justify-start gap-x-5 gap-y-2">
+                        <a href="#" class="text-neutral-400 hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-neutral-400 hover:text-white transition-colors">Terms of Use</a>
+                         <a href="#" class="text-neutral-400 hover:text-white transition-colors">Accessibility</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back to Top Button -->
+            <button id="back-to-top" class="fixed bottom-6 right-6 p-3 bg-primary text-white rounded-full shadow-lg hover:bg-primary-dark transition-all duration-300 opacity-0 invisible z-50" aria-label="Back to top">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+                </svg>
+            </button>
+         </footer>
+
+         <!-- Footer Scripts -->
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              // Back to top button functionality
+              const backToTopButton = document.getElementById('back-to-top');
+
+              if (backToTopButton) {
+                window.addEventListener('scroll', function() {
+                  if (window.pageYOffset > 300) { // Show after scrolling 300px
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                  } else {
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                  }
+                });
+
+                backToTopButton.addEventListener('click', function() {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+              }
+
+              // Smooth scrolling for internal links (already present in style, but JS ensures compatibility)
+              // This ensures smooth scroll even if CSS :target fails or for broader compatibility
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        const targetId = this.getAttribute('href');
+                        // Basic check if it's an internal link
+                        if (targetId && targetId.startsWith('#') && targetId.length > 1) {
+                            const targetElement = document.querySelector(targetId);
+                            if (targetElement) {
+                                e.preventDefault();
+                                const headerOffset = document.getElementById('header')?.offsetHeight || 80; // Get header height or default
+                                const elementPosition = targetElement.getBoundingClientRect().top;
+                                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                                window.scrollTo({
+                                    top: offsetPosition,
+                                    behavior: 'smooth'
+                                });
+
+                                // Optional: Update URL hash without jump
+                                // history.pushState(null, null, targetId);
+                            }
+                        }
+                    });
+                });
+            });
+          </script>
+        </div>
+
+      </main>
+
+      <!-- Body Scripts Placeholder -->
+      <!-- {bodyScripts} -->
+
+   <!-- SVG placeholder (keep as is) -->
+   <svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg>
+   </body>
 </html>
