@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Satvic Revolution - Book Page Clone</title>
+    <style>
+        /* Basic Reset & Body Styling */
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        .book-page-container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Header Section (Image, Title, Author) */
+        .book-header {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            gap: 30px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .book-cover {
+            flex: 0 0 180px; /* Fixed width for cover */
+            max-width: 180px;
+            height: auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+        }
+
+        .book-details {
+            flex: 1; /* Takes remaining space */
+            min-width: 250px; /* Ensure details don't get too squished */
+        }
+
+        .book-title {
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #222;
+            line-height: 1.2;
+        }
+
+        .book-author {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .book-author a {
+            color: #d9534f; /* Penguin-ish orange/red */
+            text-decoration: none;
+        }
+         .book-author a:hover {
+            text-decoration: underline;
+         }
+
+        .book-format, .book-price { /* Optional basic info */
+            font-size: 0.95em;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+
+        /* Tab System */
+        .tab-container {
+            margin-top: 20px;
+        }
+
+        .tab-buttons {
+            display: flex;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 20px;
+        }
+
+        .tab-button {
+            padding: 12px 20px;
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            font-size: 1em;
+            color: #555;
+            margin-right: 5px;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            top: 2px; /* Align with the container border */
+        }
+
+        .tab-button:hover {
+            color: #d9534f;
+        }
+
+        .tab-button.active {
+            border-bottom-color: #d9534f;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .tab-panel {
+            display: none; /* Hide panels by default */
+            padding: 15px 5px; /* Padding for content area */
+            animation: fadeIn 0.5s ease; /* Simple fade animation */
+        }
+
+        .tab-panel.active {
+            display: block; /* Show active panel */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Content specific styling */
+         .tab-panel h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            color: #333;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+         }
+
+        .tab-panel p {
+            margin-bottom: 15px;
+        }
+
+        .reviews-rating {
+            margin-bottom: 20px;
+        }
+        .star-rating { /* Basic stars */
+            font-size: 1.5em;
+            color: #f0ad4e; /* Yellowish for stars */
+            margin-bottom: 10px;
+        }
+        .review-item {
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+         .review-item:last-child {
+             border-bottom: none;
+             margin-bottom: 0;
+         }
+        .review-quote {
+             font-style: italic;
+             color: #444;
+        }
+         .review-author {
+             font-size: 0.9em;
+             color: #777;
+             text-align: right;
+             margin-top: 5px;
+         }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .book-header {
+                flex-direction: column; /* Stack image and details vertically */
+                align-items: center;
+                text-align: center;
+            }
+            .book-cover {
+                margin-bottom: 20px;
+            }
+             .tab-buttons {
+                flex-wrap: wrap; /* Allow tabs to wrap */
+            }
+            .tab-button {
+                 padding: 10px 15px;
+                 font-size: 0.95em;
+            }
+             .book-title {
+                font-size: 1.8em;
+             }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="book-page-container">
+
+        <section class="book-header">
+            <img src="https://via.placeholder.com/180x270.png?text=Book+Cover" alt="The Satvic Revolution Book Cover" class="book-cover">
+            <!-- Placeholder image - replace with actual cover URL if possible -->
+            <div class="book-details">
+                <h1 class="book-title">The Satvic Revolution</h1>
+                <p class="book-author">By <a href="#">Subah Saraf</a>, <a href="#">Harshvardhan Saraf</a></p>
+                <p class="book-format">Format: Paperback</p>
+                <!-- <p class="book-price">₹ 399.00</p> Add price/buy button if needed -->
+                 <p>Embark on a transformative journey towards holistic health and vibrant living with this essential guide.</p>
+            </div>
+        </section>
+
+        <section class="tab-container">
+            <div class="tab-buttons">
+                <button class="tab-button active" data-tab="description">Book Description</button>
+                <button class="tab-button" data-tab="samples">Samples</button>
+                <button class="tab-button" data-tab="authors">Authors</button>
+                <button class="tab-button" data-tab="reviews">Reviews & Rating</button>
+            </div>
+
+            <div class="tab-content-area">
+                <!-- Book Description Panel -->
+                <div id="description" class="tab-panel active">
+                    <h3>About The Book</h3>
+                    <p>
+                        Are you ready to reclaim your health and vitality? <strong>The Satvic Revolution</strong> offers a groundbreaking approach to well-being, rooted in the timeless wisdom of nature and ancient Indian practices. Authors Subah Saraf and Harshvardhan Saraf, pioneers of the Satvic Movement, guide you step-by-step towards adopting a lifestyle that aligns with nature's rhythms.
+                    </p>
+                    <p>
+                        Discover the profound impact of Satvic principles—embracing fresh, natural, plant-based foods and simple, sustainable habits. This book empowers you with practical knowledge, delicious recipes, and actionable techniques to detoxify your body, boost your immunity, and cultivate lasting energy. It's more than just a diet book; it's a roadmap to a truly healthy, conscious, and joyful life.
+                    </p>
+                    <p>
+                        Whether you're seeking relief from chronic ailments or simply aspiring to elevate your overall wellness, <em>The Satvic Revolution</em> provides the essential tools and inspiration to ignite your personal health transformation.
+                    </p>
+                </div>
+
+                <!-- Samples Panel -->
+                <div id="samples" class="tab-panel">
+                    <h3>Look Inside</h3>
+                    <p>Get a glimpse into the transformative content of <em>The Satvic Revolution</em>. Here you would typically find:</p>
+                    <ul>
+                        <li>An excerpt from the Introduction or a key chapter.</li>
+                        <li>Sample recipes showcasing the Satvic approach to food.</li>
+                        <li>A preview of the lifestyle charts or practical guides included.</li>
+                    </ul>
+                    <p><em>(Sample content would be displayed here - e.g., first few pages as images or text)</em></p>
+                     <p>Reading a sample allows you to experience the authors' engaging style and understand the practical nature of the guidance offered within.</p>
+                </div>
+
+                <!-- Authors Panel -->
+                <div id="authors" class="tab-panel">
+                    <h3>About the Authors</h3>
+                    <p>
+                        <strong>Subah Saraf</strong> and <strong>Harshvardhan Saraf</strong> are the founders of the Satvic Movement, a non-profit health education platform dedicated to reconnecting people with the power of nature for holistic healing. Driven by their own personal health journeys and a deep understanding of natural wellness principles, they have inspired millions across the globe to adopt a healthier, more conscious lifestyle.
+                    </p>
+                    <p>
+                        Through workshops, online courses, and insightful content, Subah and Harshvardhan share practical, evidence-based knowledge on food, detoxification, and natural living. Their mission is to empower individuals to take charge of their health and experience the profound benefits of aligning with nature's laws. <em>The Satvic Revolution</em> encapsulates their core teachings, making this life-changing wisdom accessible to all.
+                    </p>
+                </div>
+
+                <!-- Reviews & Rating Panel -->
+                <div id="reviews" class="tab-panel">
+                    <h3>Reviews & Rating</h3>
+                    <div class="reviews-rating">
+                        <span class="star-rating">★★★★☆</span> (Average Rating: 4.5 based on 120 reviews)
+                        <p>See what readers are saying about <em>The Satvic Revolution</em>:</p>
+                    </div>
+                    <div class="review-list">
+                        <div class="review-item">
+                            <p class="review-quote">"Truly life-changing! The practical steps and delicious recipes made adopting a healthier lifestyle so much easier than I thought possible. Highly recommended."</p>
+                            <p class="review-author">- Anjali P.</p>
+                        </div>
+                        <div class="review-item">
+                            <p class="review-quote">"An essential guide for anyone serious about their health. The book clearly explains the 'why' behind the Satvic way and provides the 'how' with clarity and inspiration."</p>
+                            <p class="review-author">- Vikram S.</p>
+                        </div>
+                        <div class="review-item">
+                            <p class="review-quote">"I was skeptical at first, but the results speak for themselves. My energy levels are up, and chronic issues have significantly improved. Thank you, Subah and Harsh!"</p>
+                            <p class="review-author">- Priya M.</p>
+                        </div>
+                    </div>
+                     <p><em>(More reviews would be listed here)</em></p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabPanels = document.querySelectorAll('.tab-panel');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.getAttribute('data-tab');
+
+                    // Deactivate all buttons and panels
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabPanels.forEach(panel => panel.classList.remove('active'));
+
+                    // Activate the clicked button and corresponding panel
+                    button.classList.add('active');
+                    const activePanel = document.getElementById(tabId);
+                    if (activePanel) {
+                        activePanel.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
