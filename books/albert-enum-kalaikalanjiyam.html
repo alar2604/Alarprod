@@ -698,8 +698,7 @@ body, div, p {
         document.addEventListener('DOMContentLoaded', () => {
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
-    let touchStartX = 0;
-    let touchEndX = 0;
+    
 
     // Function to set the active tab
     const setActiveTab = (button) => {
@@ -737,32 +736,37 @@ body, div, p {
         return activeIndex;
     };
 
-    // Function to handle swipe navigation
-    const handleSwipe = () => {
-        const swipeDistance = touchEndX - touchStartX;
-        const minSwipeDistance = 50; // Minimum distance for a swipe to be considered
-        const activeIndex = getActiveTabIndex();
+      let touchStartX = 0, touchEndX = 0;
+  let touchStartY = 0, touchEndY = 0;
 
-        if (Math.abs(swipeDistance) > minSwipeDistance) {
-            if (swipeDistance > 0 && activeIndex > 0) {
-                // Swipe right: go to previous tab
-                setActiveTab(tabButtons[activeIndex - 1]);
-            } else if (swipeDistance < 0 && activeIndex < tabButtons.length - 1) {
-                // Swipe left: go to next tab
-                setActiveTab(tabButtons[activeIndex + 1]);
-            }
-        }
-    };
+  const handleSwipe = () => {
+    const distanceX = touchEndX - touchStartX;
+    const distanceY = touchEndY - touchStartY;
+    const minSwipeDistance = 150;
+    const activeIndex = getActiveTabIndex();
 
-    // Add touch event listeners for swipe detection
-    document.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    });
+    if (
+      Math.abs(distanceX) > minSwipeDistance &&
+      Math.abs(distanceX) > Math.abs(distanceY)
+    ) {
+      if (distanceX > 0 && activeIndex > 0) {
+        setActiveTab(tabButtons[activeIndex - 1]);
+      } else if (distanceX < 0 && activeIndex < tabButtons.length - 1) {
+        setActiveTab(tabButtons[activeIndex + 1]);
+      }
+    }
+  };
 
-    document.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    });
+  document.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  });
+
+  document.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+    handleSwipe();
+  });
 
     // Add click event listeners to tab buttons
     tabButtons.forEach(button => {
