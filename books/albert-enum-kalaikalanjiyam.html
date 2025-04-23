@@ -305,19 +305,19 @@ body, div, p {
   <section id="Details" class="py-12 mt-12 px-4 md:px-8 lg:px-12 bg-white">
     <div class="container mx-auto max-w-[1280px] mt-8">
       <div class=" border-gray-200 mb-8 md:ml-12">
-            <ul class="flex justify-center space-x-6 ">
+            <ul class="flex justify-center gap-4 md:gap-8 ">
                 <li>
-                    <button id="tab-bookDetails" class="tab-button pb-2 text-gray-600 font-medium text-md focus:outline-none" data-tab="bookDetails">
+                    <button id="tab-bookDetails" class="tab-button pb-2 text-gray-600 font-medium text-lg focus:outline-none" data-tab="bookDetails">
                         Book Details
                     </button>
                 </li>
                 <li>
-                    <button id="tab-bookAuthor" class="tab-button pb-2 text-gray-600 font-medium text-md focus:outline-none" data-tab="bookAuthor">
+                    <button id="tab-bookAuthor" class="tab-button pb-2 text-gray-600 font-medium text-lg focus:outline-none" data-tab="bookAuthor">
                         About Author
                     </button>
                 </li>
                 <li>
-                    <button id="tab-bookArticle" class="tab-button pb-2 text-gray-600 font-medium text-md focus:outline-none" data-tab="bookArticle">
+                    <button id="tab-bookArticle" class="tab-button pb-2 text-gray-600 font-medium text-lg focus:outline-none" data-tab="bookArticle">
                         Related Articles
                     </button>
                 </li>
@@ -686,6 +686,8 @@ body, div, p {
       </div>
     </div>
   </section>
+ 
+
 </div>
 
 
@@ -742,7 +744,7 @@ body, div, p {
   const handleSwipe = () => {
     const distanceX = touchEndX - touchStartX;
     const distanceY = touchEndY - touchStartY;
-    const minSwipeDistance = 150;
+    const minSwipeDistance = 100;
     const activeIndex = getActiveTabIndex();
 
     if (
