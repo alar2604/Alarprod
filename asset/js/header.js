@@ -59,3 +59,60 @@
         megaMenus.forEach(menu => menu.classList.remove('open'));
       }
     });
+
+    //common goto top
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.innerWidth > 1024) { // Ensure this runs only on desktop
+    // Back to top button functionality
+    const backToTopButton = document.getElementById('back-to-top');
+
+    if (backToTopButton) {
+      // Show/hide back to top button based on scroll position
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.remove('opacity-0', 'invisible');
+          backToTopButton.classList.add('opacity-100', 'visible');
+        } else {
+          backToTopButton.classList.remove('opacity-100', 'visible');
+          backToTopButton.classList.add('opacity-0', 'invisible');
+        }
+      });
+
+      // Scroll to top when button is clicked
+      backToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    // Smooth scrolling for all internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+
+        // Skip if it's just "#" or empty
+        if (targetId === '#' || !targetId) {
+          return;
+        }
+
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          e.preventDefault();
+
+          window.scrollTo({
+            top: targetElement.offsetTop - 80, // Adjust for header height
+            behavior: 'smooth'
+          });
+
+          // Update URL without page jump
+          history.pushState(null, null, targetId);
+        }
+      });
+    });
+  }
+});
