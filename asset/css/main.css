@@ -42,3 +42,8 @@
     display: block;
     aspect-ratio:2/1;
     }
+    #switchlang{
+      position: fixed;
+      right: 50px;
+      top: 20px;
+    }

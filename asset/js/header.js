@@ -115,4 +115,19 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   }
+   const switchLang = document.getElementById('switchlang');
+  if (switchLang) {
+    switchLang.addEventListener('click', function () {
+      const { origin, pathname } = window.location;
+      let targetPath;
+      if (pathname.startsWith('/en/')) {
+        // Remove '/en' from the path to switch to Tamil
+        targetPath = pathname.replace(/^\/en/, '') || '/';
+      } else {
+        // Add '/en' to the path to switch to English
+        targetPath = '/en' + pathname;
+      }
+      window.location.href = origin + targetPath;
+    });
+  }
 });
