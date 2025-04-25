@@ -272,10 +272,19 @@ body, div, p {
        x-data="{
            activeSlide: 1,
            slides: [
-               { id: 1, src: '../images/alarbanner.webp', alt: 'அலர் வெளியீடு புத்தகங்கள் பதாகை 1' },
-               { id: 2, src: '../images/alarbanner2.webp', alt: 'அலர் வெளியீடு புத்தகங்கள் பதாகை 2' },
-               { id: 3, src: '../images/alarbanner.webp', alt: 'அலர் வெளியீடு புத்தகங்கள் பதாகை 3' }
-           ],
+             { 
+                 id: 1, 
+                 src: '../images/alarbanner.webp', 
+                 alt: 'அலர் வெளியீடு புத்தகங்கள் பதாகை 1',
+                 link: './books/albert-enum-kalaikalanjiyam.html'  // Add link for each slide
+             },
+             { 
+                 id: 2, 
+                 src: '../images/alarbanner2.webp', 
+                 alt: 'அலர் வெளியீடு புத்தகங்கள் பதாகை 2',
+                 link: '#about-us'  // Example: linking to about section
+             }
+         ],
            interval: null,
            dragStartX: null,
            dragging: false,
@@ -341,7 +350,10 @@ body, div, p {
              x-transition:leave="opacity-100"
              x-transition:leave-start="opacity-100"
              x-transition:leave-end="opacity-0">
-          <img :src="slide.src" :alt="slide.alt" width="1920" height="960" class="w-full h-full object-cover pointer-events-none">
+          <a :href="slide.link" class="block w-full h-full">
+      <img :src="slide.src" :alt="slide.alt" width="1920" height="960" 
+           class="w-full h-full object-cover pointer-events-none">
+    </a>
         </div>
       </template>
     </div>

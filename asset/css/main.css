@@ -42,6 +42,12 @@
     display: block;
     aspect-ratio:2/1;
     }
+    #banner a {
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
     #switchlang{
       position: fixed;
       right: 50px;
