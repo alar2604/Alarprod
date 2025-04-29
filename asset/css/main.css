@@ -53,3 +53,9 @@
       right: 50px;
       top: 20px;
     }
+
+    @media (min-width: 1024px) {
+      footer h3{
+        margin-top: 80px;
+      }
+    }
