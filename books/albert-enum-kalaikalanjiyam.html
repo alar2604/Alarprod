@@ -328,7 +328,7 @@ body, div, p, a, span, li, button { /* Applied to more elements */
               </div>
               <div class="flex gap-4">
                 <span class="text-gray-600 ">பேப்பர்பேக்:</span> <!-- Translated (or அட்டைப் புத்தகம்) -->
-                <span class="text-gray-900">256 பக்கங்கள்</span> 
+                <span class="text-gray-900" > 400 பக்கங்கள்</span> 
               </div>
               <div class="flex gap-4">
                 <span class="text-gray-600 ">ISBN-10:</span> <!-- Kept as is -->
@@ -436,13 +436,16 @@ body, div, p, a, span, li, button { /* Applied to more elements */
             </div>
         </div>
 
-        <div id="bookAuthor" class="tab-content mx-auto bg-white py-6 px-4 md:px-8 lg:px-16 leading-8 rounded-lg hidden">
+        <div id="bookAuthor" class="tab-content mx-auto bg-white py-6  md:px-8 lg:px-16 leading-8 rounded-lg hidden">
             <!-- NOTE: The original Author section below is placeholder text about "Amit Kalyani".
                  It should ideally be replaced with information about the actual editor, S. Arputharaj.
                  Translating the placeholder for now. -->
-            <h3 class="text-xl font-bold text-gray-900 mb-4">தொகுப்பாசிரியரைப் பற்றி</h3> 
-            <div >
-                <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">தொகுப்பாசிரியரைப் பற்றி</h3> 
+            <div class="flex gap-4 flex-col items-center md:items-start text-center md:text-left md:flex-row">
+              <div>
+                <img src="/images/s_arputharaj.webp" alt="arputharaj image" class="max-w-[288px] md:max-w-[300px] rounded-md" />
+              </div>
+                <div >
                     <p class="text-gray-700 mb-4">
                         எஸ். அற்புதராஜ், பேராசிரியர் ஆல்பர்ட்டுடன் அவருடைய இளமைக் காலம் முதல் எழுபது ஆண்டு காலம் உடனிருந்து பழகியவர்.
 திருச்சி செயிண்ட் ஜோஸப் மேல்நிலைப் பள்ளியில் உதவித் தலைமை ஆசிரியராகப் பணிபுரிந்து ஓய்வு பெற்றவர்.
@@ -481,17 +484,15 @@ body, div, p, a, span, li, button { /* Applied to more elements */
         </div>
       </div>
       <!-- Reviews Section -->
-      <div class="mt-16 border-t border-gray-200 pt-10">
+      <!-- <div class="mt-16 border-t border-gray-200 pt-10">
         <h2 class="text-2xl font-bold text-gray-900 mb-8">வாடிக்கையாளர் விமர்சனங்கள்</h2> 
 
         <div class="flex flex-col md:flex-row gap-10">
-          <!-- Overall Rating -->
           <div class="w-full md:w-1/3">
             <div class="flex items-center mb-4">
-              <div class="text-5xl font-bold text-gray-900 mr-4">4.0</div> <!-- Kept rating value -->
+              <div class="text-5xl font-bold text-gray-900 mr-4">4.0</div> 
               <div>
                 <div class="flex mb-1">
-                  <!-- Stars kept as is -->
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
@@ -502,9 +503,7 @@ body, div, p, a, span, li, button { /* Applied to more elements */
               </div>
             </div>
 
-            <!-- Rating Distribution -->
             <div class="space-y-2">
-              <!-- Star ratings kept -->
               <div class="flex items-center text-sm">
                 <span class="w-10 text-gray-700">5★</span>
                 <div class="w-full bg-gray-200 rounded-full h-2 mx-2">
@@ -547,15 +546,12 @@ body, div, p, a, span, li, button { /* Applied to more elements */
             </button>
           </div>
 
-          <!-- Review List -->
           <div class="w-full md:w-2/3">
             <div class="space-y-8">
-              <!-- Review 1 -->
               <div class="border-b border-gray-200 pb-8">
                 <div class="flex justify-between mb-2">
                   <h4 class="font-bold text-gray-900">வாழ்க்கை மாற்றும் பார்வை</h4> 
                   <div class="flex">
-                    <!-- Stars kept -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
@@ -564,21 +560,19 @@ body, div, p, a, span, li, button { /* Applied to more elements */
                   </div>
                 </div>
                 <div class="flex items-center text-sm text-gray-600 mb-2">
-                  <span>பிரியா சர்மா</span> <!-- Translated/Kept Name -->
+                  <span>பிரியா சர்மா</span> 
                   <span class="mx-2">|</span>
-                  <span>மார்ச் 15, 2023</span> <!-- Translated Date Format -->
+                  <span>மார்ச் 15, 2023</span> 
                 </div>
                 <p class="text-gray-700">
                   இந்தப் புத்தகம் என் வாழ்க்கையில் சரியான நேரத்தில் வந்தது. நான் பல முன்னுரிமைகளால் திணறிக் கொண்டிருந்தேன், எதிலும் முன்னேற முடியவில்லை. உண்மையாக முக்கியத்துவம் வாய்ந்தவற்றைக் கண்டறிந்து, அந்தப் பகுதிகளில் கவனம் செலுத்த அமைப்புகளை உருவாக்குவதற்கான நடைமுறை நுட்பங்கள் மாற்றத்தை ஏற்படுத்தியுள்ளன. டிஜிட்டல் மினிமலிசம் பற்றிய அத்தியாயத்தை நான் குறிப்பாகப் பாராட்டினேன். 
                 </p>
               </div>
 
-              <!-- Review 2 -->
               <div class="border-b border-gray-200 pb-8">
                 <div class="flex justify-between mb-2">
                   <h4 class="font-bold text-gray-900">நடைமுறை மற்றும் நுண்ணறிவு</h4> 
                   <div class="flex">
-                     <!-- Stars kept -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
@@ -587,21 +581,18 @@ body, div, p, a, span, li, button { /* Applied to more elements */
                   </div>
                 </div>
                 <div class="flex items-center text-sm text-gray-600 mb-2">
-                  <span>ராஜிவ் படேல்</span> <!-- Translated/Kept Name -->
+                  <span>ராஜிவ் படேல்</span> 
                   <span class="mx-2">|</span>
-                  <span>பிப்ரவரி 28, 2023</span> <!-- Translated Date Format -->
                 </div>
                 <p class="text-gray-700">
                   ஒரு வணிக உரிமையாளராக, நான் தொடர்ந்து பல முன்னுரிமைகளைச் சமாளிக்கிறேன். இந்தப் புத்தகம் எனது மிக முக்கியமான பணிகளைக் கண்டறிந்து, அந்தச் செயல்பாடுகளில் கவனம் செலுத்த நேரத் தொகுதிகளை உருவாக்க தெளிவான உத்திகளை வழங்கியது. ஆசிரியரின் தனிப்பட்ட எடுத்துக்காட்டுகள் கருத்துக்களைத் தொடர்புபடுத்தக்கூடியதாக மாற்றின, மேலும் ஒவ்வொரு அத்தியாயத்தின் முடிவிலும் உள்ள பணித்தாள்கள் யோசனைகளை உடனடியாகப் பயன்படுத்த எனக்கு உதவியது. மெலிந்துபோனதாக உணரும் எவருக்கும் மிகவும் பரிந்துரைக்கப்படுகிறது. 
                 </p>
               </div>
 
-              <!-- Review 3 -->
               <div class="border-b border-gray-200 pb-8">
                 <div class="flex justify-between mb-2">
                   <h4 class="font-bold text-gray-900">நல்லது ஆனால் புரட்சிகரமானது அல்ல</h4> 
                   <div class="flex">
-                     <!-- Stars kept -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
@@ -610,9 +601,9 @@ body, div, p, a, span, li, button { /* Applied to more elements */
                   </div>
                 </div>
                 <div class="flex items-center text-sm text-gray-600 mb-2">
-                  <span>அர்ஜுன் கிருஷ்ணன்</span> <!-- Translated/Kept Name -->
+                  <span>அர்ஜுன் கிருஷ்ணன்</span> 
                   <span class="mx-2">|</span>
-                  <span>பிப்ரவரி 10, 2023</span> <!-- Translated Date Format -->
+                  <span>பிப்ரவரி 10, 2023</span> 
                 </div>
                 <p class="text-gray-700">
                   இந்தப் புத்தகத்தில் சில பயனுள்ள ஆலோசனைகள் இருந்தாலும், அவற்றில் பெரும்பாலானவை நான் படித்த மற்ற உற்பத்தித்திறன் புத்தகங்களின் மறுபதிப்பாகவே உணர்கிறேன். எழுத்து நடை அணுகக்கூடியது மற்றும் பயிற்சிகள் உதவியாக உள்ளன, ஆனால் நான் இன்னும் புதுமையான அணுகுமுறைகளை எதிர்பார்த்தேன். இருப்பினும், நீங்கள் உற்பத்தித்திறன் இலக்கியத்திற்குப் புதியவராக இருந்தால், இது நடைமுறைப் பயன்பாடுகளுடன் கூடிய ஒரு திடமான அறிமுகமாக இருக்கும். 
@@ -628,7 +619,7 @@ body, div, p, a, span, li, button { /* Applied to more elements */
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 
@@ -689,7 +680,7 @@ body, div, p, a, span, li, button { /* Applied to more elements */
           <ul class="space-y-3">
             <li class="flex items-start">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-neutral-400 mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path> </svg>
-              <span class="text-neutral-400">7வது தளம், இன்ஃபினிட்டி டவர் C, DLF சைபர் சிட்டி, குர்கான் 122002, ஹரியானா, இந்தியா</span> <!-- Kept Address -->
+              <span class="text-neutral-400">Alar veliyeedu <br> No.35, kiledhar street, <br> big bazaar, <br> trichy- 620008</span> <!-- Kept Address -->
             </li>
             <li class="flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-neutral-400 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path> </svg>
@@ -697,7 +688,7 @@ body, div, p, a, span, li, button { /* Applied to more elements */
             </li>
             <li class="flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-neutral-400 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path> </svg>
-              <span class="text-neutral-400">+91 124 478 5600</span> <!-- Kept Phone -->
+              <span class="text-neutral-400">+91 7200111312 / 97917 43555</span> <!-- Kept Phone -->
             </li>
           </ul>
 

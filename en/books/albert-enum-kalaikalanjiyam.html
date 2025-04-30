@@ -259,17 +259,17 @@ body, div, p {
       <div class=" border-gray-200 mb-8 md:ml-12">
             <ul class="flex justify-center gap-4 md:gap-8 ">
                 <li>
-                    <button id="tab-bookDetails" class="tab-button pb-2 text-gray-600 font-medium text-lg focus:outline-none" data-tab="bookDetails">
+                    <button id="tab-bookDetails" class="tab-button pb-2 text-gray-600 font-medium text-base focus:outline-none" data-tab="bookDetails">
                         Book Details
                     </button>
                 </li>
                 <li>
-                    <button id="tab-bookAuthor" class="tab-button pb-2 text-gray-600 font-medium text-lg focus:outline-none" data-tab="bookAuthor">
+                    <button id="tab-bookAuthor" class="tab-button pb-2 text-gray-600 font-medium text-base focus:outline-none" data-tab="bookAuthor">
                         About Author
                     </button>
                 </li>
                 <li>
-                    <button id="tab-bookArticle" class="tab-button pb-2 text-gray-600 font-medium text-lg focus:outline-none" data-tab="bookArticle">
+                    <button id="tab-bookArticle" class="tab-button pb-2 text-gray-600 font-medium text-base focus:outline-none" data-tab="bookArticle">
                         Related Articles
                     </button>
                 </li>
@@ -302,7 +302,7 @@ body, div, p {
               </div>
               <div class="flex gap-4">
                 <span class="text-gray-600 ">Paperback:</span> 
-                <span class="text-gray-900">256 pages</span> 
+                <span class="text-gray-900"> 400 pages</span> 
               </div>
               <div class="flex gap-4">
                 <span class="text-gray-600 ">ISBN-10:</span> <!-- Kept as is -->
@@ -410,9 +410,12 @@ body, div, p {
             </div>
         </div>
 
-        <div id="bookAuthor" class="tab-content mx-auto bg-white py-6 px-4 md:px-8 lg:px-16 leading-8 rounded-lg hidden">
-            <h3 class="text-xl font-bold text-gray-900 mb-4">About the Editor</h3> 
-            <div >
+        <div id="bookAuthor" class="tab-content mx-auto bg-white py-6  md:px-8 lg:px-16 leading-8 rounded-lg hidden">
+            <h3 class="text-xl text-center font-bold text-gray-900 mb-4">About the Editor</h3> 
+            <div class="flex gap-4 flex-col items-center md:items-start text-center md:text-left md:flex-row">
+              <div>
+                <img src="/images/s_arputharaj.webp" alt="arputharaj image" class="max-w-[288px] md:max-w-[300px] rounded-md" />
+              </div>
                 <div>
                     <p class="text-gray-700 mb-4">
                        S. Arputharaj was acquainted with Professor Albert for seventy years, since his youth. 
@@ -449,189 +452,7 @@ body, div, p {
         </div>
       </div>
       <!-- Reviews Section -->
-      <div class="mt-16 border-t border-gray-200 pt-10">
-        <h2 class="text-2xl font-bold text-gray-900 mb-8">Customer Reviews</h2>
-        
-        <div class="flex flex-col md:flex-row gap-10">
-          <!-- Overall Rating -->
-          <div class="w-full md:w-1/3">
-            <div class="flex items-center mb-4">
-              <div class="text-5xl font-bold text-gray-900 mr-4">4.0</div>
-              <div>
-                <div class="flex mb-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                  </svg>
-                </div>
-                <div class="text-sm text-gray-600">Based on 16 reviews</div>
-              </div>
-            </div>
-
-            <!-- Rating Distribution -->
-            <div class="space-y-2">
-              <div class="flex items-center text-sm">
-                <span class="w-10 text-gray-700">5★</span>
-                <div class="w-full bg-gray-200 rounded-full h-2 mx-2">
-                  <div class="bg-yellow-400 h-2 rounded-full" style="width: 60%"></div>
-                </div>
-                <span class="w-8 text-right text-gray-700">9</span>
-              </div>
-              <div class="flex items-center text-sm">
-                <span class="w-10 text-gray-700">4★</span>
-                <div class="w-full bg-gray-200 rounded-full h-2 mx-2">
-                  <div class="bg-yellow-400 h-2 rounded-full" style="width: 20%"></div>
-                </div>
-                <span class="w-8 text-right text-gray-700">3</span>
-              </div>
-              <div class="flex items-center text-sm">
-                <span class="w-10 text-gray-700">3★</span>
-                <div class="w-full bg-gray-200 rounded-full h-2 mx-2">
-                  <div class="bg-yellow-400 h-2 rounded-full" style="width: 13%"></div>
-                </div>
-                <span class="w-8 text-right text-gray-700">2</span>
-              </div>
-              <div class="flex items-center text-sm">
-                <span class="w-10 text-gray-700">2★</span>
-                <div class="w-full bg-gray-200 rounded-full h-2 mx-2">
-                  <div class="bg-yellow-400 h-2 rounded-full" style="width: 7%"></div>
-                </div>
-                <span class="w-8 text-right text-gray-700">1</span>
-              </div>
-              <div class="flex items-center text-sm">
-                <span class="w-10 text-gray-700">1★</span>
-                <div class="w-full bg-gray-200 rounded-full h-2 mx-2">
-                  <div class="bg-yellow-400 h-2 rounded-full" style="width: 7%"></div>
-                </div>
-                <span class="w-8 text-right text-gray-700">1</span>
-              </div>
-            </div>
-
-            <button class="mt-6 w-full bg-white border border-gray-300 text-gray-700 py-2 rounded hover:bg-gray-50 transition duration-300">
-              Write a Review
-            </button>
-          </div>
-
-          <!-- Review List -->
-          <div class="w-full md:w-2/3">
-            <div class="space-y-8">
-              <!-- Review 1 -->
-              <div class="border-b border-gray-200 pb-8">
-                <div class="flex justify-between mb-2">
-                  <h4 class="font-bold text-gray-900">Life-Changing Perspective</h4>
-                  <div class="flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                  </div>
-                </div>
-                <div class="flex items-center text-sm text-gray-600 mb-2">
-                  <span>Priya Sharma</span>
-                  <span class="mx-2">|</span>
-                  <span>March 15, 2023</span>
-                </div>
-                <p class="text-gray-700">
-                  This book came at exactly the right time in my life. I was feeling overwhelmed with too many priorities and unable to make progress on any of them. The practical techniques for identifying what truly matters and creating systems to focus on those areas have been transformative. I especially appreciated the chapter on digital minimalism.
-                </p>
-              </div>
-
-              <!-- Review 2 -->
-              <div class="border-b border-gray-200 pb-8">
-                <div class="flex justify-between mb-2">
-                  <h4 class="font-bold text-gray-900">Practical and Insightful</h4>
-                  <div class="flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                  </div>
-                </div>
-                <div class="flex items-center text-sm text-gray-600 mb-2">
-                  <span>Rajiv Patel</span>
-                  <span class="mx-2">|</span>
-                  <span>February 28, 2023</span>
-                </div>
-                <p class="text-gray-700">
-                  As a business owner, I'm constantly juggling multiple priorities. This book provided me with clear strategies to identify my most important work and create time blocks to focus on those activities. The author's personal examples made the concepts relatable, and the worksheets at the end of each chapter helped me apply the ideas immediately. Highly recommended for anyone feeling stretched thin.
-                </p>
-              </div>
-
-              <!-- Review 3 -->
-              <div class="border-b border-gray-200 pb-8">
-                <div class="flex justify-between mb-2">
-                  <h4 class="font-bold text-gray-900">Good But Not Revolutionary</h4>
-                  <div class="flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                  </div>
-                </div>
-                <div class="flex items-center text-sm text-gray-600 mb-2">
-                  <span>Arjun Krishnan</span>
-                  <span class="mx-2">|</span>
-                  <span>February 10, 2023</span>
-                </div>
-                <p class="text-gray-700">
-                  While this book has some useful advice, much of it feels like a rehash of other productivity books I've read. The writing style is accessible and the exercises are helpful, but I was hoping for more innovative approaches. That said, if you're new to productivity literature, this would be a solid introduction with practical applications.
-                </p>
-              </div>
-
-              <button class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
-                <span>See all 16 reviews</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </section>
  
@@ -728,7 +549,7 @@ body, div, p {
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-neutral-400 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
               </svg>
-              <span class="text-neutral-400">+91 124 478 5600</span>
+              <span class="text-neutral-400">+91 7200111312 / 97917 43555</span>
             </li>
           </ul>
           
