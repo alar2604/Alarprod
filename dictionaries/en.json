@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "title": "Alar Veliyeedu Books - Tamil Books, Authors & Literary Events",
+    "description": "Alar Veliyeedu - Discover the best Tamil books, new releases..."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "books": "Books",
+    "coming_soon": "Coming Soon",
+    "our_team": "Our Team",
+    "contact": "Contact Us",
+    "imprint": "Imprint",
+    "yaa_veliyeedu": "Yaa Veliyeedu"
+  },
+  "hero": {
+    "featured_release": "Featured Release",
+    "slides": [
+      {
+        "alt": "Alar Veliyeedu Books Banner 1"
+      },
+      {
+        "alt": "Alar Veliyeedu Books Banner 2"
+      }
+    ]
+  },
+  "about": {
+    "title": "About Alar veliyeedu",
+    "p1": "It is indeed true that the human species is in no way superior to other living beings. However, the ability to deeply appreciate life, analyze it with intellect, and discern between good and bad makes humans a unique species. Recognizing that reading is crucial for such a dignified life, the publishing house Alar Publications was established.",
+    "p2": "Our goal is to encourage reading by publishing quality books at affordable prices for the majority of people. Alar Publications takes pride in emphasizing that its uniqueness lies in not focusing solely on commercial objectives but in acting with a sense of responsibility."
+  },
+  "books_section": {
+    "title": "Books",
+    "view_details": "View Details",
+    "price_prefix": "₹"
+  },
+  "coming_soon": {
+    "title": "Coming Soon",
+    "description": "Get a sneak peek at our upcoming releases...",
+    "notify_me": "Notify Me"
+  },
+  "footer": {
+    "company_desc": "Alar Publications strives to make quality books accessible to everyone...",
+    "pages": "Pages",
+    "company": "Company",
+    "get_in_touch": "Get In Touch",
+    "rights": "© 2025 Alar Veliyeedu. All rights reserved."
+  },
+  "book_details": {
+    "tabs": {
+      "book": "Book Details",
+      "author": "About Author",
+      "articles": "Related Articles"
+    },
+    "labels": {
+      "title": "Book Title",
+      "author": "Author",
+      "compiler": "Compiler",
+      "translator": "Translation",
+      "edition": "Edition",
+      "language": "Language",
+      "category": "Category",
+      "isbn": "ISBN",
+      "pages": "Pages",
+      "binding": "Binding",
+      "paper": "Paper",
+      "code": "Code No",
+      "share": "Share",
+      "buy_now": "Buy Now",
+      "read_more": "Read More"
+    }
+  }
+}

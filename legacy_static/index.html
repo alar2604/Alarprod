@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="ta" class="scroll-smooth"> <!-- Changed lang to "ta" for Tamil -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- === SEO Meta Tags === -->
+    <title>அலர் வெளியீடு புத்தகங்கள் - தமிழ் புத்தகங்கள், எழுத்தாளர்கள் & இலக்கிய நிகழ்வுகள்</title>
+    <meta name="description" content="அலர் வெளியீடு - சிறந்த தமிழ் புத்தகங்கள், புதிய வெளியீடுகள், விருது பெற்ற புனைகதை, புனைவு அல்லாதவை மற்றும் சிறுவர் புத்தகங்கள். முன்னணி தமிழ் வெளியீட்டாளரிடமிருந்து வாசிக்கவும்.">
+    <meta name="keywords" content="அலர் வெளியீடு, தமிழ் புத்தகங்கள், புதிய வெளியீடுகள், எழுத்தாளர்கள், புனைகதை, புனைவு அல்லாதவை, சிறுவர் புத்தகங்கள், தமிழ்நாடு">
+    <meta name="robots" content="index, follow"> <!-- Allow indexing -->
+    <link rel="canonical" href="https://alarveliyeedu.com/" />
+    <link rel="alternate" hreflang="en" href="https://alarveliyeedu.com/en/" />
+    <link rel="alternate" hreflang="ta" href="https://alarveliyeedu.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://alarveliyeedu.com/" />
+    
+<link rel="icon" href="/images/alarfavicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/alarfavicon.png" type="image/x-icon">
+    <!-- === Open Graph / Facebook Meta Tags === -->
+    <meta property="og:title" content="அலர் வெளியீடு புத்தகங்கள் - தமிழ் புத்தகங்கள், எழுத்தாளர்கள் & இலக்கிய நிகழ்வுகள்">
+    <meta property="og:description" content="அலர் வெளியீடு - சிறந்த தமிழ் புத்தகங்கள், புதிய வெளியீடுகள், விருது பெற்ற புனைகதை, புனைவு அல்லாதவை மற்றும் சிறுவர் புத்தகங்கள். முன்னணி தமிழ் வெளியீட்டாளரிடமிருந்து வாசிக்கவும்.">
+    <meta property="og:image" content="https://alarveliyeedu.com/images/alarlogo.png"> <!-- *** REPLACE with actual URL to logo/banner image *** -->
+    <meta property="og:url" content="https://alarveliyeedu.com/"> <!-- *** Use the actual canonical URL *** -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ta_IN">
+    <meta property="og:site_name" content="அலர் வெளியீடு"> <!-- Corrected site name -->
+    
+    <!-- === Twitter Card Meta Tags === -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="அலர் வெளியீடு புத்தகங்கள் - தமிழ் புத்தகங்கள், எழுத்தாளர்கள் & இலக்கிய நிகழ்வுகள்">
+    <meta name="twitter:description" content="அலர் வெளியீடு - சிறந்த தமிழ் புத்தகங்கள், புதிய வெளியீடுகள், விருது பெற்ற புனைகதை, புனைவு அல்லாதவை மற்றும் சிறுவர் புத்தகங்கள். முன்னணி தமிழ் வெளியீட்டாளரிடமிருந்து வாசிக்கவும்.">
+    <meta name="twitter:image" content="https://alarveliyeedu.com/images/alarlogo.png"> <!-- *** REPLACE with actual URL to logo/banner image *** -->
+    <!-- <meta name="twitter:site" content="@YourTwitterHandle"> --> <!-- Optional: Add Twitter handle -->
+
+    <!-- === Other Head Elements === -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      h1, h2, h3, h4, h5, h6 { font-family: "Fraunces", "Noto Sans Tamil", sans-serif !important; }
+      body, div, p, a, span, li, button, label, input::placeholder, textarea::placeholder { font-family: "Nunito", "Noto Sans Tamil", sans-serif !important; }
+    </style>
+
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <style>:root { color-scheme: light; }</style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // render the settings object
+      //console.log('settings', [object Object]);
+      document.addEventListener('DOMContentLoaded', function() {
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: {
+                  DEFAULT: '#FF6B00',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8', 
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                secondary: {
+                  DEFAULT: '#000000',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3', 
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                accent: {
+                  DEFAULT: '',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3', 
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+              },
+              fontFamily: {
+                sans: ['Fraunces', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                heading: ['Nunito', 'Inter', 'system-ui', 'sans-serif'],
+                body: ['Nunito', 'Inter', 'system-ui', 'sans-serif'],
+              },
+              spacing: {
+                '18': '4.5rem',
+                '22': '5.5rem',
+                '30': '7.5rem',
+              },
+              maxWidth: {
+                '8xl': '88rem',
+                '9xl': '96rem',
+              },
+              aspectRatio: {
+                'portrait': '3/4',
+                'landscape': '4/3',
+                'ultrawide': '21/9',
+              },
+            },
+          },
+          variants: {
+            extend: {
+              opacity: ['disabled'],
+              cursor: ['disabled'],
+              backgroundColor: ['active', 'disabled'],
+              textColor: ['active', 'disabled'],
+            },
+          },
+        }
+      });
+      </script>
+
+    <script src="./asset/js/alpine.js"></script>
+    <link rel="icon" type="image/x-icon" href="https://alarveliyeedu.com/images/favicon.ico"> <!-- *** Add a favicon link *** -->
+    <link rel="stylesheet" href="../../asset/css/main.css">
+</head>
+<body class="antialiased text-gray-800 min-h-screen flex flex-col">
+      <!-- Skip to main content link for accessibility -->
+      <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+         முதன்மை உள்ளடக்கத்திற்குச் செல்க 
+      </a>
+
+      <!-- Main content area -->
+      <main id="main-content" class="flex-1 relative h-full">
+        <div >
+<div>
+<header id="header" class="bg-white shadow-sm fixed w-full top-0 z-50">
+    <div class=" mx-auto relative">
+      <nav class="flex justify-between md:justify-center gap-4 items-center px-4">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <a href="#" class="text-2xl font-bold text-neutral-800">
+            <img src="/images/alarlogo.png"
+                 alt="அலர் வெளியீடு" class="h-20 w-auto" 
+                >
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-6 items-center">
+          <a href="./" class="text-neutral-700 hover:text-neutral-900 text-base transition-colors duration-300">முகப்பு</a> 
+
+          <a href="./#about-us" class="text-neutral-700 hover:text-neutral-900 text-base transition-colors duration-300">எங்களைப் பற்றி</a> 
+
+          <a href="#books" class="nav-dropdown text-neutral-700 hover:text-neutral-900 text-base transition-colors duration-300 inline-flex items-center" data-target="books-dropdown">
+            புத்தகங்கள் 
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+
+          
+
+          <a href="./#coming-soon"
+                 class="text-neutral-700 hover:text-neutral-900 text-base transition-colors duration-300">விரைவில்</a> 
+          <a href="./#our-team" 
+                 class="text-neutral-700 hover:text-neutral-900 text-base transition-colors duration-300">எங்கள் குழு</a> 
+          <a href="/contact.html"
+                 class="text-neutral-700 hover:text-neutral-900 text-base transition-colors duration-300">தொடர்புக்கு</a> 
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden flex items-center" aria-label="மொபைல் மெனுவை மாற்று" aria-expanded="false" aria-controls="mobile-menu"> <!-- Translated aria-label -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-neutral-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </nav>
+
+      <!-- Mega Menu Dropdowns for Desktop -->
+      <div id="books-dropdown" class="mega-menu">
+        <div class="w-screen mx-auto py-8 border-t">
+          <div class="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 class="text-lg font-semibold mb-4">கதைகள் / நாவல்</h3> 
+              <ul class="space-y-2">
+                <li><a href="./books/sathyajit-ray-kathaigal.html" class="text-neutral-700 hover:text-neutral-900">சத்யஜித் ரே கதைகள்</a></li> 
+                <li><a href="./books/nenjam-marapathillai.html" class="text-neutral-700 hover:text-neutral-900">நெஞ்சம் மறப்பதில்லை</a></li> 
+              </ul>
+            </div>
+             <div>
+              <h3 class="text-lg font-semibold mb-4">கட்டுரை / வரலாறு</h3> 
+              <ul class="space-y-2">
+                <li><a href="./books/albert-enum-kalaikalanjiyam.html" class="text-neutral-700 hover:text-neutral-900">ஆல்பர்ட் எனும் கலைக்களஞ்சியம்</a></li> 
+                 <li><a href="./books/sagayam-seitha-sagayam.html" class="text-neutral-700 hover:text-neutral-900">சகாயம் செய்த சகாயம்</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="authors-dropdown" class="mega-menu ">
+        <div class="w-screen mx-auto py-8 border-t">
+          <div class="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 class="text-lg font-semibold mb-4">சிறப்பு ஆசிரியர்கள்</h3> 
+              <ul class="space-y-2">
+                 <!-- Note: Keep placeholder links or update them -->
+                <li><a href="#" class="text-neutral-700 hover:text-neutral-900">ஆசிரியர் 1</a></li> 
+                <li><a href="#" class="text-neutral-700 hover:text-neutral-900">ஆசிரியர் 2</a></li> 
+                <li><a href="#" class="text-neutral-700 hover:text-neutral-900">ஆசிரியர் 3</a></li> 
+                <li><a href="#" class="text-neutral-700 hover:text-neutral-900">ஆசிரியர் 4</a></li> 
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+        <div class="flex flex-col p-4">
+          <a href="./" class="py-2 text-neutral-700 hover:text-neutral-900 transition-colors duration-300">முகப்பு</a> 
+
+          <a href="./#about-us" class="py-2 text-neutral-700 hover:text-neutral-900 transition-colors duration-300">எங்களைப் பற்றி</a> 
+
+          <!-- Mobile Books Dropdown -->
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle w-full text-left py-2 flex justify-between items-center text-neutral-700" data-target="mobile-books-menu">
+              <span>புத்தகங்கள்</span> 
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="mobile-books-menu" class="mobile-submenu pl-4">
+              <a href="./books/albert-enum-kalaikalanjiyam.html" class="block py-2 text-neutral-700">ஆல்பர்ட் எனும் கலைக்களஞ்சியம்</a> 
+              <a href="./books/sathyajit-ray-kathaigal.html" class="block py-2 text-neutral-700">சத்யஜித் ரே கதைகள்</a>
+              <a href="./books/sagayam-seitha-sagayam.html" class="block py-2 text-neutral-700">சகாயம் செய்த சகாயம்</a>
+              <a href="./books/nenjam-marapathillai.html" class="block py-2 text-neutral-700">நெஞ்சம் மறப்பதில்லை</a>
+            </div>
+          </div>
+
+
+          <a href="./#coming-soon"
+                 class="py-2 text-neutral-700 hover:text-neutral-900 transition-colors duration-300">விரைவில்</a> 
+           <a href="./#our-team" 
+                 class="py-2 text-neutral-700 hover:text-neutral-900 transition-colors duration-300">எங்கள் குழு</a> 
+          <a href="/contact.html"
+                 class="py-2 text-neutral-700 hover:text-neutral-900 transition-colors duration-300">தொடர்புக்கு</a> 
+        </div>
+      </div>
+    </div>
+   <div id="switchlang">
+      <img src="/images/switchlang.svg" alt="language switch icon">
+    </div>
+</header>
+
+
+
+</div>
+
+
+
+<div>
+<section id="banner" class="w-full overflow-hidden mt-20 md:mt-10">
+  <div id="banner-slider" class="relative"
+       x-data="{
+           activeSlide: 1,
+           slides: [
+             { 
+                 id: 1, 
+                 src: '../images/alarbanner.webp', 
+                 alt: 'அலர் வெளியீடு புத்தகங்கள் பதாகை 1',
+                 link: './books/albert-enum-kalaikalanjiyam.html'  // Add link for each slide
+             },
+             { 
+                 id: 2, 
+                 src: '../images/alarbanner2.webp', 
+                 alt: 'அலர் வெளியீடு புத்தகங்கள் பதாகை 2',
+                 link: '#about-us'  // Example: linking to about section
+             }
+         ],
+           interval: null,
+           dragStartX: null,
+           dragging: false,
+           loop() {
+               this.interval = setInterval(() => { this.nextSlide() }, 4000);
+           },
+           nextSlide() {
+               this.activeSlide = this.activeSlide === this.slides.length ? 1 : this.activeSlide + 1;
+           },
+           prevSlide() {
+               this.activeSlide = this.activeSlide === 1 ? this.slides.length : this.activeSlide - 1;
+           },
+           goToSlide(slideId) {
+               this.activeSlide = slideId;
+           },
+           pause() {
+               clearInterval(this.interval);
+           },
+           resume() {
+               this.loop();
+           },
+           startDrag(e) {
+               this.dragging = true;
+               this.dragStartX = e.type.startsWith('touch') ? e.touches[0].clientX : e.clientX;
+           },
+           onDrag(e) {
+               if (!this.dragging) return;
+               let currentX = e.type.startsWith('touch') ? e.touches[0].clientX : e.clientX;
+               let diff = currentX - this.dragStartX;
+               if (Math.abs(diff) > 50) {
+                   if (diff < 0) {
+                       this.nextSlide();
+                   } else {
+                       this.prevSlide();
+                   }
+                   this.dragging = false;
+               }
+           },
+           endDrag() {
+               this.dragging = false;
+               this.dragStartX = null;
+           }
+       }"
+       x-init="loop()"
+       >
+
+    <!-- Slides with drag/swipe support -->
+    <div class="relative w-full aspect-[2/1] overflow-hidden select-none"
+         x-ref="slider"
+         @mousedown="startDrag($event)"
+         @touchstart="startDrag($event)"
+         @mousemove="onDrag($event)"
+         @touchmove="onDrag($event)"
+         @mouseup="endDrag()"
+         @mouseleave="endDrag()"
+         @touchend="endDrag()">
+      <template x-for="slide in slides" :key="slide.id">
+        <div x-show="activeSlide === slide.id"
+             class="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+             x-transition:enter="opacity-0"
+             x-transition:enter-start="opacity-0"
+             x-transition:enter-end="opacity-100"
+             x-transition:leave="opacity-100"
+             x-transition:leave-start="opacity-100"
+             x-transition:leave-end="opacity-0">
+          <a :href="slide.link" class="block w-full h-full">
+      <img :src="slide.src" :alt="slide.alt" width="1920" height="960" 
+           class="w-full h-full object-cover pointer-events-none">
+    </a>
+        </div>
+      </template>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button @click="prevSlide()"
+            class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-30 text-white p-2 rounded-full z-10 hover:bg-opacity-50 transition-opacity focus:outline-none focus:ring-2 focus:ring-white"
+            aria-label="Previous Slide">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+    </button>
+    <button @click="nextSlide()"
+            class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-30 text-white p-2 rounded-full z-10 hover:bg-opacity-50 transition-opacity focus:outline-none focus:ring-2 focus:ring-white"
+            aria-label="Next Slide">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+    </button>
+
+    <!-- Pagination Dots -->
+    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+      <template x-for="slide in slides" :key="slide.id">
+        <button @click="goToSlide(slide.id)"
+                :class="{ 'bg-white': activeSlide === slide.id, 'bg-gray-400 bg-opacity-50': activeSlide !== slide.id }"
+                class="w-2.5 h-2.5 rounded-full hover:bg-white transition-colors focus:outline-none focus:ring-1 focus:ring-white"
+                :aria-label="'Go to slide ' + slide.id"></button>
+      </template>
+    </div>
+  </div>
+</section>
+</div>
+
+
+<!-- ABOUT US SECTION -->
+        <div>
+          <section id="about-us" class="py-14 md:py-18 bg-white">
+            <div class="container mx-auto px-4">
+              <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-xl md:text-2xl font-bold font-heading mb-6 text-secondary-default">அலர் வெளியீடு பற்றி</h2> 
+                <p class="text-neutral-600 text-base mb-8 italic leading-8">
+                  உலக உயிர்கள் ஏனையத்தினின்றும் மனித இனம் எவ்விதத்திலும் உயர்ந்ததில்லை என்பது உண்மையிலும் உண்மை. எனினும் இந்த வாழ்வை ஆழ்மனதைக் கொண்டு ரசித்து ஆறறிவால் ஆராய்ந்து நல்லது கெட்டதை பகுத்தறியும் பண்பு மனிதர்களை தனித்துவமான ஓர் இனமாய் மாற்றிவிடுகிறது. அத்தகைய மனித இனம் மாண்புற வாழ வாசிப்பு மிக முக்கியம் என்பதை உணர்ந்து உருவாக்கப்பட்ட பதிப்பகம் தான், அலர் வெளியீடு. 
+                </p>
+                <p class="text-neutral-600 text-base mb-8 italic leading-8">
+                  எங்களது நோக்கம், வாசிப்பை ஊக்குவிக்கும் பொருட்டு செறிவான நூல்களை பெரும்பான்மை மக்களின் பயன்பாட்டுக்காய் குறைந்த விலையில் பதிப்பித்து கொடுப்பதே. இதை வியாபார நோக்கத்தை மட்டும் மையமாக கொண்டு செய்யாமல், தனது பொறுப்பாக உணர்ந்து செயல்படுவது தான் அலர் வெளியீட்டின் சிறப்பு என்று தெரியப்படுத்துவதில் பெருமகிழ்வு கொள்கிறது, அலர்.
+                </p>
+                
+                 <!-- <a href="/contact.html" class="btn btn-secondary-outline">மேலும் அறிக</a> --> 
+              </div>
+            </div>
+          </section>
+        </div>
+
+<div>
+  <section id="books" class="py-16 ">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-xl md:text-2xl font-bold text-neutral-900 mb-4">புத்தகங்கள்</h2> 
+      </div>
+
+
+
+      <!-- Books Grid -->
+   <div class="max-w-[1240px] mx-auto px-4 py-6 space-y-12">
+  <!-- Book Card 1: Albert -->
+  <div class="flex flex-col md:flex-row justify-center items-start gap-6 md:gap-12 border-b border-neutral-200 pb-12 last:border-0 last:pb-0">
+    <div class="book-card w-full md:w-[300px]">
+      <div class="relative group">
+        <div class="aspect-[2/3] overflow-hidden bg-neutral-200 mb-4 shadow-[0_4px_10px_rgba(0,0,0,0.15)] rounded-lg">
+          <a href="./books/albert-enum-kalaikalanjiyam.html" class="cursor-pointer">
+            <img src="./images/cver.webp" alt="ஆல்பர்ட் எனும் கலைக்களஞ்சியம் புத்தக அட்டை" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="flex-1 w-full md:max-w-[400px]">
+      <h3 class="text-neutral-900 font-semibold text-lg md:text-xl leading-tight mb-2">ஆல்பர்ட் எனும் கலைக்களஞ்சியம்</h3> 
+      <p class="text-neutral-600 text-sm mb-2">தொகுப்பாசிரியர்: எஸ். அற்புதராஜ்</p> 
+      <div class="flex items-center gap-2 mb-3">
+        <div class="flex text-yellow-400">★★★★★</div>
+        <span class="text-neutral-500 text-sm">(5.0 / 5)</span>
+      </div>
+      <p class="text-neutral-900 font-bold text-lg mb-3">₹399</p>
+      <p class="text-neutral-600 text-sm mb-4 line-clamp-3">
+        இந்த புத்தகம், "ஆல்பர்ட் எனும் கலைக்களஞ்சியம்", திரு. ஆல்பர்ட்டின் கலை மற்றும் இலக்கிய உலகிற்கான ஆழமான பங்களிப்புகளை முன்னிலைப்படுத்தும் கட்டுரைகளின் தொகுப்பாகும்.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="./books/albert-enum-kalaikalanjiyam.html" class="cursor-pointer">
+          <button class="px-4 py-2 border border-neutral-300 text-neutral-900 rounded-md text-sm font-medium hover:bg-neutral-100 transition-colors w-full sm:w-auto">
+            விவரங்களைக் காண்க 
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Book Card 2: Sathyajit Ray -->
+  <div class="flex flex-col md:flex-row justify-center items-start gap-6 md:gap-12 border-b border-neutral-200 pb-12 last:border-0 last:pb-0">
+    <div class="book-card w-full md:w-[300px]">
+      <div class="relative group">
+        <div class="aspect-[2/3] overflow-hidden bg-neutral-200 mb-4 shadow-[0_4px_10px_rgba(0,0,0,0.15)] rounded-lg">
+          <a href="./books/sathyajit-ray-kathaigal.html" class="cursor-pointer">
+            <img src="./images/sathyajithrey.webp" alt="சத்யஜித் ரே கதைகள் புத்தக அட்டை" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="flex-1 w-full md:max-w-[400px]">
+      <h3 class="text-neutral-900 font-semibold text-lg md:text-xl leading-tight mb-2">சத்யஜித் ரே கதைகள்</h3> 
+      <p class="text-neutral-600 text-sm mb-2">ஆசிரியர்: சத்யஜித் ரே (மொழிபெயர்ப்பு: எஸ். அற்புதராஜ்)</p> 
+      <div class="flex items-center gap-2 mb-3">
+        <div class="flex text-yellow-400">★★★★★</div>
+        <span class="text-neutral-500 text-sm">(5.0 / 5)</span>
+      </div>
+      <p class="text-neutral-900 font-bold text-lg mb-3">₹399</p>
+      <p class="text-neutral-600 text-sm mb-4 line-clamp-3">
+        சத்யஜித் ரே எழுதிய சுவாரஸ்யமான சிறுகதைகளின் தொகுப்பு. தமிழில் எஸ்ய அற்புதராஜ் அவர்கள் அழகாக மொழிபெயர்த்துள்ளார்.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="./books/sathyajit-ray-kathaigal.html" class="cursor-pointer">
+          <button class="px-4 py-2 border border-neutral-300 text-neutral-900 rounded-md text-sm font-medium hover:bg-neutral-100 transition-colors w-full sm:w-auto">
+            விவரங்களைக் காண்க 
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Book Card 3: Sagayam Seitha Sagayam -->
+  <div class="flex flex-col md:flex-row justify-center items-start gap-6 md:gap-12 border-b border-neutral-200 pb-12 last:border-0 last:pb-0">
+    <div class="book-card w-full md:w-[300px]">
+      <div class="relative group">
+        <div class="aspect-[2/3] overflow-hidden bg-neutral-200 mb-4 shadow-[0_4px_10px_rgba(0,0,0,0.15)] rounded-lg">
+          <a href="./books/sagayam-seitha-sagayam.html" class="cursor-pointer">
+            <img src="./images/sagayam.webp" alt="சகாயம் செய்த சகாயம் புத்தக அட்டை" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="flex-1 w-full md:max-w-[400px]">
+      <h3 class="text-neutral-900 font-semibold text-lg md:text-xl leading-tight mb-2">சகாயம் செய்த சகாயம்</h3> 
+      <p class="text-neutral-600 text-sm mb-2">ஆசிரியர்: பெருமாள் முருகன்</p> 
+      <div class="flex items-center gap-2 mb-3">
+        <div class="flex text-yellow-400">★★★★★</div>
+        <span class="text-neutral-500 text-sm">(5.0 / 5)</span>
+      </div>
+      <p class="text-neutral-900 font-bold text-lg mb-3">₹---</p>
+      <p class="text-neutral-600 text-sm mb-4 line-clamp-3">
+        நாமக்கல் மாவட்ட ஆட்சியராக உ. சகாயம் பணியாற்றியபோது, தனது அலுவலகத்தில் ‘லஞ்சம் தவிர்த்து, நெஞ்சம் நிமிர்த்து’ என்று ஒரு பலகையை மாட்டிவைத்தார். விளிம்புநிலை மக்களின் துயரங்களைத் துடைத்தெறிந்த சகாயத்தின் பணிகளைப் பதிவுசெய்கிறது.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="./books/sagayam-seitha-sagayam.html" class="cursor-pointer">
+          <button class="px-4 py-2 border border-neutral-300 text-neutral-900 rounded-md text-sm font-medium hover:bg-neutral-100 transition-colors w-full sm:w-auto">
+            விவரங்களைக் காண்க 
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Book Card 4: Nenjam Marapathillai -->
+  <div class="flex flex-col md:flex-row justify-center items-start gap-6 md:gap-12">
+    <div class="book-card w-full md:w-[300px]">
+      <div class="relative group">
+        <div class="aspect-[2/3] overflow-hidden bg-neutral-200 mb-4 shadow-[0_4px_10px_rgba(0,0,0,0.15)] rounded-lg">
+          <a href="./books/nenjam-marapathillai.html" class="cursor-pointer">
+            <img src="./images/kundrakudiadigal.webp" alt="நெஞ்சம் மறப்பதில்லை புத்தக அட்டை" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="flex-1 w-full md:max-w-[400px]">
+      <h3 class="text-neutral-900 font-semibold text-lg md:text-xl leading-tight mb-2">நெஞ்சம் மறப்பதில்லை</h3> 
+      <p class="text-neutral-600 text-sm mb-2">ஆசிரியர்: குன்றக்குடி அடிகள்</p> 
+       <div class="flex items-center gap-2 mb-3">
+        <div class="flex text-yellow-400">★★★★★</div>
+        <span class="text-neutral-500 text-sm">(5.0 / 5)</span>
+      </div>
+      <p class="text-neutral-900 font-bold text-lg mb-3">₹200</p>
+      <p class="text-neutral-600 text-sm mb-4 line-clamp-3">
+        நினைவும் உணர்வும் சார்ந்த குன்றக்குடி அடிகள் அவர்களின் இலக்கியப் படைப்பு. ஆன்மிகம் மற்றும் மனித உறவுகள் பற்றிய ஆழமான பார்வை.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="./books/nenjam-marapathillai.html" class="cursor-pointer">
+          <button class="px-4 py-2 border border-neutral-300 text-neutral-900 rounded-md text-sm font-medium hover:bg-neutral-100 transition-colors w-full sm:w-auto">
+            விவரங்களைக் காண்க 
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- View More Button -->
+  <div class="text-center mt-10">
+    <!-- <button class="px-6 py-3 bg-white border border-neutral-300 text-neutral-800 rounded-md font-medium hover:bg-neutral-100 transition duration-300">
+      அனைத்து புத்தகங்களையும் காண்க
+    </button> --> 
+  </div>
+</div>
+    <!-- Book Details Modal -->
+    <div id="book-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden" aria-modal="true" aria-hidden="true">
+      <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-auto p-6 relative mx-4">
+        <!-- Close Button -->
+        <button id="close-modal" class="absolute top-4 right-4 text-neutral-500 hover:text-neutral-900" aria-label="மாதிரியை மூடு"> <!-- Translated aria-label -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+
+        <!-- Modal Content -->
+        <div class="flex flex-col md:flex-row gap-8">
+          <!-- Book Image -->
+          <div class="md:w-1/3">
+            <div class="aspect-[2/3] bg-neutral-100 rounded-md overflow-hidden">
+              <img id="modal-book-image" src="https://placehold.co/300x450?text=Book+Cover" alt="புத்தக அட்டை" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/300x450?text=புத்தக+அட்டை'"> <!-- Translated alt and placeholder text -->
+            </div>
+          </div>
+
+          <!-- Book Details -->
+          <div class="md:w-2/3">
+            <h3 id="modal-book-title" class="text-2xl font-bold text-neutral-900 mb-2"></h3>
+            <p id="modal-book-author" class="text-neutral-600 mb-4"></p>
+            <div class="flex items-center mb-4">
+              <div class="flex text-yellow-400">
+                <!-- Stars kept as is -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"> <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path> </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"> <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path> </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"> <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path> </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"> <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path> </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-neutral-300" viewBox="0 0 20 20" fill="currentColor"> <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path> </svg>
+              </div>
+              <span class="ml-2 text-neutral-600 text-sm">4.0 (124 மதிப்புரைகள்)</span> 
+            </div>
+
+            <p id="modal-book-price" class="text-2xl font-bold text-neutral-900 mb-4"></p>
+
+            <div class="border-t border-b border-neutral-200 py-4 mb-4">
+              <h4 class="font-semibold text-neutral-900 mb-2">புத்தக விவரங்கள்:</h4> 
+              <ul class="space-y-2 text-neutral-600">
+                <li><span class="font-medium">வெளியீட்டாளர்:</span> அலர் வெளியீடு</li> 
+                <li><span class="font-medium">மொழி:</span> ஆங்கிலம்</li> <!-- Kept as English for this example, change if needed -->
+                <li><span class="font-medium">பேப்பர்பேக்:</span> 256 பக்கங்கள்</li> 
+                <li><span class="font-medium">ISBN-13:</span> 978-0143475811</li> <!-- Kept as is -->
+                <li><span class="font-medium">பரிமாணங்கள்:</span> 20 x 14 x 2.5 செ.மீ</li> <!-- Translated units -->
+              </ul>
+            </div>
+
+            <div class="mb-6">
+              <h4 class="font-semibold text-neutral-900 mb-2">விளக்கம்:</h4> 
+              <p id="modal-book-description" class="text-neutral-600">இது புத்தக விளக்கத்திற்கான இடமாகும். விரைவு பார்வைக்கு ஒரு புத்தகம் தேர்ந்தெடுக்கப்படும்போது உண்மையான விளக்கம் மாறும் வகையில் ஏற்றப்படும்.</p> 
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+              <button class="px-6 py-3 bg-neutral-900 text-white font-medium rounded-md hover:bg-neutral-800 transition duration-300">இப்போதே வாங்கு</button> 
+              <button class="px-6 py-3 border border-neutral-300 text-neutral-800 font-medium rounded-md hover:bg-neutral-100 transition duration-300">பொருளைக் காண்க</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div>
+  <section id="coming-soon" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-xl md:text-2xl  font-bold text-neutral-900 mb-4">விரைவில்</h2> 
+        <p class="text-neutral-600 max-w-2xl mx-auto ">எங்கள் வரவிருக்கும் வெளியீடுகளைப் பற்றிய ஒரு முன்னோட்டத்தைப் பெறுங்கள் மற்றும் புதிய இலக்கியப் பொக்கிஷங்களைக் கண்டறியும் முதல் நபராக இருங்கள்.</p> 
+      </div>
+
+      <div class="max-w-4xl mx-auto mb-12">
+        <!-- Featured Upcoming Book: Lankesh -->
+        <div class="bg-neutral-50 rounded-lg overflow-hidden shadow-sm">
+          <div class="flex flex-col md:flex-row">
+            <div class="md:w-2/5  relative">
+              <img src="./images/lankesh.webp" alt="லங்கேஷ் கதைகள் புத்தக அட்டை"  class="w-full h-full object-cover rounded-lg"> 
+              <div class="absolute rounded-bl-lg top-0 right-0 bg-yellow-500 text-white px-3 py-1 text-sm font-semibold">
+                விரைவில் வருகிறது
+              </div>
+            </div>
+            <div class="md:w-3/5 p-6">
+              <h3 class="text-xl font-bold text-neutral-900 mb-2">லங்கேஷ் கதைகள்</h3> 
+              <p class="text-neutral-600 text-sm mb-3">ஆசிரியர்: பி. லங்கேஷ்</p>
+              <p class="text-neutral-700 mb-4">புகழ்பெற்ற கன்னட எழுத்தாளர் பி. லங்கேஷ் அவர்களின் சிறுகதைகள். கன்னட இலக்கியத்தின் நவீன குரலாக ஒலித்த லங்கேஷின் படைப்புகள், சமூக விமர்சனம் மற்றும் மனித உணர்வுகளின் ஆழத்தை வெளிப்படுத்துபவை.</p> 
+              <div class="flex items-center mb-4">
+                <div class="flex mr-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                  </svg>
+                  <span class="text-neutral-700 ml-1">முன்-பதிவு மதிப்பீடு: அதிக எதிர்பார்ப்பு</span> 
+                </div>
+              </div>
+              <button id="notify-btn-featured" class="px-4 py-2 bg-neutral-900 text-white rounded-md hover:bg-neutral-800 transition duration-300">எனக்கு அறிவிக்கவும்</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+    <!-- Notification Modal -->
+    <div id="notification-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden" aria-modal="true" aria-hidden="true">
+      <div class="bg-white rounded-lg max-w-md w-full mx-4 p-6 relative">
+        <!-- Close Button -->
+        <button id="close-notification-modal" class="absolute top-4 right-4 text-neutral-500 hover:text-neutral-900" aria-label="மாதிரியை மூடு"> <!-- Translated aria-label -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+
+        <!-- Modal Content -->
+        <div class="text-center">
+          <h3 class="text-xl font-bold text-neutral-900 mb-4">புத்தக வெளியீட்டு அறிவிப்புகளைப் பெறுங்கள்</h3> 
+          <p class="text-neutral-600 mb-6">இந்தப் புத்தகம் வாங்குவதற்கு அல்லது முன்-பதிவு செய்வதற்கு கிடைக்கும்போது உங்களுக்கு அறிவிப்போம்.</p> 
+
+          <form id="notification-form" class="space-y-4">
+            <div>
+              <input type="text" id="notification-name" placeholder="உங்கள் பெயர்" class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-500" required=""> <!-- Translated placeholder -->
+            </div>
+            <div>
+              <input type="email" id="notification-email" placeholder="உங்கள் மின்னஞ்சல்" class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-500" required=""> <!-- Translated placeholder -->
+            </div>
+            <div class="flex items-start">
+              <input type="checkbox" id="notification-terms" class="mt-1 mr-2" required="">
+              <label for="notification-terms" class="text-sm text-neutral-600">அலர் வெளியீட்டிடமிருந்து மின்னஞ்சல் அறிவிப்புகளைப் பெற நான் ஒப்புக்கொள்கிறேன்.</label> 
+            </div>
+            <button type="submit" class="w-full py-3 bg-neutral-900 text-white font-medium rounded-md hover:bg-neutral-800 transition duration-300">எனக்கு அறிவிக்கவும்</button> 
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+
+
+<div>
+  <footer id="footer" class="bg-neutral-900 text-white pt-12 pb-6">
+    <div class="container mx-auto px-4">
+      <!-- Footer Main Content -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <!-- Company Info -->
+        <div>
+          <div class="mb-6">
+            <img src="./images/alarlogo.png"
+                 alt="அலர் வெளியீடு சின்னம்" class="h-24 w-auto " 
+                >
+          </div>
+          <p class="text-neutral-400 mb-4">அலர் வெளியீடு செறிவான நூல்களை அனைவருக்கும் குறைந்த விலையில் வழங்க, வியாபார நோக்கத்தை விட பொறுப்பை முன்னிலைப்படுத்தி செயல்படுகிறது.</p> 
+          <div class="flex space-x-4">
+            <!-- Translated aria-labels -->
+            <a href="#" aria-label="பேஸ்புக்" class="text-neutral-600 hover:text-neutral-900"> <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"> <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" /> </svg> </a>
+            <a href="#" aria-label="ட்விட்டர்" class="text-neutral-600 hover:text-neutral-900"> <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"> <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /> </svg> </a>
+            <a href="#" aria-label="இன்ஸ்டாகிராம்" class="text-neutral-600 hover:text-neutral-900"> <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"> <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.172.053 1.803.249 2.228.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.426.36 1.057.413 2.228.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.053 1.172-.249 1.803-.413 2.228-.217.562-.477.96-.896 1.382-.42.419-.819.679-1.381.896-.426.164-1.057.36-2.228.413-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.172-.053-1.803-.249-2.228-.413-.562-.217-.96-.477-1.382-.896-.419-.42-.679-.819-.896-1.381-.164-.426-.36-1.057-.413-2.228-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.053-1.172.249-1.803.413-2.228.217-.562.477-.96.896-1.382.42-.419.819.679 1.381-.896.426-.164 1.057-.36 2.228-.413 1.266-.058 1.646-.07 4.85-.07zm0-1.932c-3.264 0-3.678.014-4.949.072-1.28.058-2.148.25-2.914.554-.796.314-1.454.745-2.11 1.4-.654.656-1.086 1.314-1.4 2.11-.303.766-.496 1.634-.554 2.914-.058 1.27-.072 1.685-.072 4.949s.014 3.678.072 4.949c.058 1.28.25 2.148.554 2.914.314.796.745 1.454 1.4 2.11.656.654 1.314 1.086 2.11 1.4.766.303 1.634.496 2.914.554 1.27.058 1.685.072 4.949.072s3.678-.014 4.949-.072c1.28-.058 2.148-.25 2.914-.554.796-.314 1.454-.745 2.11-1.4.654-.656 1.086-1.314 1.4-2.11.303-.766.496-1.634.554-2.914.058-1.27.072-1.685.072-4.949s-.014-3.678-.072-4.949c-.058-1.28-.25-2.148-.554-2.914-.314-.796-.745-1.454-1.4-2.11-.656-.654-1.314-1.086-2.11-1.4-.766-.303-1.634-.496-2.914-.554C15.678.244 15.264.23 12 .23zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.39a4.228 4.228 0 1 1 0-8.456 4.228 4.228 0 0 1 0 8.456zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/> </svg> </a>
+            <a href="#" aria-label="லிங்க்ட்இன்" class="text-neutral-600 hover:text-neutral-900"> <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"> <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /> </svg> </a>
+            <a href="#" aria-label="யூடியூப்" class="text-neutral-600 hover:text-neutral-900"> <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"> <path d="M21.582 6.186A2.99 2.99 0 0 0 19.47 4.078 48.766 48.766 0 0 0 12 3.75a48.766 48.766 0 0 0-7.47.328A2.99 2.99 0 0 0 2.42 6.186 31.385 31.385 0 0 0 2 12a31.385 31.385 0 0 0 .42 5.814 2.99 2.99 0 0 0 2.112 2.108c1.79.294 7.47.328 7.47.328s5.68-.034 7.47-.328a2.99 2.99 0 0 0 2.112-2.108A31.385 31.385 0 0 0 22 12a31.385 31.385 0 0 0-.418-5.814zM9.75 15.75V8.25l6 3.75-6 3.75z" /> </svg> </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-bold mb-4">பக்கங்கள்</h3> 
+          <ul class="space-y-2">
+            
+            <li><a href="#about-us" class="text-neutral-400 hover:text-white transition-colors">About us</a></li>
+            <li><a href="#books" class="text-neutral-400 hover:text-white transition-colors">Books</a></li>
+            <li><a href="#coming-soon" class="text-neutral-400 hover:text-white transition-colors">Coming Soon</a></li>
+            <li><a href="/contact.html" class="text-neutral-400 hover:text-white transition-colors">Contact</a></li>
+            <li><a href="#newsletter" class="text-neutral-400 hover:text-white transition-colors">Newsletter</a></li>
+            
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h3 class="text-lg font-bold mb-4">நிறுவனம்</h3> 
+          
+          <ul class="space-y-2">
+            <li><a href="./books/albert-enum-kalaikalanjiyam.html" class="text-neutral-400 hover:text-white transition-colors">Albert Enum...</a></li>
+            <li><a href="/privacy.html" class="text-neutral-400 hover:text-white transition-colors">Privacy</a></li>
+            <li><a href="/terms.html" class="text-neutral-400 hover:text-white transition-colors">Terms</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Newsletter -->
+        <div>
+          <h3 class="text-lg font-bold mb-4">தொடர்பில் இருங்கள்</h3> 
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-neutral-400 mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path> </svg>
+              <span class="text-neutral-400">Alar veliyeedu <br> No. 2A, White Betal Street, <br> Big Bazaar, <br> Tiruchirappalli - 620008
+                  </span> <!-- Kept Address -->
+            </li>
+            <li class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-neutral-400 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path> </svg>
+              <a href="mailto:alarveliyeedu@gmail.com" class="text-neutral-400 hover:text-white transition-colors">alarveliyeedu@gmail.com</a> <!-- Kept Email -->
+            </li>
+            <li class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-neutral-400 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path> </svg>
+              <span class="text-neutral-400">+91 7200111312 / 97917 43555</span> <!-- Kept Phone -->
+            </li>
+          </ul>
+
+
+        </div>
+      </div>
+
+      <!-- Footer Divider -->
+      <div class="border-t border-neutral-800 my-6"></div>
+
+      <!-- Bottom Footer -->
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        
+
+        <div class="text-sm text-neutral-500 text-center md:text-right">
+          <p>© 2025 அலர் வெளியீடு. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p> <!-- Translated Copyright -->
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 p-2 bg-neutral-800 text-white rounded-full shadow-lg z-10 transition-all duration-300 opacity-0 invisible" aria-label="மேலே செல்க"> <!-- Translated aria-label -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+      </svg>
+    </button>
+  </footer>
+
+
+</div>
+      </main>
+
+    <script src="./asset/js/header.js"></script>
+    </body>
+</html>
