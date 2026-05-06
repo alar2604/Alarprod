@@ -2,33 +2,113 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+
+type LocalizedText = string | Record<string, string>;
+
+interface BookQuote {
+  text: LocalizedText;
+  author: LocalizedText;
+}
+
+interface BookArticle {
+  title: LocalizedText;
+  excerpt: LocalizedText;
+  link: string;
+}
+
+interface BookDetailsData {
+  edition?: LocalizedText;
+  language?: LocalizedText;
+  category?: LocalizedText;
+  pages?: LocalizedText;
+  binding?: LocalizedText;
+  paper?: LocalizedText;
+  isbn?: string;
+  code?: string;
+  buyLinks?: {
+    dodo?: string;
+  };
+  authorBio?: LocalizedText;
+  quotes?: BookQuote[];
+  relatedArticles?: BookArticle[];
+}
+
+interface BookData {
+  id: string;
+  title: LocalizedText;
+  author: LocalizedText;
+  translator?: LocalizedText;
+  desc?: LocalizedText;
+  image: string;
+  authorImage?: string;
+  price: string;
+  details: BookDetailsData;
+}
+
+interface BookDetailsDictionary {
+  book_details: {
+    tabs: {
+      book: string;
+      author: string;
+      articles: string;
+    };
+    labels: {
+      title: string;
+      compiler: string;
+      author: string;
+      translator: string;
+      edition: string;
+      language: string;
+      category: string;
+      isbn: string;
+      pages: string;
+      binding: string;
+      paper: string;
+      code: string;
+      buy_now: string;
+      share: string;
+      read_more: string;
+    };
+  };
+  books_section: {
+    view_details: string;
+    price_prefix: string;
+  };
+}
 
 interface BookDetailsTabsProps {
-  book: any;
-  dict: any;
+  book: BookData;
+  dict: BookDetailsDictionary;
   lang: string;
 }
 
 export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsProps) {
   const [activeTab, setActiveTab] = useState('bookDetails');
 
-  // Helper to safely get localized string
-  const getLoc = (obj: any) => (typeof obj === 'object' && obj !== null && lang in obj ? obj[lang] : obj);
+  // Helper to safely get localized string; returns string or undefined
+  const getLoc = (obj: LocalizedText | undefined): string | undefined => {
+    if (!obj) return undefined;
+    if (typeof obj === 'object' && obj !== null) {
+      return (obj as Record<string, string>)[lang];
+    }
+    if (typeof obj === 'string') return obj;
+    return undefined;
+  };
 
-  const title = getLoc(book.title);
-  const author = getLoc(book.author);
-  const translator = getLoc(book.translator);
-  const desc = getLoc(book.desc);
+  const title = String(getLoc(book.title) ?? '');
+  const author = String(getLoc(book.author) ?? '');
+  const translator = book.translator ? String(getLoc(book.translator) ?? '') : undefined;
+  const desc = String(getLoc(book.desc) ?? '');
   const details = book.details;
+  const authorImage = book.authorImage;
 
   // Function to handle share
   const handleShare = async () => {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: title,
-          text: `Check out this book: ${title}`,
+          title: String(title),
+          text: `Check out this book: ${String(title)}`,
           url: window.location.href,
         });
       } catch (error) {
@@ -41,7 +121,7 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
 
   return (
     <div className="py-12 mt-12 px-4 md:px-8 lg:px-12 bg-white">
-      <div className="container mx-auto max-w-[1280px] mt-8">
+      <div className="container mx-auto max-w-7xl mt-8">
         <div className="border-gray-200 mb-8 md:ml-12">
           <ul className="flex justify-center gap-4 md:gap-8">
             {['bookDetails', 'bookAuthor', 'bookArticle'].map((tab) => {
@@ -75,7 +155,7 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
                 {/* Left Column: Image + Details List */}
                 <div className="w-full md:w-1/3">
                   <div className="top-24">
-                    <div className="aspect-[2/3] relative w-full shadow-lg rounded overflow-hidden">
+                    <div className="aspect-2/3 relative w-full shadow-lg rounded overflow-hidden">
                         <Image
                             src={book.image}
                             alt={`${title} cover`}
@@ -148,7 +228,7 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
                   <div className="text-gray-700 mb-4">
                       {/* If quotes exist, render them. If not, fallback to regular desc */}
                       {details.quotes && details.quotes.length > 0 ? (
-                           details.quotes.map((quote: any, idx: number) => (
+                           details.quotes.map((quote: BookQuote, idx: number) => (
                                <p key={idx} className="text-gray-700 mb-4">
                                    {getLoc(quote.text)}
                                    <br className="mt-2" />
@@ -177,15 +257,16 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
 
             {/* AUTHOR TAB */}
             {activeTab === 'bookAuthor' && (
-                <div className="tab-content mx-auto bg-white py-6 md:px-8 lg:px-16 leading-8 rounded-lg">
-                    <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">{dict.book_details.tabs.author}</h3>
-                    <div className="flex gap-4 flex-col items-center md:items-start text-center md:text-left md:flex-row">
-                        <div>
-                             {/* Use author image if available, else placeholder or keep specific image for Arputharaj */}
-                             <div className="relative w-[288px] h-[300px] rounded-md overflow-hidden">
-                                 <Image src="/images/s_arputharaj.webp" alt={author} fill className="object-cover" />
-                             </div>
-                        </div>
+                <div className="tab-content mx-auto bg-white py-6 md:px-8 lg:px-16 leading-8 rounded-lg flex flex-col items-center">
+                    <h3 className="text-xl font-bold text-gray-900 mb-4 text-center text-orange-500">{author}</h3>
+                    <div className="flex gap-4 flex-col items-center text-center">
+                  {authorImage && (
+                    <div>
+                               <div className="relative w-[288px] h-75 rounded-md overflow-hidden">
+                         <Image src={authorImage} alt={author} fill className="object-cover" />
+                       </div>
+                    </div>
+                  )}
                         <div>
                             <p className="text-gray-700 mb-4">
                                 {details.authorBio ? getLoc(details.authorBio) : 'Biography not available.'}
@@ -200,7 +281,7 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
                 <div className="tab-content mx-auto bg-white py-6 px-4 md:px-8 lg:px-16 leading-8 rounded-lg">
                     <h3 className="text-xl font-bold text-gray-900 mb-4">{dict.book_details.tabs.articles}</h3>
                     <div className="grid grid-cols-1 gap-6">
-                        {details.relatedArticles && details.relatedArticles.map((article: any, idx: number) => (
+                        {details.relatedArticles && details.relatedArticles.map((article: BookArticle, idx: number) => (
                             <a key={idx} href={article.link} target="_blank" rel="noopener noreferrer">
                                 <div className="border border-gray-200 rounded-md p-4 hover:shadow-md transition duration-300">
                                     <h4 className="font-semibold text-gray-900 mb-2">{getLoc(article.title)}</h4>

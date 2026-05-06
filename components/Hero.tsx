@@ -15,6 +15,15 @@ const bookBackgrounds: Record<string, string> = {
   'nenjam-marapathillai': '/images/hero_bg_nenjam.webp'
 };
 
+const bannerOrder = [
+  'albert-enum-kalaikalanjiyam',
+  'nenjam-marapathillai',
+  'sagayam-seitha-sagayam',
+  'sathyajit-ray-kathaigal'
+];
+
+const heroBooks = bannerOrder.map(id => books.find(b => b.id === id)).filter(Boolean) as typeof books;
+
 export default function Hero({ dict, lang }: { dict: any, lang: string }) {
   const [activeSlide, setActiveSlide] = useState(0);
   const slideRef = useRef<HTMLDivElement>(null);
@@ -31,11 +40,11 @@ export default function Hero({ dict, lang }: { dict: any, lang: string }) {
   }, [activeSlide]); // visual dependency for reset
 
   const prevSlide = () => {
-    setActiveSlide((current) => (current === 0 ? books.length - 1 : current - 1));
+    setActiveSlide((current) => (current === 0 ? heroBooks.length - 1 : current - 1));
   };
 
   const nextSlide = () => {
-    setActiveSlide((current) => (current === books.length - 1 ? 0 : current + 1));
+    setActiveSlide((current) => (current === heroBooks.length - 1 ? 0 : current + 1));
   };
 
   // Animation
@@ -48,7 +57,7 @@ export default function Hero({ dict, lang }: { dict: any, lang: string }) {
     }
   }, [activeSlide]);
 
-  const currentBook = books[activeSlide];
+  const currentBook = heroBooks[activeSlide];
   const bgImage = bookBackgrounds[currentBook.id] || '/images/hero_bg_albert.webp'; // fallback
 
   return (
@@ -72,7 +81,7 @@ export default function Hero({ dict, lang }: { dict: any, lang: string }) {
             {/* Text Content (Left) */}
             <div className="w-full md:w-1/2 text-center md:text-left animate-element order-2 md:order-1">
                 <span className="inline-block px-3 py-1 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-sm font-medium mb-6 text-neutral-200 uppercase tracking-widest">
-                    {dict.hero.featured_release}
+                    {dict.hero.release || 'வெளியீடு'} 0{activeSlide + 1}
                 </span>
                 <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 leading-tight">
                     {(currentBook.title as any)[lang]}
@@ -120,7 +129,7 @@ export default function Hero({ dict, lang }: { dict: any, lang: string }) {
 
         {/* Dots */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
-          {books.map((_, index) => (
+          {heroBooks.map((_, index) => (
             <button
               key={index}
               onClick={() => setActiveSlide(index)}

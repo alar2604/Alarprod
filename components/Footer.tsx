@@ -20,7 +20,7 @@ export default function Footer({ dict, lang }: { dict: any, lang: string }) {
                 alt="Alar veliyeedu Logo" 
                 width={100} 
                 height={100}
-                className="h-24 w-auto brightness-0 invert" 
+                className="h-24 w-auto" 
               />
             </div>
             <p className="text-neutral-400 mb-4">{dict.footer.company_desc}</p>
