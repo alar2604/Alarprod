@@ -29,7 +29,7 @@ export const books = [
       code: '001',
       authorBio: {
         ta: 'எஸ். அற்புதராஜ், பேராசிரியர் ஆல்பர்ட்டுடன் அவருடைய இளமைக் காலம் முதல் எழுபது ஆண்டு காலம் உடனிருந்து பழகியவர். திருச்சி செயிண்ட் ஜோஸப் மேல்நிலைப் பள்ளியில் உதவித் தலைமை ஆசிரியராகப் பணிபுரிந்து ஓய்வு பெற்றவர். சிறுகதைகள் கொஞ்சம், கவிதைகள் கொஞ்சம் எழுதியிருக்கிறார். நல்ல இலக்கிய ரசனை உள்ளவர்.',
-        en: 'S. Arputharaj was acquainted with Professor Albert for seventy years, since his youth. He retired as the Assistant Headmaster from St. Joseph\'s Higher Secondary School, Trichy. He has written some short stories and poems and possesses a keen appreciation for literature.'
+        en: 'S. Arputharaj was closely associated with Professor Albert for seventy years, from his youth. He retired as the Assistant Headmaster at St. Joseph\'s Higher Secondary School in Trichy. He has written a few short stories and poems, and has a strong literary sensibility.'
       },
       relatedArticles: [
         {
@@ -73,7 +73,7 @@ export const books = [
       en: 'Sathyajit Ray'
     },
     translator: {
-      ta: 'எஸ். அற்புதராஜ்',
+      ta: 'மொழிபெயர்ப்பாளர் எஸ். அற்புதராஜ்',
       en: 'S. Arputharaj'
     },
     price: '399',
@@ -90,7 +90,7 @@ export const books = [
       pages: { ta: '400', en: '400' },
       isbn: '9788198726735',
       edition: { ta: 'ஆகஸ்ட் 2025 (அலர் வெளியீடு)', en: 'August 2025 (Alar Veliyeedu)' },
-      authorBio: {
+      translatorBio: {
         ta: 'எஸ். அற்புதராஜ், பேராசிரியர் ஆல்பர்ட்டுடன் அவருடைய இளமைக் காலம் முதல் எழுபது ஆண்டு காலம் உடனிருந்து பழகியவர். திருச்சி செயிண்ட் ஜோஸப் மேல்நிலைப் பள்ளியில் உதவித் தலைமை ஆசிரியராகப் பணிபுரிந்து ஓய்வு பெற்றவர். சிறுகதைகள் கொஞ்சம், கவிதைகள் கொஞ்சம் எழுதியிருக்கிறார். நல்ல இலக்கிய ரசனை உள்ளவர்.',
         en: 'S. Arputharaj was acquainted with Professor Albert for seventy years, since his youth. He retired as the Assistant Headmaster from St. Joseph\'s Higher Secondary School, Trichy. He has written some short stories and poems and possesses a keen appreciation for literature.'
       }

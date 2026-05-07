@@ -29,6 +29,7 @@ interface BookDetailsData {
     dodo?: string;
   };
   authorBio?: LocalizedText;
+  translatorBio?: LocalizedText;
   quotes?: BookQuote[];
   relatedArticles?: BookArticle[];
 }
@@ -101,6 +102,8 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
   const desc = String(getLoc(book.desc) ?? '');
   const details = book.details;
   const authorImage = book.authorImage;
+  const authorBio = getLoc(details.authorBio);
+  const hasAuthorSection = Boolean(authorBio);
 
   // Function to handle share
   const handleShare = async () => {
@@ -258,21 +261,42 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
             {/* AUTHOR TAB */}
             {activeTab === 'bookAuthor' && (
                 <div className="tab-content mx-auto bg-white py-6 md:px-8 lg:px-16 leading-8 rounded-lg flex flex-col items-center">
+                {hasAuthorSection && (
+                  <>
                     <h3 className="text-xl font-bold text-gray-900 mb-4 text-center text-orange-500">{author}</h3>
                     <div className="flex gap-4 flex-col items-center text-center">
-                  {authorImage && (
-                    <div>
-                               <div className="relative w-[288px] h-75 rounded-md overflow-hidden">
-                         <Image src={authorImage} alt={author} fill className="object-cover" />
-                       </div>
-                    </div>
-                  )}
+                      {authorImage && (
                         <div>
-                            <p className="text-gray-700 mb-4">
-                                {details.authorBio ? getLoc(details.authorBio) : 'Biography not available.'}
-                            </p>
+                          <div className="relative w-[288px] h-75 rounded-md overflow-hidden">
+                            <Image src={authorImage} alt={author} fill className="object-contain" />
+                          </div>
                         </div>
+                      )}
+                      <div>
+                        <p className="text-gray-700 mb-4">{authorBio}</p>
+                      </div>
                     </div>
+                  </>
+                )}
+                    {translator && (
+                  <div className={`${hasAuthorSection ? 'mt-8 pt-8 border-t border-gray-300' : ''} w-full flex flex-col items-center`}>
+                            <h4 className="text-lg font-semibold text-gray-900 mb-4 text-center text-orange-500">{translator}</h4>
+                            <div className="flex gap-4 flex-col items-center text-center">
+                                {authorImage && (
+                                    <div>
+                                        <div className="relative w-[288px] h-75 rounded-md overflow-hidden">
+                                            <Image src={authorImage} alt={translator} fill className="object-contain" />
+                                        </div>
+                                    </div>
+                                )}
+                                <div>
+                                    <p className="text-gray-700 mb-4">
+                                        {details.translatorBio ? getLoc(details.translatorBio) : 'Translator biography not available.'}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    )}
                 </div>
             )}
 
