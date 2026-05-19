@@ -20,14 +20,6 @@ export default function ComingSoon({ dict, lang }: { dict: any, lang: string }) 
       desc: lang === 'ta' ? 'வாழ்வின் நிதர்சனங்களை உரைநடைக்கு நெருக்கமான கதைமொழியில் இயல்பாகப் பகிரும் எஸ். அற்புதராஜின் சிறுகதைகள்.' : 'S. Arputharaj\'s short stories that naturally share the realities of life in a narrative language close to prose.',
       label: lang === 'ta' ? 'விரைவில் வருகிறது' : 'Upcoming Release',
       image: '/images/meliyakodugal.webp'
-    },
-    {
-      id: 'kannisangu',
-      title: lang === 'ta' ? 'கன்னிச்சங்கு' : 'Kannisangu',
-      author: lang === 'ta' ? 'பேராசிரியர் முனைவர் அ. அந்தோனி குருசு' : 'Prof. Dr. A. Anthony Kurusu',
-      desc: lang === 'ta' ? 'வீரமாமுனிவர் வழியில் கன்னி மரியாவின் ஆளுமையையும், பெண் விடுதலையின் முன்னோடியாக அவரை அணுகும் திறனாய்வு நூல்.' : 'A critical review that explores the multifaceted personality of Virgin Mary and approaches her as a pioneer of women\'s liberation.',
-      label: lang === 'ta' ? 'விரைவில் வருகிறது' : 'Upcoming Release',
-      image: '/images/kannisangu.webp'
     }
   ];
 
