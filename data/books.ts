@@ -160,5 +160,77 @@ export const books = [
         en: 'Amuthan Adigal was born on April 18, 1943, in Punnaikayal, present-day Thoothukudi district, to Jebamalai Fernando and Amirthaseeli Pinheiro. After his schooling, he studied at the Urban University in Rome and obtained his Master\'s degrees in Philosophy (1965) and Theology (1969). He received his Master\'s in Journalism (1975) and Psychology (1977) from Marquette University, Milwaukee (USA). He studied at the University of Madras and obtained a Master\'s degree in Tamil (1987). He did his research on \'Vallalar Kattum Aanma Neyam\' at Bharathidasan University, Tiruchirappalli and received his doctorate. He personally researched Veeramamunivar. He learned languages like English, Latin, Italian, French, Spanish, German, and Portuguese. He was capable of delivering speeches in Tamil, English, and Italian, and conversing in other languages.'
       }
     }
+  },
+  {
+    id: 'kasi-ayya',
+    title: {
+      ta: 'காசி அய்யா',
+      en: 'Kasi Ayya'
+    },
+    author: {
+      ta: 'க. திருமூர்த்தி (மொய்ம்பு)',
+      en: 'K. Thirumoorthy (Moimpu)'
+    },
+    price: '350',
+    image: '/images/kaasiayya.webp',
+    authorImage: '/images/authorthirumoorthi.webp',
+    desc: {
+      ta: 'காசி அய்யா அவர்களின் வாழ்வையும் பணிகளையும் விவரிக்கும் நூல்.',
+      en: 'A book describing the life and work of Kasi Ayya.'
+    },
+    rating: 5,
+    details: {
+      publisher: { ta: 'அலர் வெளியீடு', en: 'Alar Veliyeedu' },
+      language: { ta: 'தமிழ்', en: 'Tamil' },
+      pages: { ta: '296', en: '296' },
+      isbn: '978-81-987267-6-6',
+      edition: { ta: 'முதற்பதிப்பு: மே 2026', en: 'First Edition: May 2026' },
+      paper: { ta: '18.6 kg Maplitho', en: '18.6 kg Maplitho' },
+      layout: { ta: 'ஒய் கிரியேஷன்ஸ்', en: 'Y Creations' },
+      coverDesign: { ta: 'ஒய் கிரியேஷன்ஸ்', en: 'Y Creations' },
+      printer: { ta: 'ஏ.எஸ்.எக்ஸ் அச்சகம்', en: 'ASX Printing' },
+      size: { ta: 'டெம்மி 1/8', en: 'Demy 1/8' },
+      code: '007',
+      authorBio: {
+        ta: 'க. திருமூர்த்தி (மொய்ம்பு) (பி.1998), தமிழிலக்கியத்தில் முதுகலைப் பட்டம் பெற்றவர். ‘இமையம் புனைவுகளில் வெளியும் காலமும்’ என்ற தலைப்பில் முனைவர் பட்ட ஆய்வை மேற்கொள்கிறார். மெய்ப்புப் பார்த்தல், பொருளடைவு ஆக்கம், மூலபாடவியல் உள்ளிட்ட தொகுப்பு, பதிப்புப்பணிகளில் ஈடுபாடுடையவர். இணையர் ஆ. கெளசல்யாவுடன் திருச்சியில் வசிக்கிறார். மின்னஞ்சல்: thirumoorthisuthi@gmail.com.',
+        en: 'K. Thirumoorthy (Moimpu) (b.1998) holds a Master\'s degree in Tamil Literature. He is pursuing doctoral research on the topic \'Space and Time in Imayam\'s Fictions\'. He is involved in compilation and publication works, including proofreading, indexing, and textual criticism. He lives in Trichy with his partner A. Kausalya. Email: thirumoorthisuthi@gmail.com.'
+      }
+    }
+  },
+  {
+    id: 'nainthazum-kural',
+    title: {
+      ta: 'நைந்தழும் குரல் (கவிதைகள்)',
+      en: 'Nainthazum Kural (Poetry)'
+    },
+    author: {
+      ta: 'க. காசிமாரியப்பன்',
+      en: 'K. Kasimariyappan'
+    },
+    price: '150',
+    image: '/images/Nainthazhum.webp',
+    authorImage: '/images/authorkasimariyappan.webp',
+    desc: {
+      ta: 'கே. காசிமாரியப்பன் அவர்களின் கவிதைத் தொகுப்பு.',
+      en: 'A collection of poems by K. Kasimariyappan.'
+    },
+    rating: 5,
+    details: {
+      publisher: { ta: 'அலர் வெளியீடு', en: 'Alar Veliyeedu' },
+      language: { ta: 'தமிழ்', en: 'Tamil' },
+      pages: { ta: '96', en: '96' },
+      isbn: '978-81-987267-0-4',
+      edition: { ta: 'முதற்பதிப்பு: மே 2026', en: 'First Edition: May 2026' },
+      paper: { ta: '18.6 kg Maplitho', en: '18.6 kg Maplitho' },
+      layout: { ta: 'ஒய் கிரியேஷன்ஸ்', en: 'Y Creations' },
+      coverDesign: { ta: 'நெகிழியன்', en: 'Negizhan' },
+      printer: { ta: 'ஏ.எஸ்.எக்ஸ் அச்சகம்', en: 'ASX Printing' },
+      size: { ta: 'டெம்மி 1/8', en: 'Demy 1/8' },
+      code: '008',
+      authorBio: {
+        ta: 'க. காசிமாரியப்பன், திருச்சியில் வாழ்ந்து வருகிறார். தந்தை பெரியார் அரசு கலை மற்றும் அறிவியல் கல்லூரியில் தமிழ் இணைப்பேராசிரியராகப் பணிபுரிகிறார். வேறுவேறு, கூடு இதழ்களின் ஆசிரியர் குழுவில் இருந்துள்ளார். பத்தாண்டு (2000–2010) காலத் தமிழ் ஆய்வேடுகளைத் தொகுத்துத் தமிழ் இணையத்தில் (Tamilaivugal.org) வெளியிட்டுள்ளார். ‘கொம்பமாடசாமி’ என்னும் புனைபெயரில் கவிதைகள் எழுதியுள்ளார். மின்னஞ்சல் : meenamariyappan@gmail.com',
+        en: 'K. Kasimariyappan resides in Trichy. He works as an Associate Professor of Tamil at Thanthai Periyar Government Arts and Science College. He has served on the editorial boards of magazines like Veruveru and Koodu. He has compiled a decade (2000–2010) of Tamil research journals and published them on the Tamil web (Tamilaivugal.org). He has written poems under the pseudonym \'Kombamaadasamy\'. Email: meenamariyappan@gmail.com'
+      }
+    }
   }
 ];

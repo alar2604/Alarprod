@@ -23,6 +23,10 @@ interface BookDetailsData {
   pages?: LocalizedText;
   binding?: LocalizedText;
   paper?: LocalizedText;
+  layout?: LocalizedText;
+  coverDesign?: LocalizedText;
+  printer?: LocalizedText;
+  size?: LocalizedText;
   isbn?: string;
   code?: string;
   buyLinks?: {
@@ -65,6 +69,10 @@ interface BookDetailsDictionary {
       pages: string;
       binding: string;
       paper: string;
+      layout: string;
+      cover_design: string;
+      printer: string;
+      size: string;
       code: string;
       buy_now: string;
       share: string;
@@ -173,15 +181,19 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
                         <ul className="list-disc pl-5 space-y-2 text-gray-700 text-base">
                           {/* Book Details List */}
                           <li><span className="font-semibold text-gray-900">{dict.book_details.labels.title} :</span> {title}</li>
-                          <li><span className="font-semibold text-gray-900">{book.id === 'albert-enum-kalaikalanjiyam' ? dict.book_details.labels.compiler : dict.book_details.labels.author} :</span> {author}</li>
+                          <li><span className="font-semibold text-gray-900">{['albert-enum-kalaikalanjiyam', 'kasi-ayya'].includes(book.id) ? dict.book_details.labels.compiler : dict.book_details.labels.author} :</span> {author}</li>
                           {translator && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.translator} :</span> {translator}</li>}
                           {details.edition && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.edition} :</span> {getLoc(details.edition)}</li>}
                           <li><span className="font-semibold text-gray-900">{dict.book_details.labels.language} :</span> {getLoc(details.language)}</li>
                           {details.category && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.category} :</span> {getLoc(details.category)}</li>}
                           {details.isbn && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.isbn} :</span> {details.isbn}</li>}
                           {details.pages && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.pages} :</span> {getLoc(details.pages)}</li>}
+                          {details.size && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.size} :</span> {getLoc(details.size)}</li>}
                           {details.binding && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.binding} :</span> {getLoc(details.binding)}</li>}
                           {details.paper && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.paper} :</span> {getLoc(details.paper)}</li>}
+                          {details.layout && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.layout} :</span> {getLoc(details.layout)}</li>}
+                          {details.coverDesign && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.cover_design} :</span> {getLoc(details.coverDesign)}</li>}
+                          {details.printer && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.printer} :</span> {getLoc(details.printer)}</li>}
                           {details.code && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.code} :</span> {details.code}</li>}
                         </ul>
                       </div>
@@ -195,9 +207,13 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
                   {/* Short one-liner if exists, otherwise desc intro? Used hardcoded quote in legacy. Using desc for now. */}
                   {/* <p className="text-lg text-gray-600 mb-4">"A collection..."</p> */} 
                   
-                  <p className="text-md font-semibold text-gray-700 mb-2">{book.id === 'albert-enum-kalaikalanjiyam' ? dict.book_details.labels.compiler : dict.book_details.labels.author}: {author}</p>
+                  <p className="text-md font-semibold text-gray-700 mb-2">{['albert-enum-kalaikalanjiyam', 'kasi-ayya'].includes(book.id) ? dict.book_details.labels.compiler : dict.book_details.labels.author}: {author}</p>
                   {translator && <p className="text-md font-semibold text-gray-700 mb-4">{dict.book_details.labels.translator}: {translator}</p>}
-                  <p className="text-md font-semibold text-gray-700 mb-4">Cover Designer: <a href="https://www.rohinimanicharcoal.com/" className="underline" target="_blank">Rohini Mani</a></p>
+                  {details.coverDesign ? (
+                    <p className="text-md font-semibold text-gray-700 mb-4">{dict.book_details.labels.cover_design}: {getLoc(details.coverDesign)}</p>
+                  ) : (
+                    <p className="text-md font-semibold text-gray-700 mb-4">{lang === 'ta' ? 'அட்டை வடிவமைப்பு' : 'Cover Designer'}: <a href="https://www.rohinimanicharcoal.com/" className="underline" target="_blank">{lang === 'ta' ? 'ரோகிணி மணி' : 'Rohini Mani'}</a></p>
+                  )}
 
                   <div className="flex items-center mb-4">
                     <div className="text-yellow-400 text-xl">★★★★★</div>
@@ -263,7 +279,7 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
                 <div className="tab-content mx-auto bg-white py-6 md:px-8 lg:px-16 leading-8 rounded-lg flex flex-col items-center">
                 {hasAuthorSection && (
                   <>
-                    <h3 className="text-xl font-bold text-gray-900 mb-4 text-center text-orange-500">{author}</h3>
+                    <h3 className="text-xl font-bold mb-4 text-center text-orange-500">{author}</h3>
                     <div className="flex gap-4 flex-col items-center text-center">
                       {authorImage && (
                         <div>
@@ -280,7 +296,7 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
                 )}
                     {translator && (
                   <div className={`${hasAuthorSection ? 'mt-8 pt-8 border-t border-gray-300' : ''} w-full flex flex-col items-center`}>
-                            <h4 className="text-lg font-semibold text-gray-900 mb-4 text-center text-orange-500">{translator}</h4>
+                            <h4 className="text-lg font-semibold mb-4 text-center text-orange-500">{translator}</h4>
                             <div className="flex gap-4 flex-col items-center text-center">
                                 {authorImage && (
                                     <div>
