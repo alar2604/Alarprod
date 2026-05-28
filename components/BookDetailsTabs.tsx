@@ -18,10 +18,9 @@ interface BookArticle {
 
 interface BookDetailsData {
   edition?: LocalizedText;
-  language?: LocalizedText;
   category?: LocalizedText;
   pages?: LocalizedText;
-  binding?: LocalizedText;
+  format?: LocalizedText;
   paper?: LocalizedText;
   layout?: LocalizedText;
   coverDesign?: LocalizedText;
@@ -42,6 +41,7 @@ interface BookData {
   id: string;
   title: LocalizedText;
   author: LocalizedText;
+  role?: string;
   translator?: LocalizedText;
   desc?: LocalizedText;
   image: string;
@@ -60,14 +60,14 @@ interface BookDetailsDictionary {
     labels: {
       title: string;
       compiler: string;
+      editor: string;
       author: string;
       translator: string;
       edition: string;
-      language: string;
       category: string;
       isbn: string;
       pages: string;
-      binding: string;
+      format: string;
       paper: string;
       layout: string;
       cover_design: string;
@@ -181,15 +181,19 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
                         <ul className="list-disc pl-5 space-y-2 text-gray-700 text-base">
                           {/* Book Details List */}
                           <li><span className="font-semibold text-gray-900">{dict.book_details.labels.title} :</span> {title}</li>
-                          <li><span className="font-semibold text-gray-900">{['albert-enum-kalaikalanjiyam', 'kasi-ayya'].includes(book.id) ? dict.book_details.labels.compiler : dict.book_details.labels.author} :</span> {author}</li>
+                          <li><span className="font-semibold text-gray-900">
+                            {book.id === 'kasi-ayya' || book.role === 'editor'
+                              ? dict.book_details.labels.editor 
+                              : (book.role === 'compiler' 
+                                ? dict.book_details.labels.compiler 
+                                : dict.book_details.labels.author)} :</span> {author}</li>
                           {translator && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.translator} :</span> {translator}</li>}
                           {details.edition && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.edition} :</span> {getLoc(details.edition)}</li>}
-                          <li><span className="font-semibold text-gray-900">{dict.book_details.labels.language} :</span> {getLoc(details.language)}</li>
                           {details.category && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.category} :</span> {getLoc(details.category)}</li>}
                           {details.isbn && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.isbn} :</span> {details.isbn}</li>}
                           {details.pages && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.pages} :</span> {getLoc(details.pages)}</li>}
                           {details.size && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.size} :</span> {getLoc(details.size)}</li>}
-                          {details.binding && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.binding} :</span> {getLoc(details.binding)}</li>}
+                          {details.format && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.format} :</span> {getLoc(details.format)}</li>}
                           {details.paper && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.paper} :</span> {getLoc(details.paper)}</li>}
                           {details.layout && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.layout} :</span> {getLoc(details.layout)}</li>}
                           {details.coverDesign && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.cover_design} :</span> {getLoc(details.coverDesign)}</li>}
@@ -207,7 +211,12 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
                   {/* Short one-liner if exists, otherwise desc intro? Used hardcoded quote in legacy. Using desc for now. */}
                   {/* <p className="text-lg text-gray-600 mb-4">"A collection..."</p> */} 
                   
-                  <p className="text-md font-semibold text-gray-700 mb-2">{['albert-enum-kalaikalanjiyam', 'kasi-ayya'].includes(book.id) ? dict.book_details.labels.compiler : dict.book_details.labels.author}: {author}</p>
+                  <p className="text-md font-semibold text-gray-700 mb-2">
+                    {book.id === 'kasi-ayya' || book.role === 'editor'
+                      ? dict.book_details.labels.editor 
+                      : (book.role === 'compiler' 
+                        ? dict.book_details.labels.compiler 
+                        : dict.book_details.labels.author)}: {author}</p>
                   {translator && <p className="text-md font-semibold text-gray-700 mb-4">{dict.book_details.labels.translator}: {translator}</p>}
                   {details.coverDesign ? (
                     <p className="text-md font-semibold text-gray-700 mb-4">{dict.book_details.labels.cover_design}: {getLoc(details.coverDesign)}</p>
@@ -279,7 +288,12 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
                 <div className="tab-content mx-auto bg-white py-6 md:px-8 lg:px-16 leading-8 rounded-lg flex flex-col items-center">
                 {hasAuthorSection && (
                   <>
-                    <h3 className="text-xl font-bold mb-4 text-center text-orange-500">{author}</h3>
+                    <h3 className="text-xl font-bold mb-4 text-center text-orange-500">
+                      {book.id === 'kasi-ayya' || book.role === 'editor'
+                        ? dict.book_details.labels.editor
+                        : (book.role === 'compiler'
+                          ? dict.book_details.labels.compiler
+                          : dict.book_details.labels.author)} : {author}</h3>
                     <div className="flex gap-4 flex-col items-center text-center">
                       {authorImage && (
                         <div>
