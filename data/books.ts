@@ -202,6 +202,68 @@ export const books = [
     },
   },
   {
+    id: "melliya-kodugal",
+    title: {
+      ta: "மெல்லிய கோடுகள்",
+      en: "Melliya Kodugal",
+    },
+    author: {
+      ta: "எஸ். அற்புதராஜ்",
+      en: "S. Arputharaj",
+    },
+    price: "150",
+    image: "/images/meliyakodugal.webp",
+    authorImage: "/images/s_arputharaj.webp",
+    desc: {
+      ta: "வாழ்வின் நிதர்சனங்களை உரைநடைக்கு நெருக்கமான கதைமொழியில் இயல்பாகப் பகிரும் எஸ். அற்புதராஜின் சிறுகதைகள்.",
+      en: "S. Arputharaj's short stories that naturally share the realities of life in a narrative language close to prose.",
+    },
+    rating: 5,
+    details: {
+      format: "Paperback",
+      publisher: { ta: "அலர் வெளியீடு", en: "Alar Veliyeedu" },
+      pages: { ta: "128", en: "128" },
+      isbn: "978-81-987267-4-2",
+      edition: { ta: "முதற்பதிப்பு: 2026", en: "First Edition: 2026" },
+      code: "005",
+      authorBio: {
+        ta: "எஸ். அற்புதராஜ், திருச்சி செயிண்ட் ஜோஸப் மேல்நிலைப் பள்ளியில் உதவித் தலைமை ஆசிரியராகப் பணிபுரிந்து ஓய்வு பெற்றவர். சிறுகதைகள் கொஞ்சம், கவிதைகள் கொஞ்சம் எழுதியிருக்கிறார். நல்ல இலக்கிய ரசனை உள்ளவர்.",
+        en: "S. Arputharaj retired as the Assistant Headmaster at St. Joseph's Higher Secondary School in Trichy. He has written a few short stories and poems, and has a strong literary sensibility.",
+      },
+    },
+  },
+  {
+    id: "kannisangu",
+    title: {
+      ta: "கன்னிச்சங்கு (திருக்காவலூர்க் கலம்பகத்திறனாய்வு)",
+      en: "Kannichangu (A Critical Analysis of Thirukkavalur Kalambagam)",
+    },
+    author: {
+      ta: "பேராசிரியர் முனைவர் அ. அந்தோனி குருசு",
+      en: "Professor Dr. A. Anthoni Kurusu",
+    },
+    price: "150",
+    image: "/images/kannisangu.webp",
+    desc: {
+      ta: "இந்தப் புத்தகம் வீரமாமுனிவர் இயற்றிய புகழ்பெற்ற 'திருக்காவலூர்க் கலம்பகம்' என்னும் தமிழ் இலக்கியத்தின் விரிவான திறனாய்வு நூலாகும். அன்னை மரியாவின் புகழ்பாடும் இந்த 18-ஆம் நூற்றாண்டுப் படைப்பினைப் பேராசிரியர் முனைவர் அ. அந்தோனி குருசு ஆழமாகப் பகுப்பாய்வு செய்துள்ளார். மூலக்கவிதைகளின் கடினமான இலக்கணக் கட்டமைப்பு, உவமைகள் மற்றும் இறையியல் கருத்துகளை இந்நூல் தெளிவாகவும் எளிமையாகவும் விளக்குகிறது. ஐரோப்பியக் கிறித்துவ பக்தியும், பழமையான தமிழ் இலக்கிய மரபும் எவ்வாறு இதில் நேர்த்தியாக ஒருங்கிணைக்கப்பட்டுள்ளன என்பதை ஆசிரியர் சுட்டிக்காட்டுகிறார். தமிழ் இலக்கிய ஆய்வாளர்கள், மாணவர்கள் மற்றும் வரலாற்று ஆர்வலர்கள் கட்டாயம் படிக்க வேண்டிய ஒரு சிறந்த கல்விசார் ஆராய்ச்சிப் படைப்பு இதுவாகும்.",
+      en: "This book is a detailed critical analysis of the famous Tamil literary work 'Thirukkavalur Kalambagam' composed by Veeramamunivar. Professor Dr. A. Anthoni Kurusu provides a deep analysis of this 18th-century work that sings the praises of Mother Mary. The book clearly and simply explains the complex grammatical structures, metaphors, and theological concepts of the original poems. The author highlights how European Christian devotion and ancient Tamil literary traditions are elegantly integrated. This is an essential academic research work for Tamil literary scholars, students, and history enthusiasts.",
+    },
+    rating: 5,
+    details: {
+      format: "Paperback",
+      publisher: { ta: "அலர் வெளியீடு", en: "Alar Veliyeedu" },
+      pages: { ta: "120", en: "120" },
+      isbn: "978-81-987267-5-9",
+      edition: { ta: "முதற்பதிப்பு: 2026", en: "First Edition: 2026" },
+      category: { ta: "இலக்கியத் திறனாய்வு", en: "Literary Criticism" },
+      code: "006",
+      authorBio: {
+        ta: "முனைவர் அ. அந்தோனி குருசு (Dr. A. Antony Kurusu) ஒரு மூத்த தமிழறிஞர், கல்வியாளர் மற்றும் எழுத்தாளர் ஆவார். தலித்தியம், சங்க இலக்கியம், மற்றும் சமூக சமய விழிப்புணர்வு சார்ந்த பல நூல்களை எழுதியும் மொழிபெயர்த்தும் புகழ்பெற்றவர்.",
+        en: "Dr. A. Anthoni Kurusu is a veteran Tamil scholar, educator, and writer. He is renowned for writing and translating numerous books on Dalitism, Sangam literature, and social-religious awareness.",
+      },
+    },
+  },
+  {
     id: "kasi-ayya",
     title: {
       ta: "காசி அய்யா",
@@ -251,7 +313,7 @@ export const books = [
     image: "/images/Nainthazhum.webp",
     authorImage: "/images/authorkasimariyappan.webp",
     desc: {
-      ta: "கே. காசிமாரியப்பன் அவர்களின் கவிதைத் தொகுப்பு.",
+      ta: "க. காசிமாரியப்பன் அவர்களின் கவிதைத் தொகுப்பு.",
       en: "A collection of poems by K. Kasimariyappan.",
     },
     rating: 5,

@@ -12,14 +12,6 @@ export default function ComingSoon({ dict, lang }: { dict: any, lang: string }) 
       desc: lang === 'ta' ? 'புகழ்பெற்ற கன்னட எழுத்தாளர் பி. லங்கேஷ் அவர்களின் சிறுகதைகள்...' : 'A collection of short stories by the acclaimed Kannada writer P. Lankesh...',
       label: lang === 'ta' ? 'விரைவில் வருகிறது' : 'Upcoming Release',
       image: '/images/lankesh.webp'
-    },
-    {
-      id: 'melliya-kodugal',
-      title: lang === 'ta' ? 'மெல்லிய கோடுகள்' : 'Melliya Kodugal',
-      author: lang === 'ta' ? 'எஸ். அற்புதராஜ்' : 'S. Arputharaj',
-      desc: lang === 'ta' ? 'வாழ்வின் நிதர்சனங்களை உரைநடைக்கு நெருக்கமான கதைமொழியில் இயல்பாகப் பகிரும் எஸ். அற்புதராஜின் சிறுகதைகள்.' : 'S. Arputharaj\'s short stories that naturally share the realities of life in a narrative language close to prose.',
-      label: lang === 'ta' ? 'விரைவில் வருகிறது' : 'Upcoming Release',
-      image: '/images/meliyakodugal.webp'
     }
   ];
 
