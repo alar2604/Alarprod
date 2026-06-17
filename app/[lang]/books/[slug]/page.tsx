@@ -70,7 +70,7 @@ export default async function BookPage({ params }: { params: Promise<{ lang: str
     },
     offers: {
       '@type': 'Offer',
-      price: book.price.toString().replace('₹', ''),
+      price: (book.price?.toString().replace('₹', '') ?? '0'),
       priceCurrency: 'INR',
       availability: 'https://schema.org/InStock'
     }

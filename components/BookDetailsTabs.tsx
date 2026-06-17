@@ -47,7 +47,7 @@ interface BookData {
   image: string;
   fullCoverImage?: string;
   authorImage?: string;
-  price: string;
+  price?: string;
   details: BookDetailsData;
 }
 
