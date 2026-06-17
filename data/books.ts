@@ -12,6 +12,7 @@ export const books = [
     role: "author",
     price: "399",
     image: "/images/cver.webp",
+    fullCoverImage: "/images/covers/albert-full-cover.jpg",
     authorImage: "/images/s_arputharaj.webp",
     desc: {
       ta: 'இந்த புத்தகம், "ஆல்பர்ட் எனும் கலைக்களஞ்சியம்", திரு. ஆல்பர்ட்டின் கலை மற்றும் இலக்கிய உலகிற்கான ஆழமான பங்களிப்புகளை முன்னிலைப்படுத்தும் கட்டுரைகளின் தொகுப்பாகும்.',
@@ -22,7 +23,7 @@ export const books = [
       format: "Paperback",
       publisher: { ta: "அலர் வெளியீடு", en: "Alar veliyeedu" },
       pages: { ta: "400", en: "400" },
-      isbn: "9788198726735",
+      isbn: "978-81-987267-3-5",
       edition: {
         ta: "ஏப்ரல் 2025 (அலர் வெளியீடு)",
         en: "April 2025 (Alar Veliyeedu)",
@@ -107,8 +108,9 @@ export const books = [
       ta: "மொழிபெயர்ப்பாளர் எஸ். அற்புதராஜ்",
       en: "S. Arputharaj",
     },
-    price: "399",
+    price: "350",
     image: "/images/sathyajithrey.webp",
+    fullCoverImage: "/images/covers/sathyajit-full-cover.jpg",
     authorImage: "/images/s_arputharaj.webp",
     desc: {
       ta: "சத்யஜித் ரே எழுதிய சுவாரஸ்யமான சிறுகதைகளின் தொகுப்பு. தமிழில் எஸ். அற்புதராஜ் அவர்கள் அழகாக மொழிபெயர்த்துள்ளார்.",
@@ -119,10 +121,10 @@ export const books = [
       format: "Paperback",
       publisher: { ta: "அலர் வெளியீடு", en: "Alar veliyeedu" },
       pages: { ta: "400", en: "400" },
-      isbn: "9788198726735",
+      isbn: "978-81-987267-8-0",
       edition: {
-        ta: "ஆகஸ்ட் 2025 (அலர் வெளியீடு)",
-        en: "August 2025 (Alar Veliyeedu)",
+        ta: "நவம்பர் 2025 (அலர் வெளியீடு)",
+        en: "November 2025 (Alar Veliyeedu)",
       },
       translatorBio: {
         ta: "எஸ். அற்புதராஜ், பேராசிரியர் ஆல்பர்ட்டுடன் அவருடைய இளமைக் காலம் முதல் எழுபது ஆண்டு காலம் உடனிருந்து பழகியவர். திருச்சி செயிண்ட் ஜோஸப் மேல்நிலைப் பள்ளியில் உதவித் தலைமை ஆசிரியராகப் பணிபுரிந்து ஓய்வு பெற்றவர். சிறுகதைகள் கொஞ்சம், கவிதைகள் கொஞ்சம் எழுதியிருக்கிறார். நல்ல இலக்கிய ரசனை உள்ளவர்.",
@@ -142,6 +144,7 @@ export const books = [
     },
     price: "150",
     image: "/images/sagayam.webp",
+    fullCoverImage: "/images/covers/sagayam-full-cover.jpg",
     authorImage: "/images/perumalmurugan.webp",
     desc: {
       ta: `நாமக்கல் மாவட்ட ஆட்சியராக உ. சகாயம் பணியாற்றியபோது அவரது செயல்பாடுகளைச் செய்திகள், நிகழ்வுகள், மக்கள் வாய்மொழி வழக்காறுகள்
@@ -159,8 +162,8 @@ export const books = [
       pages: { ta: "136", en: "136" },
       isbn: "978-81-987267-1-1",
       edition: {
-        ta: "டிசம்பர் 2025 (அலர் வெளியீடு)",
-        en: "December 2025 (Alar Veliyeedu)",
+        ta: "அக்டோபர் 2025 (அலர் வெளியீடு)",
+        en: "October 2025 (Alar Veliyeedu)",
       },
       authorBio: {
         ta: "படைப்புத் துறைகளில் இயங்கிவருபவர். அகராதியியல், பதிப்பியல், மூலபாடவியல் ஆகிய கல்விப்புலத் துறைகளிலும் ஈடுபாடுள்ளவர். 2023ஆம் ஆண்டுக்கான 'பன்னாட்டுப் புக்கர் விருது' நெடும்பட்டியலில் 'பூக்குழி' நாவலின் ஆங்கில மொழிபெயர்ப்பு 'Pyre' இடம்பெற்றது. இவரது 'ஆளண்டாப் பட்சி' நாவலின் ஆங்கில மொழிபெயர்ப்பான 'Fire Bird' நூலுக்கு 2023ஆம் ஆண்டு ஜேசிபி இலக்கியப் பரிசு வழங்கப்பட்டது.",
@@ -178,8 +181,9 @@ export const books = [
       ta: "அமுதன் அடிகள்",
       en: "Amuthan Adigal",
     },
-    price: "200",
+    price: "150",
     image: "/images/kundrakudiadigal.webp",
+    fullCoverImage: "/images/covers/nenjam-full-cover.jpg",
     authorImage: "/images/amuthanadigal.webp",
     desc: {
       ta: "பதினைந்து ஆண்டுக் காலமாகத் தவத்திரு. குன்றக்குடி அடிகளாருடன் நெருங்கிப் பழகும் வாய்ப்பினைப் பெற்றவன் நான். வேறு சமயத்தைச் சார்ந்தவனாயினும் என்னைத் தம் உடன்பிறவாச் சகோதரராகவே அடிகளார் ஏற்றுக் கொண்டார். அவர் வாழ்ந்த காலத்தில் வாழ்ந்து, அவரது அன்புக்கும் பாசத்துக்கும் உரியவனாகும் வாய்ப்புப் பெற்றதைப் பெறலரும் பெரும் பேறாகவே கருதுகின்றேன். -அமுதன் அடிகள்",
@@ -190,7 +194,7 @@ export const books = [
       format: "Paperback",
       publisher: { ta: "அலர் வெளியீடு", en: "Alar veliyeedu" },
       pages: { ta: "144", en: "144" },
-      isbn: "9788198726797",
+      isbn: "978-81-987267-9-7",
       edition: {
         ta: "ஜூலை 2025 (அலர் வெளியீடு)",
         en: "July 2025 (Alar Veliyeedu)",
@@ -224,7 +228,7 @@ export const books = [
       publisher: { ta: "அலர் வெளியீடு", en: "Alar Veliyeedu" },
       pages: { ta: "128", en: "128" },
       isbn: "978-81-987267-4-2",
-      edition: { ta: "முதற்பதிப்பு: 2026", en: "First Edition: 2026" },
+      edition: { ta: "முதற்பதிப்பு: ஏப்ரல் 2026", en: "First Edition: April 2026" },
       code: "005",
       authorBio: {
         ta: "எஸ். அற்புதராஜ், திருச்சி செயிண்ட் ஜோஸப் மேல்நிலைப் பள்ளியில் உதவித் தலைமை ஆசிரியராகப் பணிபுரிந்து ஓய்வு பெற்றவர். சிறுகதைகள் கொஞ்சம், கவிதைகள் கொஞ்சம் எழுதியிருக்கிறார். நல்ல இலக்கிய ரசனை உள்ளவர்.",
@@ -254,7 +258,7 @@ export const books = [
       publisher: { ta: "அலர் வெளியீடு", en: "Alar Veliyeedu" },
       pages: { ta: "120", en: "120" },
       isbn: "978-81-987267-5-9",
-      edition: { ta: "முதற்பதிப்பு: 2026", en: "First Edition: 2026" },
+      edition: { ta: "முதற்பதிப்பு: ஏப்ரல் 2026", en: "First Edition: April 2026" },
       category: { ta: "இலக்கியத் திறனாய்வு", en: "Literary Criticism" },
       code: "006",
       authorBio: {
@@ -332,6 +336,27 @@ export const books = [
         ta: "க. காசிமாரியப்பன், திருச்சியில் வாழ்ந்து வருகிறார். தந்தை பெரியார் அரசு கலை மற்றும் அறிவியல் கல்லூரியில் தமிழ் இணைப்பேராசிரியராகப் பணிபுரிகிறார். வேறுவேறு, கூடு இதழ்களின் ஆசிரியர் குழுவில் இருந்துள்ளார். பத்தாண்டு (2000–2010) காலத் தமிழ் ஆய்வேடுகளைத் தொகுத்துத் தமிழ் இணையத்தில் (Tamilaivugal.org) வெளியிட்டுள்ளார். ‘கொம்பமாடசாமி’ என்னும் புனைபெயரில் கவிதைகள் எழுதியுள்ளார். மின்னஞ்சல் : meenamariyappan@gmail.com",
         en: "K. Kasimariyappan resides in Trichy. He works as an Associate Professor of Tamil at Thanthai Periyar Government Arts and Science College. He has served on the editorial boards of magazines like Veruveru and Koodu. He has compiled a decade (2000–2010) of Tamil research journals and published them on the Tamil web (Tamilaivugal.org). He has written poems under the pseudonym 'Kombamaadasamy'. Email: meenamariyappan@gmail.com",
       },
+    },
+  },
+  {
+    id: "lankesh-kathaigal",
+    title: {
+      ta: "லங்கேஷ் கதைகள்",
+      en: "Lankesh Kathaigal",
+    },
+    author: {
+      ta: "பி. லங்கேஷ்",
+      en: "P. Lankesh",
+    },
+    image: "/images/lankesh.webp",
+    desc: {
+      ta: "புகழ்பெற்ற கன்னட எழுத்தாளர் பி. லங்கேஷ் அவர்களின் சிறுகதைகள்...",
+      en: "A collection of short stories by the acclaimed Kannada writer P. Lankesh...",
+    },
+    rating: 5,
+    details: {
+      format: "Paperback",
+      publisher: { ta: "அலர் வெளியீடு", en: "Alar Veliyeedu" },
     },
   },
 ];

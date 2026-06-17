@@ -71,12 +71,15 @@ export default function Header({ dict, lang }: { dict: any, lang: string }) {
                 className={`absolute left-1/2 transform -translate-x-1/2 mt-0 w-80 bg-white shadow-lg border-t border-gray-100 overflow-hidden transition-all duration-300 ease-in-out ${isBooksOpen ? 'max-h-[500px] opacity-100 py-2' : 'max-h-0 opacity-0 py-0'}`}
               >
                  <div className="flex flex-col">
+                   <Link href={`${langPrefix}/books/albert-enum-kalaikalanjiyam`} className="text-neutral-700 hover:text-neutral-900 block px-4 py-2 hover:bg-gray-50 text-sm whitespace-nowrap">{lang === 'ta' ? 'ஆல்பர்ட் எனும் கலைக்களஞ்சியம்' : 'Albert Enum Kalaikalanjiyam'}</Link>
+                   <Link href={`${langPrefix}/books/nenjam-marapathillai`} className="text-neutral-700 hover:text-neutral-900 block px-4 py-2 hover:bg-gray-50 text-sm whitespace-nowrap">{lang === 'ta' ? 'நெஞ்சம் மறப்பதில்லை' : 'Nenjam Marappathillai'}</Link>
+                   <Link href={`${langPrefix}/books/sagayam-seitha-sagayam`} className="text-neutral-700 hover:text-neutral-900 block px-4 py-2 hover:bg-gray-50 text-sm whitespace-nowrap">{lang === 'ta' ? 'சகாயம் செய்த சகாயம்' : 'Sagayam Seitha Sagayam'}</Link>
+                   <Link href={`${langPrefix}/books/sathyajit-ray-kathaigal`} className="text-neutral-700 hover:text-neutral-900 block px-4 py-2 hover:bg-gray-50 text-sm whitespace-nowrap">{lang === 'ta' ? 'சத்யஜித் ரே கதைகள்' : 'Sathyajit Ray Stories'}</Link>
+                   <Link href={`${langPrefix}/books/melliya-kodugal`} className="text-neutral-700 hover:text-neutral-900 block px-4 py-2 hover:bg-gray-50 text-sm whitespace-nowrap">{lang === 'ta' ? 'மெல்லிய கோடுகள்' : 'Melliya Kodugal'}</Link>
+                   <Link href={`${langPrefix}/books/kannisangu`} className="text-neutral-700 hover:text-neutral-900 block px-4 py-2 hover:bg-gray-50 text-sm whitespace-nowrap">{lang === 'ta' ? 'கன்னிச்சங்கு' : 'Kannichangu'}</Link>
                    <Link href={`${langPrefix}/books/kasi-ayya`} className="text-neutral-700 hover:text-neutral-900 block px-4 py-2 hover:bg-gray-50 text-sm whitespace-nowrap">{lang === 'ta' ? 'காசி அய்யா' : 'Kasi Ayya'}</Link>
                    <Link href={`${langPrefix}/books/nainthazum-kural`} className="text-neutral-700 hover:text-neutral-900 block px-4 py-2 hover:bg-gray-50 text-sm whitespace-nowrap">{lang === 'ta' ? 'நைந்தழும் குரல்' : 'Nainthazum Kural'}</Link>
-                   <Link href={`${langPrefix}/books/sathyajit-ray-kathaigal`} className="text-neutral-700 hover:text-neutral-900 block px-4 py-2 hover:bg-gray-50 text-sm whitespace-nowrap">{lang === 'ta' ? 'சத்யஜித் ரே கதைகள்' : 'Sathyajit Ray Stories'}</Link>
-                   <Link href={`${langPrefix}/books/nenjam-marapathillai`} className="text-neutral-700 hover:text-neutral-900 block px-4 py-2 hover:bg-gray-50 text-sm whitespace-nowrap">{lang === 'ta' ? 'நெஞ்சம் மறப்பதில்லை' : 'Nenjam Marappathillai'}</Link>
-                   <Link href={`${langPrefix}/books/albert-enum-kalaikalanjiyam`} className="text-neutral-700 hover:text-neutral-900 block px-4 py-2 hover:bg-gray-50 text-sm whitespace-nowrap">{lang === 'ta' ? 'ஆல்பர்ட் எனும் கலைக்களஞ்சியம்' : 'Albert Enum Kalaikalanjiyam'}</Link>
-                   <Link href={`${langPrefix}/books/sagayam-seitha-sagayam`} className="text-neutral-700 hover:text-neutral-900 block px-4 py-2 hover:bg-gray-50 text-sm whitespace-nowrap">{lang === 'ta' ? 'சகாயம் செய்த சகாயம்' : 'Sagayam Seitha Sagayam'}</Link>
+                   <Link href={`${langPrefix}/books/lankesh-kathaigal`} className="text-neutral-700 hover:text-neutral-900 block px-4 py-2 hover:bg-gray-50 text-sm whitespace-nowrap">{lang === 'ta' ? 'லங்கேஷ் கதைகள்' : 'Lankesh Kathaigal'}</Link>
                 </div>
               </div>
             </div>
@@ -151,12 +154,15 @@ export default function Header({ dict, lang }: { dict: any, lang: string }) {
                 <ChevronDown className={`h-4 w-4 transform transition-transform ${isMobileBooksOpen ? 'rotate-180' : ''}`} />
               </button>
               <div className={`pl-4 bg-gray-50 rounded-md overflow-hidden transition-all duration-300 ${isMobileBooksOpen ? 'max-h-screen py-2' : 'max-h-0'}`}>
+                <Link href={`${langPrefix}/books/albert-enum-kalaikalanjiyam`} className="block py-2 text-neutral-600 hover:text-neutral-900">{lang === 'ta' ? 'ஆல்பர்ட் எனும் கலைக்களஞ்சியம்' : 'Albert Enum Kalaikalanjiyam'}</Link>
+                <Link href={`${langPrefix}/books/nenjam-marapathillai`} className="block py-2 text-neutral-600 hover:text-neutral-900">{lang === 'ta' ? 'நெஞ்சம் மறப்பதில்லை' : 'Nenjam Marappathillai'}</Link>
+                <Link href={`${langPrefix}/books/sagayam-seitha-sagayam`} className="block py-2 text-neutral-600 hover:text-neutral-900">{lang === 'ta' ? 'சகாயம் செய்த சகாயம்' : 'Sagayam Seitha Sagayam'}</Link>
+                <Link href={`${langPrefix}/books/sathyajit-ray-kathaigal`} className="block py-2 text-neutral-600 hover:text-neutral-900">{lang === 'ta' ? 'சத்யஜித் ரே கதைகள்' : 'Sathyajit Ray Stories'}</Link>
+                <Link href={`${langPrefix}/books/melliya-kodugal`} className="block py-2 text-neutral-600 hover:text-neutral-900">{lang === 'ta' ? 'மெல்லிய கோடுகள்' : 'Melliya Kodugal'}</Link>
+                <Link href={`${langPrefix}/books/kannisangu`} className="block py-2 text-neutral-600 hover:text-neutral-900">{lang === 'ta' ? 'கன்னிச்சங்கு' : 'Kannichangu'}</Link>
                 <Link href={`${langPrefix}/books/kasi-ayya`} className="block py-2 text-neutral-600 hover:text-neutral-900">{lang === 'ta' ? 'காசி அய்யா' : 'Kasi Ayya'}</Link>
                 <Link href={`${langPrefix}/books/nainthazum-kural`} className="block py-2 text-neutral-600 hover:text-neutral-900">{lang === 'ta' ? 'நைந்தழும் குரல்' : 'Nainthazum Kural'}</Link>
-                <Link href={`${langPrefix}/books/albert-enum-kalaikalanjiyam`} className="block py-2 text-neutral-600 hover:text-neutral-900">{lang === 'ta' ? 'ஆல்பர்ட் எனும் கலைக்களஞ்சியம்' : 'Albert Enum Kalaikalanjiyam'}</Link>
-                <Link href={`${langPrefix}/books/sathyajit-ray-kathaigal`} className="block py-2 text-neutral-600 hover:text-neutral-900">{lang === 'ta' ? 'சத்யஜித் ரே கதைகள்' : 'Sathyajit Ray Stories'}</Link>
-                <Link href={`${langPrefix}/books/sagayam-seitha-sagayam`} className="block py-2 text-neutral-600 hover:text-neutral-900">{lang === 'ta' ? 'சகாயம் செய்த சகாயம்' : 'Sagayam Seitha Sagayam'}</Link>
-                <Link href={`${langPrefix}/books/nenjam-marapathillai`} className="block py-2 text-neutral-600 hover:text-neutral-900">{lang === 'ta' ? 'நெஞ்சம் மறப்பதில்லை' : 'Nenjam Marapathillai'}</Link>
+                <Link href={`${langPrefix}/books/lankesh-kathaigal`} className="block py-2 text-neutral-600 hover:text-neutral-900">{lang === 'ta' ? 'லங்கேஷ் கதைகள்' : 'Lankesh Kathaigal'}</Link>
               </div>
             </div>
 

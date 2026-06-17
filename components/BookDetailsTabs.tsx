@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 type LocalizedText = string | Record<string, string>;
@@ -45,6 +45,7 @@ interface BookData {
   translator?: LocalizedText;
   desc?: LocalizedText;
   image: string;
+  fullCoverImage?: string;
   authorImage?: string;
   price: string;
   details: BookDetailsData;
@@ -93,6 +94,12 @@ interface BookDetailsTabsProps {
 
 export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsProps) {
   const [activeTab, setActiveTab] = useState('bookDetails');
+  const [selectedImage, setSelectedImage] = useState<string>(book.image);
+  const [isImageFullscreen, setIsImageFullscreen] = useState(false);
+
+  useEffect(() => {
+    setSelectedImage(book.image);
+  }, [book.image]);
 
   // Helper to safely get localized string; returns string or undefined
   const getLoc = (obj: LocalizedText | undefined): string | undefined => {
@@ -162,18 +169,45 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
             
             {/* BOOK DETAILS TAB */}
             {activeTab === 'bookDetails' && (
-              <div className="tab-content flex flex-col md:flex-row gap-12 mx-auto bg-white py-6 px-4 md:px-8 lg:px-16 leading-8 rounded-lg">
+              <div className="tab-content mx-auto bg-white py-6 px-4 md:px-8 lg:px-16 leading-8 rounded-lg">
+                <div className="flex flex-col md:flex-row gap-12 w-full">
                 {/* Left Column: Image + Details List */}
                 <div className="w-full md:w-1/3">
                   <div className="top-24">
-                    <div className="aspect-2/3 relative w-full shadow-lg rounded overflow-hidden">
+                    <div className="aspect-2/3 relative w-full shadow-lg rounded overflow-hidden bg-gray-50 group">
                         <Image
-                            src={book.image}
+                            src={selectedImage}
                             alt={`${title} cover`}
                             fill
-                            className="object-cover"
+                            className="object-contain"
                         />
+                        <button 
+                            onClick={() => setIsImageFullscreen(true)}
+                            className="absolute bottom-4 right-4 bg-black/60 hover:bg-black text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                            aria-label="View Fullscreen"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                            </svg>
+                        </button>
                     </div>
+                    {/* eCommerce style thumbnails */}
+                    {book.fullCoverImage && (
+                        <div className="flex gap-4 mt-4">
+                            <button 
+                                onClick={() => setSelectedImage(book.image)}
+                                className={`relative w-16 h-24 border-2 rounded overflow-hidden ${selectedImage === book.image ? 'border-orange-500' : 'border-transparent hover:border-gray-300'}`}
+                            >
+                                <Image src={book.image} alt="Front cover thumbnail" fill className="object-cover" />
+                            </button>
+                            <button 
+                                onClick={() => setSelectedImage(book.fullCoverImage!)}
+                                className={`relative w-32 h-24 border-2 rounded overflow-hidden ${selectedImage === book.fullCoverImage ? 'border-orange-500' : 'border-transparent hover:border-gray-300'}`}
+                            >
+                                <Image src={book.fullCoverImage} alt="Full cover thumbnail" fill className="object-cover" />
+                            </button>
+                        </div>
+                    )}
                     
                     <div className="mt-6 flex flex-col space-y-4">
                       <div className="mb-8">
@@ -280,6 +314,7 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
                     </div>
                   </div>
                 </div>
+                </div>
               </div>
             )}
 
@@ -351,6 +386,53 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
           </div>
         </div>
       </div>
+
+      {isImageFullscreen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 sm:p-8">
+            <button 
+                onClick={() => setIsImageFullscreen(false)}
+                className="absolute top-4 right-4 text-white hover:text-gray-300 p-2 z-10"
+                aria-label="Close Fullscreen"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            
+            {book.fullCoverImage && (
+                <button 
+                    onClick={() => setSelectedImage(prev => prev === book.image ? book.fullCoverImage! : book.image)}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 p-2 bg-black/40 hover:bg-black/80 rounded-full transition z-10"
+                    aria-label="Previous Image"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+            )}
+
+            <div className="relative w-full h-full max-w-5xl max-h-[90vh]">
+                <Image
+                    src={selectedImage}
+                    alt={`${title} cover fullscreen`}
+                    fill
+                    className="object-contain"
+                />
+            </div>
+
+            {book.fullCoverImage && (
+                <button 
+                    onClick={() => setSelectedImage(prev => prev === book.image ? book.fullCoverImage! : book.image)}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 p-2 bg-black/40 hover:bg-black/80 rounded-full transition z-10"
+                    aria-label="Next Image"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            )}
+        </div>
+      )}
     </div>
   );
 }
