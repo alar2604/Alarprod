@@ -1,5 +1,100 @@
 export const books = [
   {
+    id: "pazhampadu-panai",
+    title: {
+      ta: "பழம்படு பனை (பனை கதைகள் 120)",
+      en: "Pazhampadu Panai (Panai Kathaigal 120)",
+    },
+    subtitle: {
+      ta: "பனைக் கதைகள் 120",
+      en: "Panai Kathaigal 120",
+    },
+    author: {
+      ta: "ம. கேசவன் - அதங்கோடு அனிஷ்குமார்",
+      en: "M. Kesavan - Athangodu Anishkumar",
+    },
+    role: "compiler",
+    price: "675",
+    salePrice: "675",
+    originalPrice: "1875",
+    volumeInfo: {
+      ta: "தொகுதி 1 + தொகுதி 2 (முழுத் தொகுப்பு)",
+      en: "Volume 1 + Volume 2 (Complete Set)",
+    },
+    image: "/images/pazhampadu_panai.webp",
+    fullCoverImage: "/images/pazhampadu_panai_vol1.webp",
+    gallery: [
+      "/images/pazhampadu_panai.webp",
+      "/images/pazhampadu_panai_vol1.webp",
+      "/images/pazhampadu_panai_vol2.webp"
+    ],
+    desc: {
+      ta: "பனை மரம் தொடர்பான 120 கதைகளின் பெருந்தொகுப்பு. தொகுதி 1 மற்றும் தொகுதி 2 ஆகிய இரண்டும் சேர்த்து ஒரே முழுத் தொகுப்பாக அலர் வெளியீட்டின் வாயிலாக வெளிவருகிறது. சிறுகதை, பண்பாடு, சூழலியல், இயற்கை மற்றும் நாட்டுப்புற மரபுகளை ஒருங்கே தாங்கி நிற்கும் அரிய ஆவணம்.",
+      en: "A grand collection of 120 stories celebrating the Palmyra tree and cultural heritage. Published as a complete two-volume set by Alar Veliyeedu, documenting short stories, ecology, tradition, and folklore.",
+    },
+    longDesc: {
+      ta: "தமிழர்களின் பண்பாட்டுத் தொடர்ச்சிக்கும் தொல்மரபிற்கும் அடையாளமாக இருக்கும் பனையின் இருப்பு, நூற்றாண்டு கண்ட தமிழ்ச் சிறுகதைப் பரப்பில் எவ்வாறு உணரப்பட்டிருக்கிறது என்பதை ‘பனைக் கதைகள் 120’ என்னும் இப்பெருந்தொகுப்பு ஆவணப்படுத்துகிறது.\n\nபனைசார் மக்களின் வாழ்வும் வலியும் வெளிப்படும் இக்கதைகளில், சந்தைக் கலாச்சாரத்தின் விளைவாகப் பனைசார் புழங்குபொருட்கள் எதிர்கொள்ளும் சிக்கல்களும் சவால்களும் பதிவாகியிருக்கின்றன.\n\nபனை தரும் அமிர்தமான ‘கள்’ளை ஓர் உணவாக ஏற்பதையும் மறுப்பதையும் ஆவணப்படுத்தும் கதைகள், சமகால அரசியல் சூழலில் வேறுபட்ட விவாதப் புள்ளிகளைத் தொட்டுச் செல்கின்றன.\n\nபல்வேறு வாழ்வியல் விழுமியங்களைக் கொண்ட தமிழ்நாட்டின் நிலப்பரப்பைப் பிரதிநிதித்துவப்படுத்தும் இத்தொகுப்பிலுள்ள கதைகள், அந்தந்த வட்டார வாழ்வியலை மண்ணின் மணத்தோடு முன்னிறுத்துகின்றன. தமிழ்நாட்டின் வேறு வேறு நிலப்பரப்புகளை இணைக்கும் புள்ளியாகப் பனைமரம் இருப்பதையும் இக்கதைகள் உறுதிசெய்கின்றன.",
+      en: "The Palmyra stands as a symbol of Tamil cultural continuity and ancient heritage. This grand anthology — 'Panai Kathaigal 120' — documents how the presence of the palm has been felt across a century of Tamil short-story writing.\n\nThese stories reveal the lives and struggles of palm-dependent communities, recording the challenges that palm products face under the pressures of market culture.\n\nStories that document both the acceptance and rejection of the palm's nectar 'kal' as food touch on divergent points of debate in the contemporary political climate.\n\nRepresenting the diverse landscapes and life-values of Tamil Nadu, the stories in this collection carry the earthy flavour of each region's way of life — and affirm the palmyra as the point that connects the many regions of Tamil Nadu.",
+    },
+    highlights: [
+      {
+        ta: "120 பனைக் கதைகள் — நூற்றாண்டு தமிழ்ச் சிறுகதைப் பரப்பில் இருந்து",
+        en: "120 palmyra stories — from a century of Tamil short fiction",
+      },
+      {
+        ta: "இரண்டு தொகுதிகள் ஒரே முழுத் தொகுப்பாக",
+        en: "Two volumes, sold as one complete set",
+      },
+      {
+        ta: "1500 பக்கங்கள் — சிறுகதை, பண்பாடு, சூழலியல், நாட்டுப்புற மரபு",
+        en: "1500 pages — fiction, culture, ecology, and folk tradition",
+      },
+      {
+        ta: "வட்டார வாழ்வியலை மண்ணின் மணத்தோடு முன்னிறுத்தும் தொகுப்பு",
+        en: "Regional ways of life, with the scent of the soil",
+      },
+      {
+        ta: "முதல் பதிப்பு — அலர் வெளியீடு",
+        en: "First edition — Alar Veliyeedu",
+      },
+    ],
+    rating: 5,
+    details: {
+      edition: { ta: "மக்கள் பதிப்பு (2000 பிரதிகள் மட்டுமே)", en: "People's Edition (2000 Copies Only)" },
+      category: { ta: "சிறுகதை / பண்பாடு / தொகுப்பிலக்கியம் / சூழலியல்", en: "Short Stories / Culture / Anthologies / Ecology" },
+      format: { ta: "Paper back · இரண்டு தொகுதிகள்", en: "Paperback · Two Volumes" },
+      pages: { ta: "1500", en: "1500" },
+      paper: { ta: "70 GSM நேச்சுரல் ஷேட்", en: "70 GSM Natural Shade" },
+      size: { ta: "டெமி Size (1/8 Demy)", en: "Demy Size (1/8 Demy)" },
+      publisher: { ta: "அலர் வெளியீடு", en: "Alar Veliyeedu" },
+      coverDesign: { ta: "ரோஹிணி மணி (முகப்பு அட்டை ஓவியம் & வடிவமைப்பு)", en: "Rohini Mani (Cover Art & Design)" },
+      isbn: "978-81-987267-0-4",
+      foreword: { 
+        ta: "ஆ. சிவசுப்பிரமணியன், கு. வி. கிருஷ்ணமூர்த்தி, பெருமாள்முருகன், காட்சன் சாமுவேல்", 
+        en: "A. Sivasubramanian, Ku. Vi. Krishnamurthy, Perumal Murugan, Godson Samuel" 
+      },
+      preorderDates: { ta: "செப்டம்பர் 01 முதல் அக்டோபர் 15 வரை மட்டுமே", en: "September 01 to October 15 only" },
+      dispatchDate: { ta: "அக்டோபர் 20க்குப் பிறகு", en: "After October 20" },
+      copiesLimit: { ta: "2000 பிரதிகள் மட்டுமே", en: "Limited to 2000 copies only" },
+      contactPhones: ["7200111312", "8015469260"],
+      buyLinks: {
+        dodo: "https://dodobooks.in/products/%E0%AE%AA%E0%AE%B4%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%9F%E0%AF%81-%E0%AE%AA%E0%AE%A9%E0%AF%88-%E0%AE%AA%E0%AE%A9%E0%AF%88%E0%AE%95%E0%AF%8D-%E0%AE%95%E0%AE%A4%E0%AF%88%E0%AE%95%E0%AE%B3%E0%AF%8D-120-pazhampadu-panai-panai-kathaigal-120",
+      },
+      quotes: [
+        {
+          text: {
+            ta: "பனை என்பது மரமல்ல; அது தமிழரின் தொல் பண்பாட்டின், உழைப்பின், வாழ்வின் அடையாளம்.",
+            en: "The Palmyra is not just a tree; it is the emblem of ancient Tamil culture, toil, and life."
+          },
+          author: {
+            ta: "— பதிப்புரை, அலர் வெளியீடு",
+            en: "— Publisher Note, Alar Veliyeedu"
+          }
+        }
+      ]
+    },
+  },
+  {
     id: "albert-enum-kalaikalanjiyam",
     title: {
       ta: "ஆல்பர்ட் எனும் கலைக்களஞ்சியம்",
@@ -357,101 +452,6 @@ export const books = [
     details: {
       format: "Paperback",
       publisher: { ta: "அலர் வெளியீடு", en: "Alar Veliyeedu" },
-    },
-  },
-  {
-    id: "pazhampadu-panai",
-    title: {
-      ta: "பழம்படு பனை (பனை கதைகள் 120)",
-      en: "Pazhampadu Panai (Panai Kathaigal 120)",
-    },
-    subtitle: {
-      ta: "பனைக் கதைகள் 120",
-      en: "Panai Kathaigal 120",
-    },
-    author: {
-      ta: "ம. கேசவன் - அதங்கோடு அனிஷ்குமார்",
-      en: "M. Kesavan - Athangodu Anishkumar",
-    },
-    role: "compiler",
-    price: "1500",
-    salePrice: "675",
-    originalPrice: "1875",
-    volumeInfo: {
-      ta: "தொகுதி 1 + தொகுதி 2 (முழுத் தொகுப்பு)",
-      en: "Volume 1 + Volume 2 (Complete Set)",
-    },
-    image: "/images/pazhampadu_panai.webp",
-    fullCoverImage: "/images/pazhampadu_panai_vol1.webp",
-    gallery: [
-      "/images/pazhampadu_panai.webp",
-      "/images/pazhampadu_panai_vol1.webp",
-      "/images/pazhampadu_panai_vol2.webp"
-    ],
-    desc: {
-      ta: "பனை மரம் தொடர்பான 120 கதைகளின் பெருந்தொகுப்பு. தொகுதி 1 மற்றும் தொகுதி 2 ஆகிய இரண்டும் சேர்த்து ஒரே முழுத் தொகுப்பாக அலர் வெளியீட்டின் வாயிலாக வெளிவருகிறது. சிறுகதை, பண்பாடு, சூழலியல், இயற்கை மற்றும் நாட்டுப்புற மரபுகளை ஒருங்கே தாங்கி நிற்கும் அரிய ஆவணம்.",
-      en: "A grand collection of 120 stories celebrating the Palmyra tree and cultural heritage. Published as a complete two-volume set by Alar Veliyeedu, documenting short stories, ecology, tradition, and folklore.",
-    },
-    longDesc: {
-      ta: "தமிழர்களின் பண்பாட்டுத் தொடர்ச்சிக்கும் தொல்மரபிற்கும் அடையாளமாக இருக்கும் பனையின் இருப்பு, நூற்றாண்டு கண்ட தமிழ்ச் சிறுகதைப் பரப்பில் எவ்வாறு உணரப்பட்டிருக்கிறது என்பதை ‘பனைக் கதைகள் 120’ என்னும் இப்பெருந்தொகுப்பு ஆவணப்படுத்துகிறது.\n\nபனைசார் மக்களின் வாழ்வும் வலியும் வெளிப்படும் இக்கதைகளில், சந்தைக் கலாச்சாரத்தின் விளைவாகப் பனைசார் புழங்குபொருட்கள் எதிர்கொள்ளும் சிக்கல்களும் சவால்களும் பதிவாகியிருக்கின்றன.\n\nபனை தரும் அமிர்தமான ‘கள்’ளை ஓர் உணவாக ஏற்பதையும் மறுப்பதையும் ஆவணப்படுத்தும் கதைகள், சமகால அரசியல் சூழலில் வேறுபட்ட விவாதப் புள்ளிகளைத் தொட்டுச் செல்கின்றன.\n\nபல்வேறு வாழ்வியல் விழுமியங்களைக் கொண்ட தமிழ்நாட்டின் நிலப்பரப்பைப் பிரதிநிதித்துவப்படுத்தும் இத்தொகுப்பிலுள்ள கதைகள், அந்தந்த வட்டார வாழ்வியலை மண்ணின் மணத்தோடு முன்னிறுத்துகின்றன. தமிழ்நாட்டின் வேறு வேறு நிலப்பரப்புகளை இணைக்கும் புள்ளியாகப் பனைமரம் இருப்பதையும் இக்கதைகள் உறுதிசெய்கின்றன.",
-      en: "The Palmyra stands as a symbol of Tamil cultural continuity and ancient heritage. This grand anthology — 'Panai Kathaigal 120' — documents how the presence of the palm has been felt across a century of Tamil short-story writing.\n\nThese stories reveal the lives and struggles of palm-dependent communities, recording the challenges that palm products face under the pressures of market culture.\n\nStories that document both the acceptance and rejection of the palm's nectar 'kal' as food touch on divergent points of debate in the contemporary political climate.\n\nRepresenting the diverse landscapes and life-values of Tamil Nadu, the stories in this collection carry the earthy flavour of each region's way of life — and affirm the palmyra as the point that connects the many regions of Tamil Nadu.",
-    },
-    highlights: [
-      {
-        ta: "120 பனைக் கதைகள் — நூற்றாண்டு தமிழ்ச் சிறுகதைப் பரப்பில் இருந்து",
-        en: "120 palmyra stories — from a century of Tamil short fiction",
-      },
-      {
-        ta: "இரண்டு தொகுதிகள் ஒரே முழுத் தொகுப்பாக",
-        en: "Two volumes, sold as one complete set",
-      },
-      {
-        ta: "1500 பக்கங்கள் — சிறுகதை, பண்பாடு, சூழலியல், நாட்டுப்புற மரபு",
-        en: "1500 pages — fiction, culture, ecology, and folk tradition",
-      },
-      {
-        ta: "வட்டார வாழ்வியலை மண்ணின் மணத்தோடு முன்னிறுத்தும் தொகுப்பு",
-        en: "Regional ways of life, with the scent of the soil",
-      },
-      {
-        ta: "முதல் பதிப்பு — அலர் வெளியீடு",
-        en: "First edition — Alar Veliyeedu",
-      },
-    ],
-    rating: 5,
-    details: {
-      edition: { ta: "மக்கள் பதிப்பு (2000 பிரதிகள் மட்டுமே)", en: "People's Edition (2000 Copies Only)" },
-      category: { ta: "சிறுகதை / பண்பாடு / தொகுப்பிலக்கியம் / சூழலியல்", en: "Short Stories / Culture / Anthologies / Ecology" },
-      format: { ta: "Paper back · இரண்டு தொகுதிகள்", en: "Paperback · Two Volumes" },
-      pages: { ta: "1500", en: "1500" },
-      paper: { ta: "70 GSM நேச்சுரல் ஷேட்", en: "70 GSM Natural Shade" },
-      size: { ta: "டெமி Size (1/8 Demy)", en: "Demy Size (1/8 Demy)" },
-      publisher: { ta: "அலர் வெளியீடு", en: "Alar Veliyeedu" },
-      coverDesign: { ta: "ரோஹிணி மணி (முகப்பு அட்டை ஓவியம் & வடிவமைப்பு)", en: "Rohini Mani (Cover Art & Design)" },
-      isbn: "978-81-987267-0-4",
-      foreword: { 
-        ta: "ஆ. சிவசுப்பிரமணியன், கு. வி. கிருஷ்ணமூர்த்தி, பெருமாள்முருகன், காட்சன் சாமுவேல்", 
-        en: "A. Sivasubramanian, Ku. Vi. Krishnamurthy, Perumal Murugan, Godson Samuel" 
-      },
-      preorderDates: { ta: "செப்டம்பர் 01 முதல் அக்டோபர் 15 வரை மட்டுமே", en: "September 01 to October 15 only" },
-      dispatchDate: { ta: "அக்டோபர் 20க்குப் பிறகு", en: "After October 20" },
-      copiesLimit: { ta: "2000 பிரதிகள் மட்டுமே", en: "Limited to 2000 copies only" },
-      contactPhones: ["7200111312", "8015469260"],
-      buyLinks: {
-        dodo: "https://dodobooks.in/products/%E0%AE%AA%E0%AE%B4%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%9F%E0%AF%81-%E0%AE%AA%E0%AE%A9%E0%AF%88-%E0%AE%AA%E0%AE%A9%E0%AF%88%E0%AE%95%E0%AF%8D-%E0%AE%95%E0%AE%A4%E0%AF%88%E0%AE%95%E0%AE%B3%E0%AF%8D-120-pazhampadu-panai-panai-kathaigal-120",
-      },
-      quotes: [
-        {
-          text: {
-            ta: "பனை என்பது மரமல்ல; அது தமிழரின் தொல் பண்பாட்டின், உழைப்பின், வாழ்வின் அடையாளம்.",
-            en: "The Palmyra is not just a tree; it is the emblem of ancient Tamil culture, toil, and life."
-          },
-          author: {
-            ta: "— பதிப்புரை, அலர் வெளியீடு",
-            en: "— Publisher Note, Alar Veliyeedu"
-          }
-        }
-      ]
     },
   }
 ];

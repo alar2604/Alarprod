@@ -19,9 +19,7 @@ const bookBackgrounds: Record<string, string> = {
 const bannerOrder = [
   'pazhampadu-panai',
   'albert-enum-kalaikalanjiyam',
-  'nenjam-marapathillai',
-  'sagayam-seitha-sagayam',
-  'sathyajit-ray-kathaigal'
+  'nenjam-marapathillai'
 ];
 
 const heroBooks = bannerOrder.map(id => books.find(b => b.id === id)).filter(Boolean) as typeof books;

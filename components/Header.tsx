@@ -10,8 +10,6 @@ export default function Header({ dict, lang }: { dict: any, lang: string }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isBooksOpen, setIsBooksOpen] = useState(false);
   const [isMobileBooksOpen, setIsMobileBooksOpen] = useState(false);
-  const [isImprintOpen, setIsImprintOpen] = useState(false);
-  const [isMobileImprintOpen, setIsMobileImprintOpen] = useState(false);
 
   const pathname = usePathname();
   
@@ -52,10 +50,6 @@ export default function Header({ dict, lang }: { dict: any, lang: string }) {
             <Link href={`${langPrefix}/#about-us`} className="text-neutral-700 hover:text-neutral-900 text-base transition-colors duration-300">
               {dict.nav.about}
             </Link>
-
-            <Link href={`${langPrefix}/coordinators`} className="text-neutral-700 hover:text-neutral-900 text-base transition-colors duration-300 font-medium">
-              {lang === 'ta' ? 'ஒருங்கிணைப்பாளர்கள்' : 'Coordinators'}
-            </Link>
             
             {/* Books Dropdown Trigger */}
             <div 
@@ -86,32 +80,6 @@ export default function Header({ dict, lang }: { dict: any, lang: string }) {
                    <Link href={`${langPrefix}/books/lankesh-kathaigal`} className="text-neutral-700 hover:text-neutral-900 block px-4 py-2 hover:bg-gray-50 text-sm whitespace-nowrap">{lang === 'ta' ? 'லங்கேஷ் கதைகள்' : 'Lankesh Kathaigal'}</Link>
                    <Link href={`${langPrefix}/books/pazhampadu-panai`} className="text-neutral-700 hover:text-neutral-900 block px-4 py-2 hover:bg-gray-50 text-sm whitespace-nowrap">{lang === 'ta' ? 'பழம்படு பனை (பனை கதைகள் 120)' : 'Pazhampadu Panai'} <span className="ml-1 text-[10px] font-bold uppercase tracking-wide text-white bg-[#2D6A4F] rounded-full px-1.5 py-0.5">{lang === 'ta' ? 'சிறப்பு' : 'Featured'}</span></Link>
                 </div>
-              </div>
-            </div>
-
-            {/* Imprint Dropdown Trigger */}
-            <div 
-              className="relative group"
-              onMouseEnter={() => setIsImprintOpen(true)}
-              onMouseLeave={() => setIsImprintOpen(false)}
-            >
-              <button 
-                className="text-neutral-700 hover:text-neutral-900 text-base transition-colors duration-300 inline-flex items-center outline-none"
-              >
-                {/* Fallback string if dict key is missing temporarily during dev */}
-                {dict.nav.imprint || "Imprint"}
-                <ChevronDown className="h-4 w-4 ml-1" />
-              </button>
-              
-              {/* Imprint Dropdown */}
-              <div 
-                className={`absolute left-1/2 transform -translate-x-1/2 mt-0 w-48 bg-white shadow-lg border-t border-gray-100 overflow-hidden transition-all duration-300 ease-in-out ${isImprintOpen ? 'max-h-[200px] opacity-100 py-2' : 'max-h-0 opacity-0 py-0'}`}
-              >
-                  <div className="flex flex-col">
-                    <div className="text-neutral-400 px-4 py-2 text-sm whitespace-nowrap">
-                      {dict.nav.yaa_veliyeedu || "Yaa Veliyeedu"}
-                    </div>
-                  </div>
               </div>
             </div>
 
@@ -149,10 +117,6 @@ export default function Header({ dict, lang }: { dict: any, lang: string }) {
               {dict.nav.about}
             </Link>
 
-            <Link href={`${langPrefix}/coordinators`} className="py-2 text-neutral-700 hover:text-neutral-900 font-medium" onClick={() => setIsMobileMenuOpen(false)}>
-              {lang === 'ta' ? 'ஒருங்கிணைப்பாளர்கள்' : 'Coordinators'}
-            </Link>
-
             {/* Mobile Books Dropdown */}
             <div>
               <button 
@@ -173,22 +137,6 @@ export default function Header({ dict, lang }: { dict: any, lang: string }) {
                 <Link href={`${langPrefix}/books/nainthazum-kural`} className="block py-2 text-neutral-600 hover:text-neutral-900">{lang === 'ta' ? 'நைந்தழும் குரல்' : 'Nainthazum Kural'}</Link>
                 <Link href={`${langPrefix}/books/lankesh-kathaigal`} className="block py-2 text-neutral-600 hover:text-neutral-900">{lang === 'ta' ? 'லங்கேஷ் கதைகள்' : 'Lankesh Kathaigal'}</Link>
                 <Link href={`${langPrefix}/books/pazhampadu-panai`} className="block py-2 text-neutral-600 hover:text-neutral-900">{lang === 'ta' ? 'பழம்படு பனை (பனை கதைகள் 120)' : 'Pazhampadu Panai'} <span className="ml-1 text-[10px] font-bold uppercase tracking-wide text-white bg-[#2D6A4F] rounded-full px-1.5 py-0.5">{lang === 'ta' ? 'சிறப்பு' : 'Featured'}</span></Link>
-              </div>
-            </div>
-
-            {/* Mobile Imprint Dropdown */}
-            <div>
-              <button 
-                className="w-full text-left py-2 flex justify-between items-center text-neutral-700 font-medium"
-                onClick={() => setIsMobileImprintOpen(!isMobileImprintOpen)}
-              >
-                <span>{dict.nav.imprint || "Imprint"}</span>
-                <ChevronDown className={`h-4 w-4 transform transition-transform ${isMobileImprintOpen ? 'rotate-180' : ''}`} />
-              </button>
-              <div className={`pl-4 bg-gray-50 rounded-md overflow-hidden transition-all duration-300 ${isMobileImprintOpen ? 'max-h-24 py-2' : 'max-h-0'}`}>
-                <div className="py-2 text-neutral-400">
-                  {dict.nav.yaa_veliyeedu || "Yaa Veliyeedu"}
-                </div>
               </div>
             </div>
 
