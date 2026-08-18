@@ -1,0 +1,15 @@
+# Taste
+- Wants to use the Kimi K3 model (`moonshotai/Kimi-K3`) for Command Code sessions; asked explicitly how to switch models to it. Confidence: 0.6
+- Prefers minimalist, purposeful, and clear design — no decorative clutter, blobs, gradients, or competing elements; whitespace and typography should carry the design. Confidence: 0.9
+- Wants separate, purpose-built pages for distinct content types (e.g., a book landing page kept separate from a coordinator directory page), each designed differently rather than reusing one generic template. Confidence: 0.8
+- Wants designs grounded in careful reading of the actual source material and reference sites; criticizes work that isn't based on thorough source research ("aren't carefully read sources and aren't well thought designs"). Confidence: 0.8
+- Uses reference sites as inspiration but expects the result to have better UI/UX than the reference, not a copy of it. Confidence: 0.7
+- Wants key information (e.g., phone numbers on a directory page) visible directly on cards — not hidden behind modals or extra clicks. Confidence: 0.6
+- Prefers auto-accept permission mode so edits and tool actions apply without per-step approval prompts; questions why approvals are still asked for commands and wants prompts minimized broadly, not just for file edits (again explicitly requested auto-approve for commands: "auto approve cmd"). Confidence: 0.9
+- Works iteratively on page designs section by section: explicitly approves parts they like and expects the rest of the page to be redesigned while the approved section is left untouched. Stated this directly when pointing at a live page: "hero section is good redesign rest of the sections." Confidence: 0.8
+- Wants copy/messaging to be the strength of a page rather than complex layout — thinks like a branding and marketing expert, and treats elaborate layout as unnecessary when the copy carries the persuasion ("copy should be strength... complex layout isn't needed"). Confidence: 0.85
+- Wants each section of a page to answer its own distinct "why" (why it matters, why two volumes, why now) so the page builds one persuasive narrative arc and a reader gets a clear picture by the end of the scroll. Confidence: 0.85
+- Wants sections to be visually distinct by layout rather than a stack of identical card containers — a page made of repeated white rounded cards was flagged as the weakness to fix. Confidence: 0.6
+- Wants strict on-brand palette discipline: accent colors that fight the established brand (e.g., an amber card against an emerald identity) are removed in redesigns. Confidence: 0.6
+- Wants a consistent container/max-width rhythm across all sections; ragged width jumps (3xl/4xl/5xl) were called out as a problem to eliminate. Confidence: 0.6
+- Wants key facts (dates, copy limits, dispatch info) consolidated in one place rather than repeated across multiple sections of a page. Confidence: 0.6

@@ -5,7 +5,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import BookDetailsTabs from '@/components/BookDetailsTabs';
-
 // Generate static params for all books (no lang param needed as this is root/ta)
 export async function generateStaticParams() {
   return books.map((book) => ({
@@ -20,8 +19,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
   if (!book) return { title: 'புத்தகம் காணப்படவில்லை' };
 
-  const title = (book.title as any)[lang];
-  const description = (book.desc as any)[lang];
+  const title = (book.title as any)[lang] || (book.title as any).ta;
+  const description = (book.desc as any)[lang] || (book.desc as any).ta;
 
   return {
     title: `${title} | அலர் வெளியீடு`,
@@ -51,7 +50,8 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
     return <div>Book not found</div>;
   }
 
-  const title = (book.title as any)[lang];
+  const title = (book.title as any)[lang] || (book.title as any).ta;
+
 
   return (
     <>

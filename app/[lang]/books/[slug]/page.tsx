@@ -5,7 +5,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import BookDetailsTabs from '@/components/BookDetailsTabs';
-
 export async function generateStaticParams() {
   const params: { lang: string; slug: string }[] = [];
   const lang = 'en'; // Only generate for English

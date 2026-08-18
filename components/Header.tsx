@@ -52,6 +52,10 @@ export default function Header({ dict, lang }: { dict: any, lang: string }) {
             <Link href={`${langPrefix}/#about-us`} className="text-neutral-700 hover:text-neutral-900 text-base transition-colors duration-300">
               {dict.nav.about}
             </Link>
+
+            <Link href={`${langPrefix}/coordinators`} className="text-neutral-700 hover:text-neutral-900 text-base transition-colors duration-300 font-medium">
+              {lang === 'ta' ? 'ஒருங்கிணைப்பாளர்கள்' : 'Coordinators'}
+            </Link>
             
             {/* Books Dropdown Trigger */}
             <div 
@@ -80,6 +84,7 @@ export default function Header({ dict, lang }: { dict: any, lang: string }) {
                    <Link href={`${langPrefix}/books/kasi-ayya`} className="text-neutral-700 hover:text-neutral-900 block px-4 py-2 hover:bg-gray-50 text-sm whitespace-nowrap">{lang === 'ta' ? 'காசி அய்யா' : 'Kasi Ayya'}</Link>
                    <Link href={`${langPrefix}/books/nainthazum-kural`} className="text-neutral-700 hover:text-neutral-900 block px-4 py-2 hover:bg-gray-50 text-sm whitespace-nowrap">{lang === 'ta' ? 'நைந்தழும் குரல்' : 'Nainthazum Kural'}</Link>
                    <Link href={`${langPrefix}/books/lankesh-kathaigal`} className="text-neutral-700 hover:text-neutral-900 block px-4 py-2 hover:bg-gray-50 text-sm whitespace-nowrap">{lang === 'ta' ? 'லங்கேஷ் கதைகள்' : 'Lankesh Kathaigal'}</Link>
+                   <Link href={`${langPrefix}/books/pazhampadu-panai`} className="text-neutral-700 hover:text-neutral-900 block px-4 py-2 hover:bg-gray-50 text-sm whitespace-nowrap">{lang === 'ta' ? 'பழம்படு பனை (பனை கதைகள் 120)' : 'Pazhampadu Panai'} <span className="ml-1 text-[10px] font-bold uppercase tracking-wide text-white bg-[#2D6A4F] rounded-full px-1.5 py-0.5">{lang === 'ta' ? 'சிறப்பு' : 'Featured'}</span></Link>
                 </div>
               </div>
             </div>
@@ -144,6 +149,10 @@ export default function Header({ dict, lang }: { dict: any, lang: string }) {
               {dict.nav.about}
             </Link>
 
+            <Link href={`${langPrefix}/coordinators`} className="py-2 text-neutral-700 hover:text-neutral-900 font-medium" onClick={() => setIsMobileMenuOpen(false)}>
+              {lang === 'ta' ? 'ஒருங்கிணைப்பாளர்கள்' : 'Coordinators'}
+            </Link>
+
             {/* Mobile Books Dropdown */}
             <div>
               <button 
@@ -163,6 +172,7 @@ export default function Header({ dict, lang }: { dict: any, lang: string }) {
                 <Link href={`${langPrefix}/books/kasi-ayya`} className="block py-2 text-neutral-600 hover:text-neutral-900">{lang === 'ta' ? 'காசி அய்யா' : 'Kasi Ayya'}</Link>
                 <Link href={`${langPrefix}/books/nainthazum-kural`} className="block py-2 text-neutral-600 hover:text-neutral-900">{lang === 'ta' ? 'நைந்தழும் குரல்' : 'Nainthazum Kural'}</Link>
                 <Link href={`${langPrefix}/books/lankesh-kathaigal`} className="block py-2 text-neutral-600 hover:text-neutral-900">{lang === 'ta' ? 'லங்கேஷ் கதைகள்' : 'Lankesh Kathaigal'}</Link>
+                <Link href={`${langPrefix}/books/pazhampadu-panai`} className="block py-2 text-neutral-600 hover:text-neutral-900">{lang === 'ta' ? 'பழம்படு பனை (பனை கதைகள் 120)' : 'Pazhampadu Panai'} <span className="ml-1 text-[10px] font-bold uppercase tracking-wide text-white bg-[#2D6A4F] rounded-full px-1.5 py-0.5">{lang === 'ta' ? 'சிறப்பு' : 'Featured'}</span></Link>
               </div>
             </div>
 

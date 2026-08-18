@@ -7,6 +7,10 @@ import About from '@/components/About';
 import BookList from '@/components/BookList';
 import ComingSoon from '@/components/ComingSoon';
 
+export async function generateStaticParams() {
+  return [{ lang: 'en' }, { lang: 'ta' }];
+}
+
 export default async function Home({ params }: { params: Promise<{ lang: Locale }> }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);

@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { MapPin } from 'lucide-react';
 
 type LocalizedText = string | Record<string, string>;
 
@@ -46,6 +48,7 @@ interface BookData {
   desc?: LocalizedText;
   image: string;
   fullCoverImage?: string;
+  gallery?: string[];
   authorImage?: string;
   price?: string;
   details: BookDetailsData;
@@ -137,6 +140,10 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
     }
   };
 
+  const thumbnailList = book.gallery && book.gallery.length > 0 
+    ? book.gallery 
+    : (book.fullCoverImage ? [book.image, book.fullCoverImage] : [book.image]);
+
   return (
     <div className="py-12 mt-12 px-4 md:px-8 lg:px-12 bg-white">
       <div className="container mx-auto max-w-7xl mt-8">
@@ -192,20 +199,17 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
                         </button>
                     </div>
                     {/* eCommerce style thumbnails */}
-                    {book.fullCoverImage && (
-                        <div className="flex gap-4 mt-4">
-                            <button 
-                                onClick={() => setSelectedImage(book.image)}
-                                className={`relative w-16 h-24 border-2 rounded overflow-hidden ${selectedImage === book.image ? 'border-orange-500' : 'border-transparent hover:border-gray-300'}`}
-                            >
-                                <Image src={book.image} alt="Front cover thumbnail" fill className="object-cover" />
-                            </button>
-                            <button 
-                                onClick={() => setSelectedImage(book.fullCoverImage!)}
-                                className={`relative w-32 h-24 border-2 rounded overflow-hidden ${selectedImage === book.fullCoverImage ? 'border-orange-500' : 'border-transparent hover:border-gray-300'}`}
-                            >
-                                <Image src={book.fullCoverImage} alt="Full cover thumbnail" fill className="object-cover" />
-                            </button>
+                    {thumbnailList.length > 1 && (
+                        <div className="flex flex-wrap gap-3 mt-4">
+                            {thumbnailList.map((imgSrc, idx) => (
+                              <button 
+                                  key={idx}
+                                  onClick={() => setSelectedImage(imgSrc)}
+                                  className={`relative w-16 h-24 border-2 rounded overflow-hidden transition-all ${selectedImage === imgSrc ? 'border-orange-500 shadow-md scale-105' : 'border-transparent hover:border-gray-300 opacity-75 hover:opacity-100'}`}
+                              >
+                                  <Image src={imgSrc} alt={`Thumbnail ${idx + 1}`} fill className="object-cover" />
+                              </button>
+                            ))}
                         </div>
                     )}
                     
@@ -284,6 +288,13 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
                      <a href={`https://wa.me/917200111312?text=I'm interested in buying ${title}`} target="_blank" rel="noopener noreferrer" className="flex items-center w-fit gap-3 border border-neutral-300 text-neutral-900 px-4 py-2 rounded-md hover:bg-gray-50 transition-colors">
                         <span>Order on WhatsApp</span>
                      </a>
+                     
+                     {book.id === 'pazhampadu-panai' && (
+                       <Link href={lang === 'ta' ? `/coordinators?book=${book.id}` : `/${lang}/coordinators?book=${book.id}`} className="flex items-center w-fit gap-3 bg-[#2d6a4f] text-white px-5 py-2.5 rounded-lg hover:bg-[#1b4332] transition-transform hover:-translate-y-0.5 active:translate-y-0 shadow-sm font-medium text-sm">
+                          <MapPin className="w-4 h-4" />
+                          <span>{lang === 'ta' ? 'கள ஒருங்கிணைப்பாளரைத் தேடுக' : 'Find a Field Coordinator'}</span>
+                       </Link>
+                     )}
                   </div>
                   
                   {/* Description / Quotes */}
