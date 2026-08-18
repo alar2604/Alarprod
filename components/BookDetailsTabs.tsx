@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { MapPin } from 'lucide-react';
+import { MapPin, Share2, Maximize2, X, ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
 
 type LocalizedText = string | Record<string, string>;
 
@@ -136,7 +136,8 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
         console.error('Error sharing:', error);
       }
     } else {
-      alert('Sharing is not supported on this browser. You can copy the link.');
+      navigator.clipboard.writeText(window.location.href);
+      alert('Link copied to clipboard!');
     }
   };
 
@@ -144,22 +145,47 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
     ? book.gallery 
     : (book.fullCoverImage ? [book.image, book.fullCoverImage] : [book.image]);
 
+  const specsList = [
+    { label: dict.book_details.labels.title, value: title },
+    {
+      label: book.id === 'kasi-ayya' || book.role === 'editor'
+        ? dict.book_details.labels.editor 
+        : (book.role === 'compiler' 
+          ? dict.book_details.labels.compiler 
+          : dict.book_details.labels.author),
+      value: author
+    },
+    translator ? { label: dict.book_details.labels.translator, value: translator } : null,
+    details.edition ? { label: dict.book_details.labels.edition, value: getLoc(details.edition) } : null,
+    details.category ? { label: dict.book_details.labels.category, value: getLoc(details.category) } : null,
+    details.isbn ? { label: dict.book_details.labels.isbn, value: details.isbn } : null,
+    details.pages ? { label: dict.book_details.labels.pages, value: getLoc(details.pages) } : null,
+    details.size ? { label: dict.book_details.labels.size, value: getLoc(details.size) } : null,
+    details.format ? { label: dict.book_details.labels.format, value: getLoc(details.format) } : null,
+    details.paper ? { label: dict.book_details.labels.paper, value: getLoc(details.paper) } : null,
+    details.layout ? { label: dict.book_details.labels.layout, value: getLoc(details.layout) } : null,
+    details.coverDesign ? { label: dict.book_details.labels.cover_design, value: getLoc(details.coverDesign) } : null,
+    details.printer ? { label: dict.book_details.labels.printer, value: getLoc(details.printer) } : null,
+    details.code ? { label: dict.book_details.labels.code, value: details.code } : null,
+  ].filter(Boolean);
+
   return (
-    <div className="py-12 mt-12 px-4 md:px-8 lg:px-12 bg-white">
-      <div className="container mx-auto max-w-7xl mt-8">
-        <div className="border-gray-200 mb-8 md:ml-12">
-          <ul className="flex justify-center gap-4 md:gap-8">
+    <div className="py-6 sm:py-10 px-4 sm:px-6 md:px-10 bg-white rounded-3xl shadow-xs border border-neutral-100">
+      <div className="max-w-6xl mx-auto">
+        
+        {/* Tab Navigation */}
+        <div className="border-b border-neutral-200 mb-6 sm:mb-8">
+          <ul className="flex justify-center gap-6 sm:gap-10">
             {['bookDetails', 'bookAuthor', 'bookArticle'].map((tab) => {
-               // Map internal tab keys to dictionary keys
                const dictKey = tab === 'bookDetails' ? 'book' : tab === 'bookAuthor' ? 'author' : 'articles';
                return (
                 <li key={tab}>
                   <button
                     onClick={() => setActiveTab(tab)}
-                    className={`tab-button pb-2 font-medium text-base focus:outline-none transition-colors border-b-4 ${
+                    className={`pb-3 font-semibold text-sm sm:text-base focus:outline-none transition-colors border-b-2 -mb-px ${
                       activeTab === tab
-                        ? 'text-black border-orange-500'
-                        : 'text-gray-600 border-transparent hover:text-black'
+                        ? 'text-[#2D6A4F] border-[#2D6A4F]'
+                        : 'text-neutral-500 border-transparent hover:text-neutral-900'
                     }`}
                   >
                     {dict.book_details.tabs[dictKey]}
@@ -170,259 +196,253 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
           </ul>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-12">
-          {/* Tab Content Area */}
-          <div className="w-full">
-            
-            {/* BOOK DETAILS TAB */}
-            {activeTab === 'bookDetails' && (
-              <div className="tab-content mx-auto bg-white py-6 px-4 md:px-8 lg:px-16 leading-8 rounded-lg">
-                <div className="flex flex-col md:flex-row gap-12 w-full">
-                {/* Left Column: Image + Details List */}
-                <div className="w-full md:w-1/3">
-                  <div className="top-24">
-                    <div className="aspect-2/3 relative w-full shadow-lg rounded overflow-hidden bg-gray-50 group">
+        <div>
+          {/* BOOK DETAILS TAB */}
+          {activeTab === 'bookDetails' && (
+            <div className="w-full">
+              <div className="flex flex-col md:flex-row gap-8 lg:gap-12 w-full">
+                
+                {/* Left Column: Image + Thumbnails */}
+                <div className="w-full md:w-5/12 lg:w-4/12 flex flex-col items-center md:items-start shrink-0">
+                  <div className="w-full max-w-[240px] xs:max-w-[270px] sm:max-w-[300px] md:max-w-none mx-auto">
+                    <div className="aspect-2/3 relative w-full shadow-md rounded-2xl overflow-hidden bg-neutral-50 group border border-neutral-100">
                         <Image
                             src={selectedImage}
                             alt={`${title} cover`}
                             fill
                             className="object-contain"
+                            sizes="(max-width: 768px) 270px, 350px"
+                            priority
                         />
                         <button 
                             onClick={() => setIsImageFullscreen(true)}
-                            className="absolute bottom-4 right-4 bg-black/60 hover:bg-black text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                            className="absolute bottom-3 right-3 bg-black/60 hover:bg-black active:bg-black/90 text-white p-2 rounded-xl transition-all"
                             aria-label="View Fullscreen"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-                            </svg>
+                            <Maximize2 className="w-4 h-4" />
                         </button>
                     </div>
-                    {/* eCommerce style thumbnails */}
+
+                    {/* Thumbnails */}
                     {thumbnailList.length > 1 && (
-                        <div className="flex flex-wrap gap-3 mt-4">
+                        <div className="flex justify-center md:justify-start gap-2.5 mt-3.5">
                             {thumbnailList.map((imgSrc, idx) => (
                               <button 
                                   key={idx}
                                   onClick={() => setSelectedImage(imgSrc)}
-                                  className={`relative w-16 h-24 border-2 rounded overflow-hidden transition-all ${selectedImage === imgSrc ? 'border-orange-500 shadow-md scale-105' : 'border-transparent hover:border-gray-300 opacity-75 hover:opacity-100'}`}
+                                  className={`relative w-14 h-20 rounded-xl overflow-hidden border-2 transition-all ${selectedImage === imgSrc ? 'border-[#2D6A4F] shadow-sm scale-105 ring-2 ring-emerald-500/20' : 'border-transparent opacity-70 hover:opacity-100'}`}
                               >
                                   <Image src={imgSrc} alt={`Thumbnail ${idx + 1}`} fill className="object-cover" />
                               </button>
                             ))}
                         </div>
                     )}
-                    
-                    <div className="mt-6 flex flex-col space-y-4">
-                      <div className="mb-8">
-                        <h3 className="text-lg font-normal text-gray-900 mb-4">{dict.book_details.tabs.book} {dict.books_section.view_details.replace('View Details', '')}</h3>
-                        <ul className="list-disc pl-5 space-y-2 text-gray-700 text-base">
-                          {/* Book Details List */}
-                          <li><span className="font-semibold text-gray-900">{dict.book_details.labels.title} :</span> {title}</li>
-                          <li><span className="font-semibold text-gray-900">
-                            {book.id === 'kasi-ayya' || book.role === 'editor'
-                              ? dict.book_details.labels.editor 
-                              : (book.role === 'compiler' 
-                                ? dict.book_details.labels.compiler 
-                                : dict.book_details.labels.author)} :</span> {author}</li>
-                          {translator && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.translator} :</span> {translator}</li>}
-                          {details.edition && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.edition} :</span> {getLoc(details.edition)}</li>}
-                          {details.category && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.category} :</span> {getLoc(details.category)}</li>}
-                          {details.isbn && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.isbn} :</span> {details.isbn}</li>}
-                          {details.pages && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.pages} :</span> {getLoc(details.pages)}</li>}
-                          {details.size && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.size} :</span> {getLoc(details.size)}</li>}
-                          {details.format && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.format} :</span> {getLoc(details.format)}</li>}
-                          {details.paper && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.paper} :</span> {getLoc(details.paper)}</li>}
-                          {details.layout && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.layout} :</span> {getLoc(details.layout)}</li>}
-                          {details.coverDesign && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.cover_design} :</span> {getLoc(details.coverDesign)}</li>}
-                          {details.printer && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.printer} :</span> {getLoc(details.printer)}</li>}
-                          {details.code && <li><span className="font-semibold text-gray-900">{dict.book_details.labels.code} :</span> {details.code}</li>}
-                        </ul>
-                      </div>
-                    </div>
                   </div>
                 </div>
 
-                {/* Right Column: Key Info & Description */}
-                <div className="w-full md:w-2/3">
-                  <h1 className="text-xl font-bold mb-2">{title}</h1>
-                  {/* Short one-liner if exists, otherwise desc intro? Used hardcoded quote in legacy. Using desc for now. */}
-                  {/* <p className="text-lg text-gray-600 mb-4">"A collection..."</p> */} 
+                {/* Right Column: Key Info, Pricing, Description, Actions, Specs */}
+                <div className="w-full md:w-7/12 lg:w-8/12">
+                  <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-serif text-neutral-900 mb-2 leading-tight">
+                    {title}
+                  </h1>
                   
-                  <p className="text-md font-semibold text-gray-700 mb-2">
+                  <p className="text-base sm:text-lg font-medium text-neutral-600 mb-2">
                     {book.id === 'kasi-ayya' || book.role === 'editor'
                       ? dict.book_details.labels.editor 
                       : (book.role === 'compiler' 
                         ? dict.book_details.labels.compiler 
-                        : dict.book_details.labels.author)}: {author}</p>
-                  {translator && <p className="text-md font-semibold text-gray-700 mb-4">{dict.book_details.labels.translator}: {translator}</p>}
-                  {details.coverDesign ? (
-                    <p className="text-md font-semibold text-gray-700 mb-4">{dict.book_details.labels.cover_design}: {getLoc(details.coverDesign)}</p>
-                  ) : (
-                    <p className="text-md font-semibold text-gray-700 mb-4">{lang === 'ta' ? 'அட்டை வடிவமைப்பு' : 'Cover Designer'}: <a href="https://www.rohinimanicharcoal.com/" className="underline" target="_blank">{lang === 'ta' ? 'ரோகிணி மணி' : 'Rohini Mani'}</a></p>
+                        : dict.book_details.labels.author)}: <span className="text-neutral-900 font-semibold">{author}</span>
+                  </p>
+                  
+                  {translator && (
+                    <p className="text-sm sm:text-base font-medium text-neutral-600 mb-3">
+                      {dict.book_details.labels.translator}: <span className="text-neutral-900 font-semibold">{translator}</span>
+                    </p>
                   )}
 
-                  <div className="flex items-center mb-4">
-                    <div className="text-yellow-400 text-xl">★★★★★</div>
-                    <span className="ml-2 text-gray-600">(5.0 / 5)</span>
-                    <span className="ml-4 text-xl font-bold text-green-600">{dict.books_section.price_prefix}{book.price}</span>
+                  {details.coverDesign ? (
+                    <p className="text-xs sm:text-sm text-neutral-500 mb-4">
+                      {dict.book_details.labels.cover_design}: {getLoc(details.coverDesign)}
+                    </p>
+                  ) : (
+                    <p className="text-xs sm:text-sm text-neutral-500 mb-4">
+                      {lang === 'ta' ? 'அட்டை வடிவமைப்பு' : 'Cover Designer'}: <a href="https://www.rohinimanicharcoal.com/" className="underline hover:text-[#2D6A4F]" target="_blank" rel="noopener noreferrer">{lang === 'ta' ? 'ரோகிணி மணி' : 'Rohini Mani'}</a>
+                    </p>
+                  )}
+
+                  {/* Rating & Price */}
+                  <div className="flex items-center gap-3 py-3 px-4 bg-neutral-50 rounded-2xl w-fit mb-6">
+                    <div className="text-amber-400 text-base">★★★★★</div>
+                    <span className="text-xs sm:text-sm text-neutral-500">(5.0 / 5)</span>
+                    <span className="text-neutral-300">|</span>
+                    <span className="text-xl sm:text-2xl font-bold text-[#2D6A4F]">{dict.books_section.price_prefix}{book.price}</span>
                   </div>
 
-                  <div className="space-y-4 mb-6">
-                     {/* Buy Buttons */}
+                  {/* Action Buttons */}
+                  <div className="flex flex-col sm:flex-row flex-wrap gap-3 mb-6">
                      {details.buyLinks?.dodo && (
-                        <a href={details.buyLinks.dodo} target="_blank" rel="noopener noreferrer"
-                            className="flex items-center mb-6 w-fit gap-3 group bg-[#832b5d] hover:bg-[#a13a74] p-3 rounded-md transition text-white font-semibold shadow-md">
-                             <span className="bg-white rounded p-1 h-10 w-10 flex items-center justify-center">
-                                <Image 
-                                    src="/images/dodo.svg" 
-                                    alt="Dodo" 
-                                    width={24} 
-                                    height={24} 
-                                />
-                             </span>
-                             <span className="text-base group-hover:underline">{dict.book_details.labels.buy_now}</span>
+                        <a 
+                          href={details.buyLinks.dodo} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-3 bg-[#832b5d] hover:bg-[#a13a74] active:bg-[#6e234e] px-6 py-3 rounded-xl transition-all text-white font-semibold shadow-xs w-full sm:w-auto"
+                        >
+                           <span className="bg-white rounded-lg p-1 h-7 w-7 flex items-center justify-center">
+                              <Image 
+                                  src="/images/dodo.svg" 
+                                  alt="Dodo" 
+                                  width={18} 
+                                  height={18} 
+                              />
+                           </span>
+                           <span className="text-sm sm:text-base">{dict.book_details.labels.buy_now}</span>
                         </a>
                      )}
-                     {/* WhatsApp fallback/addition */}
-                     <a href={`https://wa.me/917200111312?text=I'm interested in buying ${title}`} target="_blank" rel="noopener noreferrer" className="flex items-center w-fit gap-3 border border-neutral-300 text-neutral-900 px-4 py-2 rounded-md hover:bg-gray-50 transition-colors">
+
+                     <a 
+                       href={`https://wa.me/917200111312?text=${encodeURIComponent(`I'm interested in buying ${title}`)}`} 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       className="flex items-center justify-center gap-2 border-2 border-neutral-300 hover:border-emerald-600 text-neutral-800 hover:text-emerald-700 px-5 py-3 rounded-xl hover:bg-emerald-50/50 transition-colors w-full sm:w-auto font-semibold text-sm sm:text-base shadow-2xs"
+                     >
+                        <MessageCircle className="w-4 h-4 text-emerald-600" />
                         <span>Order on WhatsApp</span>
                      </a>
                      
                      {book.id === 'pazhampadu-panai' && (
-                       <Link href={lang === 'ta' ? `/coordinators?book=${book.id}` : `/${lang}/coordinators?book=${book.id}`} className="flex items-center w-fit gap-3 bg-[#2d6a4f] text-white px-5 py-2.5 rounded-lg hover:bg-[#1b4332] transition-transform hover:-translate-y-0.5 active:translate-y-0 shadow-sm font-medium text-sm">
+                       <Link 
+                         href={lang === 'ta' ? `/coordinators?book=${book.id}` : `/${lang}/coordinators?book=${book.id}`} 
+                         className="flex items-center justify-center gap-2 bg-[#2d6a4f] text-white px-5 py-3 rounded-xl hover:bg-[#1b4332] active:bg-[#153427] transition-all shadow-xs font-semibold text-sm sm:text-base w-full sm:w-auto"
+                       >
                           <MapPin className="w-4 h-4" />
                           <span>{lang === 'ta' ? 'கள ஒருங்கிணைப்பாளரைத் தேடுக' : 'Find a Field Coordinator'}</span>
                        </Link>
                      )}
+
+                     <button 
+                       onClick={handleShare} 
+                       className="flex items-center justify-center gap-2 px-4 py-3 border border-neutral-200 rounded-xl bg-white text-neutral-700 hover:bg-neutral-50 active:bg-neutral-100 transition-colors text-sm font-semibold w-full sm:w-auto shadow-2xs"
+                       aria-label="Share this book"
+                     >
+                        <Share2 className="w-4 h-4 text-neutral-500" />
+                        <span>{dict.book_details.labels.share}</span>
+                     </button>
                   </div>
                   
                   {/* Description / Quotes */}
-                  <div className="text-gray-700 mb-4">
-                      {/* If quotes exist, render them. If not, fallback to regular desc */}
+                  <div className="text-neutral-700 leading-relaxed font-light text-sm sm:text-base space-y-4 py-4 border-t border-neutral-100">
                       {details.quotes && details.quotes.length > 0 ? (
                            details.quotes.map((quote: BookQuote, idx: number) => (
-                               <p key={idx} className="text-gray-700 mb-4">
-                                   {getLoc(quote.text)}
-                                   <br className="mt-2" />
-                                   <span className="block mt-2 font-semibold text-sm">{getLoc(quote.author)}</span>
-                               </p>
+                               <blockquote key={idx} className="bg-neutral-50/70 p-4 sm:p-5 rounded-2xl border-l-4 border-[#2D6A4F] text-neutral-800 italic">
+                                   “{getLoc(quote.text)}”
+                                   <footer className="block mt-2 font-semibold not-italic text-xs sm:text-sm text-[#2D6A4F]">— {getLoc(quote.author)}</footer>
+                               </blockquote>
                            ))
                       ) : (
                           <p>{desc}</p>
                       )}
                   </div>
 
-
-                  <div className="border-t py-4 mt-8">
-                    <div className="mb-6 flex items-center space-x-3">
-                        <button onClick={handleShare} className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 hover:bg-gray-100 transition">
-                             {dict.book_details.labels.share}
-                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 30 30" fill="currentColor">
-                                <path d="M 23 3 A 4 4 0 0 0 19 7 A 4 4 0 0 0 19.09375 7.8359375 L 10.011719 12.376953 A 4 4 0 0 0 7 11 A 4 4 0 0 0 3 15 A 4 4 0 0 0 7 19 A 4 4 0 0 0 10.013672 17.625 L 19.089844 22.164062 A 4 4 0 0 0 19 23 A 4 4 0 0 0 23 27 A 4 4 0 0 0 27 23 A 4 4 0 0 0 23 19 A 4 4 0 0 0 19.986328 20.375 L 10.910156 15.835938 A 4 4 0 0 0 11 15 A 4 4 0 0 0 10.90625 14.166016 L 19.988281 9.625 A 4 4 0 0 0 23 11 A 4 4 0 0 0 27 7 A 4 4 0 0 0 23 3 z"/>
-                              </svg>
-                        </button>
+                  {/* Book Specs List */}
+                  <div className="mt-6 pt-6 border-t border-neutral-100">
+                    <h3 className="text-sm font-bold uppercase tracking-wider text-neutral-500 mb-3">
+                      {dict.book_details.tabs.book} {dict.books_section.view_details.replace('View Details', '')}
+                    </h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-xs sm:text-sm">
+                      {specsList.map((item: any, i: number) => (
+                        <div key={i} className="flex justify-between py-1.5 border-b border-neutral-100 last:border-0 gap-2">
+                          <span className="text-neutral-500 font-medium">{item.label}:</span>
+                          <span className="font-semibold text-neutral-900 text-right">{item.value}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                </div>
+
                 </div>
               </div>
-            )}
+            </div>
+          )}
 
-            {/* AUTHOR TAB */}
-            {activeTab === 'bookAuthor' && (
-                <div className="tab-content mx-auto bg-white py-6 md:px-8 lg:px-16 leading-8 rounded-lg flex flex-col items-center">
+          {/* AUTHOR TAB */}
+          {activeTab === 'bookAuthor' && (
+              <div className="w-full max-w-3xl mx-auto py-4 flex flex-col items-center">
                 {hasAuthorSection && (
-                  <>
-                    <h3 className="text-xl font-bold mb-4 text-center text-orange-500">
+                  <div className="w-full flex flex-col items-center text-center">
+                    <h3 className="text-lg sm:text-xl font-bold font-serif mb-4 text-[#2D6A4F]">
                       {book.id === 'kasi-ayya' || book.role === 'editor'
                         ? dict.book_details.labels.editor
                         : (book.role === 'compiler'
                           ? dict.book_details.labels.compiler
-                          : dict.book_details.labels.author)} : {author}</h3>
-                    <div className="flex gap-4 flex-col items-center text-center">
-                      {authorImage && (
-                        <div>
-                          <div className="relative w-[288px] h-75 rounded-md overflow-hidden">
-                            <Image src={authorImage} alt={author} fill className="object-contain" />
-                          </div>
-                        </div>
-                      )}
-                      <div>
-                        <p className="text-gray-700 mb-4">{authorBio}</p>
+                          : dict.book_details.labels.author)} : {author}
+                    </h3>
+                    
+                    {authorImage && (
+                      <div className="relative w-48 h-60 sm:w-56 sm:h-72 rounded-2xl overflow-hidden mb-5 shadow-md border border-neutral-100 bg-neutral-50">
+                        <Image src={authorImage} alt={author} fill className="object-cover" />
                       </div>
-                    </div>
-                  </>
-                )}
-                    {translator && (
-                  <div className={`${hasAuthorSection ? 'mt-8 pt-8 border-t border-gray-300' : ''} w-full flex flex-col items-center`}>
-                            <h4 className="text-lg font-semibold mb-4 text-center text-orange-500">{translator}</h4>
-                            <div className="flex gap-4 flex-col items-center text-center">
-                                {authorImage && (
-                                    <div>
-                                        <div className="relative w-[288px] h-75 rounded-md overflow-hidden">
-                                            <Image src={authorImage} alt={translator} fill className="object-contain" />
-                                        </div>
-                                    </div>
-                                )}
-                                <div>
-                                    <p className="text-gray-700 mb-4">
-                                        {details.translatorBio ? getLoc(details.translatorBio) : 'Translator biography not available.'}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
                     )}
-                </div>
-            )}
+                    
+                    <p className="text-neutral-700 leading-relaxed text-sm sm:text-base max-w-2xl font-light">
+                      {authorBio}
+                    </p>
+                  </div>
+                )}
 
-            {/* RELATED ARTICLES TAB */}
-            {activeTab === 'bookArticle' && (
-                <div className="tab-content mx-auto bg-white py-6 px-4 md:px-8 lg:px-16 leading-8 rounded-lg">
-                    <h3 className="text-xl font-bold text-gray-900 mb-4">{dict.book_details.tabs.articles}</h3>
-                    <div className="grid grid-cols-1 gap-6">
-                        {details.relatedArticles && details.relatedArticles.map((article: BookArticle, idx: number) => (
-                            <a key={idx} href={article.link} target="_blank" rel="noopener noreferrer">
-                                <div className="border border-gray-200 rounded-md p-4 hover:shadow-md transition duration-300">
-                                    <h4 className="font-semibold text-gray-900 mb-2">{getLoc(article.title)}</h4>
-                                    <p className="text-gray-700 text-sm">{getLoc(article.excerpt)}</p>
-                                    <span className="text-blue-600 hover:underline text-sm mt-2 inline-block">{dict.book_details.labels.read_more} →</span>
-                                </div>
-                            </a>
-                        ))}
-                    </div>
-                </div>
-            )}
+                {translator && (
+                  <div className={`${hasAuthorSection ? 'mt-8 pt-8 border-t border-neutral-200' : ''} w-full flex flex-col items-center text-center`}>
+                    <h4 className="text-lg sm:text-xl font-bold font-serif mb-4 text-[#2D6A4F]">
+                      {dict.book_details.labels.translator}: {translator}
+                    </h4>
+                    <p className="text-neutral-700 leading-relaxed text-sm sm:text-base max-w-2xl font-light">
+                      {details.translatorBio ? getLoc(details.translatorBio) : 'Translator biography not available.'}
+                    </p>
+                  </div>
+                )}
+              </div>
+          )}
 
-          </div>
+          {/* RELATED ARTICLES TAB */}
+          {activeTab === 'bookArticle' && (
+              <div className="w-full max-w-3xl mx-auto py-4">
+                  <h3 className="text-lg sm:text-xl font-bold font-serif text-neutral-900 mb-6">{dict.book_details.tabs.articles}</h3>
+                  <div className="grid grid-cols-1 gap-4 sm:gap-6">
+                      {details.relatedArticles && details.relatedArticles.map((article: BookArticle, idx: number) => (
+                          <a key={idx} href={article.link} target="_blank" rel="noopener noreferrer" className="group">
+                              <div className="border border-neutral-200 rounded-2xl p-5 hover:border-[#2D6A4F] hover:shadow-md transition-all bg-white">
+                                  <h4 className="font-semibold text-neutral-900 group-hover:text-[#2D6A4F] transition-colors mb-2 text-base sm:text-lg">{getLoc(article.title)}</h4>
+                                  <p className="text-neutral-600 text-xs sm:text-sm leading-relaxed font-light">{getLoc(article.excerpt)}</p>
+                                  <span className="text-[#2D6A4F] font-semibold text-xs sm:text-sm mt-3 inline-flex items-center gap-1 group-hover:underline">{dict.book_details.labels.read_more} →</span>
+                              </div>
+                          </a>
+                      ))}
+                  </div>
+              </div>
+          )}
         </div>
       </div>
 
+      {/* Fullscreen Image Modal */}
       {isImageFullscreen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 sm:p-8">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4 sm:p-8">
             <button 
                 onClick={() => setIsImageFullscreen(false)}
-                className="absolute top-4 right-4 text-white hover:text-gray-300 p-2 z-10"
+                className="absolute top-4 right-4 text-white hover:text-neutral-300 p-2.5 bg-white/10 rounded-full z-10"
                 aria-label="Close Fullscreen"
             >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                <X className="w-6 h-6" />
             </button>
             
             {book.fullCoverImage && (
                 <button 
                     onClick={() => setSelectedImage(prev => prev === book.image ? book.fullCoverImage! : book.image)}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 p-2 bg-black/40 hover:bg-black/80 rounded-full transition z-10"
+                    className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 text-white hover:text-neutral-300 p-2.5 bg-black/60 hover:bg-black rounded-full transition-colors z-10"
                     aria-label="Previous Image"
                 >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
+                    <ChevronLeft className="w-6 h-6" />
                 </button>
             )}
 
-            <div className="relative w-full h-full max-w-5xl max-h-[90vh]">
+            <div className="relative w-full h-full max-w-4xl max-h-[85vh]">
                 <Image
                     src={selectedImage}
                     alt={`${title} cover fullscreen`}
@@ -434,12 +454,10 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
             {book.fullCoverImage && (
                 <button 
                     onClick={() => setSelectedImage(prev => prev === book.image ? book.fullCoverImage! : book.image)}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 p-2 bg-black/40 hover:bg-black/80 rounded-full transition z-10"
+                    className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-white hover:text-neutral-300 p-2.5 bg-black/60 hover:bg-black rounded-full transition-colors z-10"
                     aria-label="Next Image"
                 >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+                    <ChevronRight className="w-6 h-6" />
                 </button>
             )}
         </div>

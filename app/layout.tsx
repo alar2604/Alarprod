@@ -1,6 +1,12 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Fraunces, Nunito } from 'next/font/google';
 import './globals.css';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#ffffff',
+};
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -15,6 +21,7 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://alarveliyeedu.com'),
   title: 'அலர் வெளியீடு புத்தகங்கள் - தமிழ் புத்தகங்கள், எழுத்தாளர்கள் & இலக்கிய நிகழ்வுகள்',
   description: 'அலர் வெளியீடு - சிறந்த தமிழ் புத்தகங்கள், புதிய வெளியீடுகள், விருது பெற்ற புனைகதை, புனைவு அல்லாதவை மற்றும் சிறுவர் புத்தகங்கள். முன்னணி தமிழ் வெளியீட்டாளரிடமிருந்து வாசிக்கவும்.',
   verification: {

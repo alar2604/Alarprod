@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import BookDetailsTabs from '@/components/BookDetailsTabs';
+
 export async function generateStaticParams() {
   const params: { lang: string; slug: string }[] = [];
   const lang = 'en'; // Only generate for English
@@ -48,7 +49,7 @@ export default async function BookPage({ params }: { params: Promise<{ lang: str
   const book = books.find((b) => b.id === slug);
 
   if (!book) {
-    return <div>Book not found</div>;
+    return <div className="min-h-screen flex items-center justify-center">Book not found</div>;
   }
 
   const title = (book.title as any)[lang];
@@ -82,13 +83,15 @@ export default async function BookPage({ params }: { params: Promise<{ lang: str
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Header dict={dict} lang={lang} />
-      <main className="flex-1 min-h-screen bg-gray-50 pt-24 pb-16">
-        <div className="container mx-auto px-4">
-           {/* Breadcrumb - Optional */}
-           <div className="mb-6 text-sm text-neutral-500">
-             <Link href={`/${lang}`} className="hover:text-black">{dict.nav.home}</Link> / 
-             <Link href={`/${lang}#books`} className="hover:text-black mx-1">{dict.nav.books}</Link> / 
-             <span className="text-black mx-1">{title}</span>
+      <main className="flex-1 min-h-screen bg-gray-50 pt-20 sm:pt-24 pb-12 sm:pb-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+           {/* Breadcrumb */}
+           <div className="mb-4 sm:mb-6 text-xs sm:text-sm text-neutral-500 flex items-center flex-wrap gap-1.5">
+             <Link href={`/${lang}`} className="hover:text-black transition-colors shrink-0">{dict.nav.home}</Link>
+             <span className="text-neutral-400">/</span>
+             <Link href={`/${lang}#books`} className="hover:text-black transition-colors shrink-0">{dict.nav.books}</Link>
+             <span className="text-neutral-400">/</span>
+             <span className="text-neutral-900 font-medium truncate max-w-[200px] sm:max-w-none">{title}</span>
            </div>
 
            <BookDetailsTabs book={book} dict={dict} lang={lang} />

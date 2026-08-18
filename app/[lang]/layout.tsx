@@ -1,7 +1,13 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Fraunces, Nunito } from 'next/font/google';
 import '../globals.css';
 import { locales } from '@/i18n/settings';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#ffffff',
+};
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -16,6 +22,7 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://alarveliyeedu.com'),
   title: 'Alar Veliyeedu Books - Tamil Books, Authors & Literary Events',
   description: 'Alar Veliyeedu - Quality Tamil books, new releases, award-winning fiction, non-fiction and children\'s books. Read from leading Tamil publishers.',
   verification: {
