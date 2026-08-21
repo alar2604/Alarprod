@@ -71,7 +71,9 @@ export default function BookList({ dict, lang }: { dict: any, lang: string }) {
                       )}
                       {isPanai && (
                         <span className="text-xs font-bold text-white bg-[#2D6A4F] rounded-full px-2.5 py-0.5 shadow-2xs">
-                          {isTa ? '64% தள்ளுபடி' : '64% OFF'}
+                          {isTa
+                            ? `${book.originalPrice && (book.salePrice || book.price) ? Math.round(((Number(book.originalPrice) - Number(book.salePrice || book.price)) / Number(book.originalPrice)) * 100) : 60}% தள்ளுபடி`
+                            : `${book.originalPrice && (book.salePrice || book.price) ? Math.round(((Number(book.originalPrice) - Number(book.salePrice || book.price)) / Number(book.originalPrice)) * 100) : 60}% OFF`}
                         </span>
                       )}
                     </div>

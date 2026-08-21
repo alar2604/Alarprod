@@ -131,7 +131,7 @@ export default function Hero({ dict, lang }: { dict: any, lang: string }) {
                   <div className="inline-flex items-center gap-2 sm:gap-3 mb-4 md:mb-6 bg-white/10 backdrop-blur-md border border-emerald-500/30 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl">
                     <span className="text-[11px] sm:text-xs text-neutral-300 font-medium">{isTa ? 'முன்பதிவு விலை:' : 'Pre-order:'}</span>
                     <span className="text-xl sm:text-2xl font-bold text-emerald-400">
-                      {isTa ? 'ரூ. ' : 'Rs. '}{currentBook.salePrice || '675'} {isTa ? 'மட்டுமே' : 'only'}
+                      {isTa ? 'ரூ. ' : 'Rs. '}{currentBook.salePrice || '750'} {isTa ? 'மட்டுமே' : 'only'}
                     </span>
                     {currentBook.originalPrice && (
                       <span className="text-xs sm:text-sm text-neutral-400 line-through">

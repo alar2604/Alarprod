@@ -167,6 +167,10 @@ export default function PanaiLanding({ book, lang }: { book: PanaiBook; lang: st
   const [selectedImage, setSelectedImage] = useState<string>(book.image);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
+  const discountPercent = book.originalPrice && (book.salePrice || book.price)
+    ? Math.round(((Number(book.originalPrice) - Number(book.salePrice || book.price)) / Number(book.originalPrice)) * 100)
+    : 60;
+
   const forewordScholars = [
     { name: isTa ? 'ஆ. சிவசுப்பிரமணியன்' : 'A. Sivasubramanian', role: isTa ? 'பண்பாட்டு ஆய்வாளர்' : 'Cultural Historian' },
     { name: isTa ? 'கு. வி. கிருஷ்ணமூர்த்தி' : 'Ku. Vi. Krishnamurthy', role: isTa ? 'தாவரவியல் பேராசிரியர்' : 'Botanist & Scholar' },
@@ -315,7 +319,7 @@ export default function PanaiLanding({ book, lang }: { book: PanaiBook; lang: st
                 {isTa ? 'முன்பதிவுத் திட்டத்தில்:' : 'Pre-order Price:'}
               </span>
               <span className="text-2xl sm:text-4xl font-bold text-[#2D6A4F]">
-                {isTa ? 'ரூ. ' : 'Rs. '}{book.salePrice || '675'} {isTa ? 'மட்டுமே' : 'only'}
+                {isTa ? 'ரூ. ' : 'Rs. '}{book.salePrice || '750'} {isTa ? 'மட்டுமே' : 'only'}
               </span>
             </div>
             {book.originalPrice && (
@@ -324,7 +328,7 @@ export default function PanaiLanding({ book, lang }: { book: PanaiBook; lang: st
                   {isTa ? 'ரூ. ' : 'Rs. '}{book.originalPrice}
                 </span>
                 <span className="text-xs font-bold text-white bg-[#2D6A4F] rounded-full px-2.5 py-0.5 shadow-2xs">
-                  {isTa ? '64% தள்ளுபடி' : '64% OFF'}
+                  {isTa ? `${discountPercent}% தள்ளுபடி` : `${discountPercent}% OFF`}
                 </span>
               </div>
             )}
@@ -758,7 +762,7 @@ export default function PanaiLanding({ book, lang }: { book: PanaiBook; lang: st
 
           <div className="flex items-center justify-center gap-3 mb-6 sm:mb-8">
             <span className="text-3xl sm:text-5xl font-bold text-[#2D6A4F]">
-              {isTa ? 'ரூ. ' : 'Rs. '}{book.salePrice || '675'} {isTa ? 'மட்டுமே' : 'only'}
+              {isTa ? 'ரூ. ' : 'Rs. '}{book.salePrice || '750'} {isTa ? 'மட்டுமே' : 'only'}
             </span>
             {book.originalPrice && (
               <span className="text-lg sm:text-2xl text-[#655E57] line-through">

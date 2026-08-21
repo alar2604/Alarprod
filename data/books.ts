@@ -14,8 +14,8 @@ export const books = [
       en: "M. Kesavan - Athangodu Anishkumar",
     },
     role: "compiler",
-    price: "675",
-    salePrice: "675",
+    price: "750",
+    salePrice: "750",
     originalPrice: "1875",
     volumeInfo: {
       ta: "தொகுதி 1 + தொகுதி 2 (முழுத் தொகுப்பு)",
