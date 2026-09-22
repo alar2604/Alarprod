@@ -30,7 +30,7 @@ export default function BookList({ dict, lang }: { dict: any, lang: string }) {
                <div key={book.id} className="flex flex-col md:flex-row justify-center items-center md:items-start gap-6 md:gap-10 border-b border-neutral-200/80 pb-10 md:pb-12 last:border-0 last:pb-0 bg-white p-5 sm:p-7 rounded-2xl shadow-2xs">
                   <div className="book-card w-full max-w-[220px] sm:max-w-[260px] md:max-w-[280px] mx-auto md:mx-0 flex-shrink-0">
                     <div className="relative group">
-                      <div className={`aspect-2/3 overflow-hidden shadow-[0_8px_20px_rgba(0,0,0,0.12)] rounded-xl ${isPanai ? 'bg-[#F4F1EA] flex items-center justify-center p-3' : 'bg-neutral-100'}`}>
+                      <div className={`aspect-2/3 overflow-hidden shadow-[0_8px_20px_rgba(0,0,0,0.12)] rounded-xl ${isPanai ? 'bg-white flex items-center justify-center p-3' : 'bg-neutral-100'}`}>
                         <Link href={`${langPrefix}/books/${book.id}`} className="w-full h-full relative block">
                           <Image 
                             src={book.image} 
