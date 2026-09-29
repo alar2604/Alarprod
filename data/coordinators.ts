@@ -26,19 +26,13 @@ export interface City {
 }
 
 export const cities: City[] = [
-  { id: 'chennai', name: { ta: 'சென்னை', en: 'Chennai' }, region: { ta: 'வட தமிழகம்', en: 'North TN' } },
   { id: 'coimbatore', name: { ta: 'கோயம்புத்தூர் - சூலூர்', en: 'Coimbatore - Soolur' }, region: { ta: 'மேற்கு தமிழகம்', en: 'West TN' } },
-  { id: 'madurai', name: { ta: 'மதுரை - தெப்பக்குளம்', en: 'Madurai - Theppakulam' }, region: { ta: 'தென் தமிழகம்', en: 'South TN' } },
   { id: 'trichy', name: { ta: 'திருச்சி', en: 'Trichy' }, region: { ta: 'மத்திய தமிழகம்', en: 'Central TN' } },
   { id: 'thirunelveli', name: { ta: 'திருநெல்வேலி', en: 'Thirunelveli' }, region: { ta: 'தென் தமிழகம்', en: 'South TN' } },
   { id: 'thoothukudi', name: { ta: 'தூத்துக்குடி', en: 'Thoothukudi' }, region: { ta: 'தென் தமிழகம்', en: 'South TN' } },
   { id: 'kanyakumari', name: { ta: 'கன்னியாகுமரி - நாகர்கோவில்', en: 'Kanyakumari - Nagercoil' }, region: { ta: 'தென் தமிழகம்', en: 'South TN' } },
-  { id: 'thanjavur', name: { ta: 'தஞ்சாவூர்', en: 'Thanjavur' }, region: { ta: 'டெல்டா', en: 'Delta' } },
   { id: 'thiruvarur', name: { ta: 'திருவாரூர்', en: 'Thiruvarur' }, region: { ta: 'டெல்டா', en: 'Delta' } },
-  { id: 'nagapattinam', name: { ta: 'நாகப்பட்டினம்', en: 'Nagapattinam' }, region: { ta: 'டெல்டா', en: 'Delta' } },
-  { id: 'dindigul', name: { ta: 'திண்டுக்கல்', en: 'Dindigul' }, region: { ta: 'மத்திய தமிழகம்', en: 'Central TN' } },
   { id: 'theni', name: { ta: 'தேனி', en: 'Theni' }, region: { ta: 'மேற்கு தொடர்ச்சி', en: 'Western Ghats' } },
-  { id: 'tiruppur', name: { ta: 'திருப்பூர் - உடுமலைப்பேட்டை', en: 'Tiruppur - Udumalaipet' }, region: { ta: 'மேற்கு தமிழகம்', en: 'West TN' } },
   { id: 'cuddalore', name: { ta: 'கடலூர் - சிதம்பரம்', en: 'Cuddalore - Chidambaram' }, region: { ta: 'வட தமிழகம்', en: 'North TN' } },
   { id: 'villupuram', name: { ta: 'விழுப்புரம்', en: 'Villupuram' }, region: { ta: 'வட தமிழகம்', en: 'North TN' } },
   { id: 'thiruvannamalai', name: { ta: 'திருவண்ணாமலை', en: 'Thiruvannamalai' }, region: { ta: 'வட தமிழகம்', en: 'North TN' } },
@@ -46,7 +40,6 @@ export const cities: City[] = [
   { id: 'kanchipuram', name: { ta: 'காஞ்சிபுரம்', en: 'Kanchipuram' }, region: { ta: 'வட தமிழகம்', en: 'North TN' } },
   { id: 'krishnagiri', name: { ta: 'கிருஷ்ணகிரி - ஓசூர்', en: 'Krishnagiri - Hosur' }, region: { ta: 'மேற்கு தமிழகம்', en: 'West TN' } },
   { id: 'ariyalur', name: { ta: 'அரியலூர்', en: 'Ariyalur' }, region: { ta: 'மத்திய தமிழகம்', en: 'Central TN' } },
-  { id: 'sivagangai', name: { ta: 'சிவகங்கை', en: 'Sivagangai' }, region: { ta: 'தென் தமிழகம்', en: 'South TN' } },
   { id: 'tenkasi', name: { ta: 'தென்காசி - சங்கரன்கோவில்', en: 'Tenkasi - Sankarankovil' }, region: { ta: 'தென் தமிழகம்', en: 'South TN' } },
   { id: 'virudhunagar', name: { ta: 'விருதுநகர் - சாத்தூர்', en: 'Virudhunagar - Sattur' }, region: { ta: 'தென் தமிழகம்', en: 'South TN' } },
   { id: 'puducherry', name: { ta: 'புதுச்சேரி', en: 'Puducherry' }, region: { ta: 'யூனியன் பிரதேசம்', en: 'Union Territory' } },
@@ -63,14 +56,6 @@ export const coordinators: Coordinator[] = [
     area: { ta: 'அரியலூர் நகரம்', en: 'Ariyalur Town' }
   },
   {
-    id: 'coord-chennai',
-    name: { ta: 'BE 4 BOOKS', en: 'BE 4 BOOKS' },
-    phone: '+919042461472',
-    waNum: '919042461472',
-    location: 'chennai',
-    area: { ta: 'சென்னை & புறநகர்', en: 'Chennai & Suburbs' }
-  },
-  {
     id: 'coord-coimbatore',
     name: { ta: 'அலர் கள ஒருங்கிணைப்பாளர்', en: 'Alar Field Coordinator' },
     phone: '+919843255244',
@@ -85,14 +70,6 @@ export const coordinators: Coordinator[] = [
     waNum: '9790137315',
     location: 'cuddalore',
     area: { ta: 'சிதம்பரம், கடலூர்', en: 'Chidambaram, Cuddalore' }
-  },
-  {
-    id: 'coord-dindigul',
-    name: { ta: 'வெற்றிமொழி வெளியீட்டகம்', en: 'Vetri Mozhi Veliyeedagam' },
-    phone: '+919715168794',
-    waNum: '919715168794',
-    location: 'dindigul',
-    area: { ta: 'திண்டுக்கல் நகரம்', en: 'Dindigul City' }
   },
   {
     id: 'coord-kanchipuram',
@@ -119,22 +96,6 @@ export const coordinators: Coordinator[] = [
     area: { ta: 'ஓசூர், கிருஷ்ணகிரி', en: 'Hosur, Krishnagiri' }
   },
   {
-    id: 'coord-madurai',
-    name: { ta: 'THEERA BOOKS (தீர புக்ஸ்)', en: 'THEERA BOOKS' },
-    phone: '+919976633688',
-    waNum: '919976633688',
-    location: 'madurai',
-    area: { ta: 'தெப்பக்குளம், மதுரை', en: 'Theppakulam, Madurai' }
-  },
-  {
-    id: 'coord-nagapattinam',
-    name: { ta: 'அலர் கள ஒருங்கிணைப்பாளர்', en: 'Alar Field Coordinator' },
-    phone: '+919843217578',
-    waNum: '919843217578',
-    location: 'nagapattinam',
-    area: { ta: 'நாகப்பட்டினம்', en: 'Nagapattinam' }
-  },
-  {
     id: 'coord-online',
     name: { ta: 'COTTON CANDY BOOKS', en: 'COTTON CANDY BOOKS' },
     phone: '+919629008192',
@@ -151,28 +112,12 @@ export const coordinators: Coordinator[] = [
     area: { ta: 'புதுச்சேரி நகரம்', en: 'Puducherry' }
   },
   {
-    id: 'coord-sivagangai',
-    name: { ta: 'கணியன் பூங்குன்றனார் புத்தகாலயம்', en: 'Kaniyan Poongundranar Puthagalayam' },
-    phone: '+919486780918',
-    waNum: '919486780918',
-    location: 'sivagangai',
-    area: { ta: 'சிவகங்கை & காரைக்குடி', en: 'Sivagangai & Karaikudi' }
-  },
-  {
     id: 'coord-tenkasi',
     name: { ta: 'சங்கரன் ஐயா புத்தகக் கடை', en: 'Sankaran Ayya Book Shop' },
     phone: '+919488041947',
     waNum: '919488041947',
     location: 'tenkasi',
     area: { ta: 'சங்கரன்கோவில், தென்காசி', en: 'Sankarankovil, Tenkasi' }
-  },
-  {
-    id: 'coord-thanjavur',
-    name: { ta: 'SIMLY NOOL ANGADI (சிம்லி நூல் அங்காடி)', en: 'SIMLY NOOL ANGADI' },
-    phone: '+919600832452',
-    waNum: '919600832452',
-    location: 'thanjavur',
-    area: { ta: 'தஞ்சாவூர் நகரம்', en: 'Thanjavur' }
   },
   {
     id: 'coord-theni',
@@ -213,14 +158,6 @@ export const coordinators: Coordinator[] = [
     waNum: '919488716962',
     location: 'thoothukudi',
     area: { ta: 'தூத்துக்குடி & கோவில்பட்டி', en: 'Thoothukudi & Kovilpatti' }
-  },
-  {
-    id: 'coord-tiruppur',
-    name: { ta: 'வேலா புக் சென்டர் (VELA BOOK CENTRE)', en: 'VELA BOOK CENTRE' },
-    phone: '+919842650929',
-    waNum: '919842650929',
-    location: 'tiruppur',
-    area: { ta: 'உடுமலைப்பேட்டை, திருப்பூர்', en: 'Udumalaipet, Tiruppur' }
   },
   {
     id: 'coord-trichy',
