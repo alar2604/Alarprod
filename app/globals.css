@@ -101,3 +101,15 @@ h1, h2, h3, h4, h5, h6 {
   scrollbar-width: none;
 }
 
+/* CommentBox.io iframe container styling */
+.commentbox {
+  width: 100% !important;
+  overflow: visible !important;
+}
+.commentbox iframe {
+  width: 100% !important;
+  min-width: 100% !important;
+  border: none !important;
+  display: block !important;
+}
+

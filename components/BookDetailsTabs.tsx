@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import CommentBox from '@/components/CommentBox';
 import { MapPin, Share2, Maximize2, X, ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
 
 type LocalizedText = string | Record<string, string>;
@@ -418,6 +419,21 @@ export default function BookDetailsTabs({ book, dict, lang }: BookDetailsTabsPro
                   </div>
               </div>
           )}
+        </div>
+
+        {/* Comments Section */}
+        <div className="mt-12 pt-8 border-t border-neutral-100">
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-lg sm:text-xl font-bold font-serif text-neutral-900 mb-2 text-center sm:text-left">
+              {lang === 'ta' ? 'வாசகர் கருத்துகள்' : 'Reader Comments'}
+            </h3>
+            <p className="text-xs sm:text-sm text-neutral-500 mb-6 font-light text-center sm:text-left">
+              {lang === 'ta'
+                ? 'இந்நூல் குறித்த உங்கள் கருத்துகளைப் பகிர்ந்துகொள்ளுங்கள்.'
+                : 'Share your thoughts and reviews about this book.'}
+            </p>
+            <CommentBox projectId="5747584295501824-proj" />
+          </div>
         </div>
       </div>
 

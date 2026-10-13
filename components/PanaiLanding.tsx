@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import CommentBox from '@/components/CommentBox';
 import {
   Check,
   MapPin,
@@ -816,6 +817,30 @@ export default function PanaiLanding({ book, lang }: { book: PanaiBook; lang: st
             </div>
           </div>
 
+        </div>
+      </section>
+
+      {/* ── COMMENTS SECTION ── */}
+      <section id="comments" className="max-w-4xl mx-auto px-3 sm:px-4 mt-14 sm:mt-20">
+        <div className="bg-white border border-[#E7E1D8] rounded-3xl p-3 xs:p-4 sm:p-9 shadow-xs overflow-visible">
+          <div className="text-center mb-6 sm:mb-8 px-2">
+            <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#2D6A4F] bg-[#EBF7EE] border border-[#B7E4C7] px-3.5 py-1.5 rounded-full mb-2">
+              <MessageCircle className="w-3.5 h-3.5" />
+              <span>{isTa ? 'வாசகர் கருத்துகள்' : 'Reader Comments'}</span>
+            </div>
+            <h3 className="font-serif text-xl sm:text-3xl font-bold text-[#181614] mb-2">
+              {isTa ? 'உங்கள் கருத்துகளைப் பகிருங்கள்' : 'Share Your Thoughts'}
+            </h3>
+            <p className="text-xs sm:text-sm text-[#655E57] max-w-md mx-auto font-light">
+              {isTa
+                ? 'பழம்படு பனை நூல் குறித்த உங்கள் எதிர்பார்ப்புகளையும் கருத்துகளையும் இங்கே பகிர்ந்து கொள்ளுங்கள்.'
+                : 'Share your reviews, anticipation, and thoughts about Pazhampadu Panai.'}
+            </p>
+          </div>
+
+          <div className="pt-2 w-full overflow-visible">
+            <CommentBox projectId="5747584295501824-proj" />
+          </div>
         </div>
       </section>
 
