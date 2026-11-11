@@ -46,7 +46,7 @@ export default function BookList({ dict, lang }: { dict: any, lang: string }) {
                   <div className="flex-1 w-full md:max-w-[520px]">
                     {isPanai && (
                       <span className="inline-block text-xs font-bold text-[#2D6A4F] bg-[#EBF7EE] border border-[#B7E4C7] px-3 py-1 rounded-full mb-2">
-                        {isTa ? 'சிறப்பு வெளியீடு · முன்பதிவுத் திட்டம்' : 'Special Release · Pre-order'}
+                        {isTa ? 'சிறப்பு வெளியீடு · இப்போது விற்பனையில்' : 'Special Release · Available Now'}
                       </span>
                     )}
                     <h3 className="text-neutral-900 font-bold text-lg sm:text-xl md:text-2xl leading-snug mb-1.5 font-serif">{book.title}</h3>
@@ -72,8 +72,8 @@ export default function BookList({ dict, lang }: { dict: any, lang: string }) {
                       {isPanai && (
                         <span className="text-xs font-bold text-white bg-[#2D6A4F] rounded-full px-2.5 py-0.5 shadow-2xs">
                           {isTa
-                            ? `${book.originalPrice && (book.salePrice || book.price) ? Math.round(((Number(book.originalPrice) - Number(book.salePrice || book.price)) / Number(book.originalPrice)) * 100) : 60}% தள்ளுபடி`
-                            : `${book.originalPrice && (book.salePrice || book.price) ? Math.round(((Number(book.originalPrice) - Number(book.salePrice || book.price)) / Number(book.originalPrice)) * 100) : 60}% OFF`}
+                            ? `${book.originalPrice && (book.salePrice || book.price) ? Math.round(((Number(book.originalPrice) - Number(book.salePrice || book.price)) / Number(book.originalPrice)) * 100) : 40}% கழிவில்`
+                            : `${book.originalPrice && (book.salePrice || book.price) ? Math.round(((Number(book.originalPrice) - Number(book.salePrice || book.price)) / Number(book.originalPrice)) * 100) : 40}% OFF`}
                         </span>
                       )}
                     </div>
@@ -84,7 +84,7 @@ export default function BookList({ dict, lang }: { dict: any, lang: string }) {
                     <div className="flex flex-col sm:flex-row gap-3">
                       <Link href={`${langPrefix}/books/${book.id}`} className="w-full sm:w-auto">
                         <button className="px-6 py-2.5 sm:py-3 bg-[#2D6A4F] hover:bg-[#1B4332] active:bg-[#153427] text-white rounded-xl text-sm font-semibold transition-all w-full sm:w-auto shadow-xs flex items-center justify-center">
-                          {isPanai ? (isTa ? 'முன்பதிவு செய்ய' : 'Pre-order') : dict.books_section.view_details}
+                          {isPanai ? (isTa ? 'இப்போதே வாங்குக' : 'Buy Now') : dict.books_section.view_details}
                         </button>
                       </Link>
                     </div>

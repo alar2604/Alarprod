@@ -58,6 +58,10 @@ export default function CommentBox({
           const cleanup = (window as any).commentBox(projectId, {
             className: 'commentbox',
             defaultBoxId: boxId,
+            createBoxUrl(boxId: string, pageLocation: Location) {
+              const pathname = pageLocation.pathname.replace(/^\/en/, '') || '/';
+              return `https://alarveliyeedu.com${pathname}#${boxId}`;
+            },
           });
           if (typeof cleanup === 'function') {
             cleanupRef.current = cleanup;
@@ -101,6 +105,10 @@ export default function CommentBox({
                 const cleanup = (window as any).commentBox(projectId, {
                   className: 'commentbox',
                   defaultBoxId: boxId,
+                  createBoxUrl(boxId: string, pageLocation: Location) {
+                    const pathname = pageLocation.pathname.replace(/^\/en/, '') || '/';
+                    return `https://alarveliyeedu.com${pathname}#${boxId}`;
+                  },
                 });
                 if (typeof cleanup === 'function') {
                   cleanupRef.current = cleanup;

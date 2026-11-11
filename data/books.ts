@@ -14,8 +14,8 @@ export const books = [
       en: "M. Kesavan - Athangodu Anishkumar",
     },
     role: "compiler",
-    price: "750",
-    salePrice: "750",
+    price: "1125",
+    salePrice: "1125",
     originalPrice: "1875",
     volumeInfo: {
       ta: "தொகுதி 1 + தொகுதி 2 (முழுத் தொகுப்பு)",
@@ -62,7 +62,7 @@ export const books = [
     details: {
       edition: { ta: "மக்கள் பதிப்பு (2000 பிரதிகள் மட்டுமே)", en: "People's Edition (2000 Copies Only)" },
       category: { ta: "சிறுகதை / பண்பாடு / தொகுப்பிலக்கியம் / சூழலியல்", en: "Short Stories / Culture / Anthologies / Ecology" },
-      format: { ta: "Paper back · இரண்டு தொகுதிகள்", en: "Paperback · Two Volumes" },
+      format: { ta: "Hardbound (அட்டைப் புத்தகம் / கடின அட்டைப் பதிப்பு)", en: "Hardbound (Hardcover Edition)" },
       pages: { ta: "1500", en: "1500" },
       paper: { ta: "70 GSM நேச்சுரல் ஷேட்", en: "70 GSM Natural Shade" },
       size: { ta: "டெமி Size (1/8 Demy)", en: "Demy Size (1/8 Demy)" },
@@ -73,9 +73,6 @@ export const books = [
         ta: "ஆ. சிவசுப்பிரமணியன், கு. வி. கிருஷ்ணமூர்த்தி, பெருமாள்முருகன், காட்சன் சாமுவேல்", 
         en: "A. Sivasubramanian, Ku. Vi. Krishnamurthy, Perumal Murugan, Godson Samuel" 
       },
-      preorderDates: { ta: "செப்டம்பர் 01 முதல் அக்டோபர் 15 வரை மட்டுமே", en: "September 01 to October 15 only" },
-      dispatchDate: { ta: "அக்டோபர் 20க்குப் பிறகு", en: "After October 20" },
-      copiesLimit: { ta: "2000 பிரதிகள் மட்டுமே", en: "Limited to 2000 copies only" },
       contactPhones: ["7200111312", "8015469260"],
       buyLinks: {
         dodo: "https://dodobooks.in/products/%E0%AE%AA%E0%AE%B4%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%9F%E0%AF%81-%E0%AE%AA%E0%AE%A9%E0%AF%88-%E0%AE%AA%E0%AE%A9%E0%AF%88%E0%AE%95%E0%AF%8D-%E0%AE%95%E0%AE%A4%E0%AF%88%E0%AE%95%E0%AE%B3%E0%AF%8D-120-pazhampadu-panai-panai-kathaigal-120",

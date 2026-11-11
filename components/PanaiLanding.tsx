@@ -170,7 +170,7 @@ export default function PanaiLanding({ book, lang }: { book: PanaiBook; lang: st
 
   const discountPercent = book.originalPrice && (book.salePrice || book.price)
     ? Math.round(((Number(book.originalPrice) - Number(book.salePrice || book.price)) / Number(book.originalPrice)) * 100)
-    : 60;
+    : 40;
 
   const forewordScholars = [
     { name: isTa ? 'ஆ. சிவசுப்பிரமணியன்' : 'A. Sivasubramanian', role: isTa ? 'பண்பாட்டு ஆய்வாளர்' : 'Cultural Historian' },
@@ -181,22 +181,22 @@ export default function PanaiLanding({ book, lang }: { book: PanaiBook; lang: st
 
   const faqs = [
     {
-      q: isTa ? 'முன்பதிவுத் திட்டம் எந்த தேதி வரை செயல்படும்?' : 'What are the dates for the pre-order scheme?',
+      q: isTa ? 'நூலை எப்படி வாங்கலாம்?' : 'How can I purchase the book?',
       a: isTa
-        ? 'இத்திட்டம் செப்டம்பர் 01 முதல் அக்டோபர் 15 வரை மட்டுமே செயல்படும். 2000 பிரதிகள் மட்டுமே மக்கள் பதிப்பாக அச்சிடப்படுகின்றன.'
-        : 'The scheme runs from September 01 to October 15 only. Limited strictly to 2000 copies as a special People Edition.'
+        ? 'இத்தளத்தின் வாயிலாக ஆன்லைனில் ஆர்டர் செய்யலாம் அல்லது தமிழ்நாடு முழுவதும் உள்ள கள ஒருங்கிணைப்பாளர்களைத் தொடர்புகொண்டும் நேரடியாகப் பெற்றுக்கொள்ளலாம்.'
+        : 'You can order online directly through this website or purchase through our field coordinators across Tamil Nadu.'
     },
     {
-      q: isTa ? 'முன்பதிவு செய்த நூல்கள் எப்போது அனுப்பிவைக்கப்படும்?' : 'When will the pre-ordered books be dispatched?',
+      q: isTa ? 'ஆர்டர் செய்த நூல் எப்போது அனுப்பிவைக்கப்படும்?' : 'How soon will the book be delivered?',
       a: isTa
-        ? 'நூல் அக்டோபர் 20க்குப் பிறகு அஞ்சல் / கூரியர் மூலமாக உங்கள் முகவரிக்கு அனுப்பிவைக்கப்படும்.'
-        : 'Books will be dispatched after October 20 via postal/courier directly to your address.'
+        ? 'ஆர்டர் உறுதிசெய்யப்பட்டதும் அஞ்சல் / கூரியர் மூலமாக உடனடியாக உங்கள் முகவரிக்கு அனுப்பிவைக்கப்படும்.'
+        : 'Orders are dispatched immediately via postal/courier service to your address.'
     },
     {
-      q: isTa ? 'கள ஒருங்கிணைப்பாளர் மூலம் எப்படி முன்பதிவு செய்வது?' : 'How to pre-order via local coordinator?',
+      q: isTa ? 'கள ஒருங்கிணைப்பாளர் மூலம் எப்படிப் பெறுவது?' : 'How to purchase via local coordinator?',
       a: isTa
-        ? 'தமிழ்நாடு முழுவதும் 25+ மையங்களில் கள ஒருங்கிணைப்பாளர்கள் உள்ளனர். உங்கள் ஊர் ஒருங்கிணைப்பாளருக்கு நேரடியாக வாட்ஸ்அப் / போன் மூலம் தொடர்புகொண்டு அஞ்சல் கட்டணமின்றி முன்பதிவு செய்து பெற்றுக்கொள்ளலாம்.'
-        : 'We have coordinators across 25+ centers in Tamil Nadu. You can connect directly on WhatsApp with zero postal fees.'
+        ? 'தமிழ்நாடு முழுவதும் 25+ மையங்களில் கள ஒருங்கிணைப்பாளர்கள் உள்ளனர். உங்கள் ஊர் ஒருங்கிணைப்பாளருக்கு நேரடியாக வாட்ஸ்அப் / போன் மூலம் தொடர்புகொண்டு அஞ்சல் கட்டணமின்றி பெற்றுக்கொள்ளலாம்.'
+        : 'We have coordinators across 25+ centers in Tamil Nadu. You can connect directly on WhatsApp or phone to purchase without courier fees.'
     },
     {
       q: isTa ? 'இத்தொகுப்பில் என்னென்ன கதைகள் இடம்பெற்றுள்ளன?' : 'What stories are included in this anthology?',
@@ -272,10 +272,10 @@ export default function PanaiLanding({ book, lang }: { book: PanaiBook; lang: st
           {/* Top Banner Tag */}
           <div className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-3 sm:mb-4">
             <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#2D6A4F] bg-[#EBF7EE] border border-[#B7E4C7] px-3 py-1 rounded-full shadow-2xs">
-              {isTa ? 'விரைவில் மக்கள் பதிப்பாக...' : 'Coming Soon as People\'s Edition...'}
+              {isTa ? 'இப்போது விற்பனையில்' : 'Available Now'}
             </span>
             <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-amber-900 bg-amber-50 border border-amber-200 px-3 py-1 rounded-full shadow-2xs">
-              {isTa ? 'முன்பதிவுத் திட்டம்' : 'Pre-order Scheme'}
+              {isTa ? 'சிறப்பு வெளியீடு' : 'Special Release'}
             </span>
           </div>
 
@@ -300,7 +300,7 @@ export default function PanaiLanding({ book, lang }: { book: PanaiBook; lang: st
 
           {/* Specs Bar */}
           <div className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-semibold text-[#2D6A4F] bg-[#EBF7EE] border border-[#B7E4C7] rounded-full px-3.5 py-1.5 mb-5 sm:mb-6">
-            <span>Paper back</span>
+            <span>{isTa ? 'Hardbound (கடின அட்டை)' : 'Hardbound'}</span>
             <span>•</span>
             <span>{isTa ? 'டெமி Size' : 'Demy Size'}</span>
             <span>•</span>
@@ -317,10 +317,10 @@ export default function PanaiLanding({ book, lang }: { book: PanaiBook; lang: st
           <div className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3.5 bg-white border-2 border-[#B7E4C7] px-5 py-3.5 sm:px-6 sm:py-4 rounded-2xl shadow-xs mb-6 sm:mb-8">
             <div className="flex items-baseline gap-2">
               <span className="text-[11px] sm:text-xs text-[#655E57] uppercase font-semibold">
-                {isTa ? 'முன்பதிவுத் திட்டத்தில்:' : 'Pre-order Price:'}
+                {isTa ? 'சிறப்பு விலையில்:' : 'Special Price:'}
               </span>
               <span className="text-2xl sm:text-4xl font-bold text-[#2D6A4F]">
-                {isTa ? 'ரூ. ' : 'Rs. '}{book.salePrice || '750'} {isTa ? 'மட்டுமே' : 'only'}
+                {isTa ? 'ரூ. ' : 'Rs. '}{book.salePrice || '1125'} {isTa ? 'மட்டுமே' : 'only'}
               </span>
             </div>
             {book.originalPrice && (
@@ -329,7 +329,7 @@ export default function PanaiLanding({ book, lang }: { book: PanaiBook; lang: st
                   {isTa ? 'ரூ. ' : 'Rs. '}{book.originalPrice}
                 </span>
                 <span className="text-xs font-bold text-white bg-[#2D6A4F] rounded-full px-2.5 py-0.5 shadow-2xs">
-                  {isTa ? `${discountPercent}% தள்ளுபடி` : `${discountPercent}% OFF`}
+                  {isTa ? `${discountPercent}% கழிவில்` : `${discountPercent}% OFF`}
                 </span>
               </div>
             )}
@@ -344,7 +344,7 @@ export default function PanaiLanding({ book, lang }: { book: PanaiBook; lang: st
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#2D6A4F] hover:bg-[#1B4332] active:bg-[#153427] text-white px-8 py-3.5 rounded-xl font-semibold text-base transition-transform hover:-translate-y-0.5 active:translate-y-0 shadow-md"
               >
-                <span>{isTa ? 'முன்பதிவு செய்க' : 'Pre-order'}</span>
+                <span>{isTa ? 'இப்போதே வாங்குக' : 'Buy Now'}</span>
                 <ExternalLink className="w-4 h-4 opacity-85" />
               </a>
             )}
@@ -361,7 +361,7 @@ export default function PanaiLanding({ book, lang }: { book: PanaiBook; lang: st
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs font-semibold text-[#655E57]">
             <span className="flex items-center gap-1.5">
               <Phone className="w-3.5 h-3.5 text-[#2D6A4F]" />
-              <span>{isTa ? 'முன்பதிவிற்கு:' : 'Pre-order Hotline:'}</span>
+              <span>{isTa ? 'தொடர்புக்கு:' : 'Contact:'}</span>
             </span>
             <a href="tel:7200111312" className="text-[#2D6A4F] hover:underline font-bold">7200111312</a>
             <span>|</span>
@@ -372,31 +372,31 @@ export default function PanaiLanding({ book, lang }: { book: PanaiBook; lang: st
 
       </section>
 
-      {/* ── PRE-ORDER SCHEME TIMELINE BANNER ── */}
+      {/* ── ORDER & DELIVERY BANNER ── */}
       <section className="max-w-4xl mx-auto px-4 mt-12 sm:mt-20">
         <Reveal>
         <div className="bg-white border border-[#E7E1D8] rounded-3xl p-5 sm:p-8 shadow-xs text-center">
 
           <div className="inline-flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#2D6A4F] bg-[#EBF7EE] border border-[#B7E4C7] px-3.5 py-1.5 rounded-full mb-3 sm:mb-4">
-            <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-            <span>{isTa ? 'முன்பதிவுத் திட்ட முக்கிய விவரங்கள்' : 'Pre-order Scheme Timeline'}</span>
+            <Truck className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            <span>{isTa ? 'நூல் கிடைக்கும் விவரங்கள்' : 'Ordering & Delivery Details'}</span>
           </div>
 
           <div className="space-y-1.5 sm:space-y-2 text-[#181614] font-serif text-base sm:text-xl font-bold leading-relaxed mb-3 sm:mb-4">
             <p>
               {isTa
-                ? 'இத்திட்டம் செப்டம்பர் 01 முதல் அக்டோபர் 15 வரை மட்டுமே...'
-                : 'Scheme valid from September 01 to October 15 only...'}
+                ? 'நூல் தற்போது விற்பனையில் உள்ளது'
+                : 'The anthology is now in stock and available for order'}
             </p>
             <p className="text-sm sm:text-lg text-[#2D6A4F]">
               {isTa
-                ? 'நூல் அக்டோபர் 20க்குப் பிறகு அனுப்பிவைக்கப்படும்.'
-                : 'Books will be dispatched after October 20.'}
+                ? 'அஞ்சல் / கூரியர் மூலமாக உடனடியாக உங்கள் முகவரிக்கு அனுப்பிவைக்கப்படும்.'
+                : 'Dispatched immediately via postal / courier service.'}
             </p>
           </div>
 
-          <div className="inline-block bg-amber-50 border border-amber-300 text-amber-900 font-bold text-xs sm:text-sm px-4 py-1.5 rounded-full shadow-2xs">
-            {isTa ? '✨ 2000 பிரதிகள் மட்டுமே...' : '✨ Limited to 2000 copies only...'}
+          <div className="inline-block bg-[#EBF7EE] border border-[#B7E4C7] text-[#2D6A4F] font-bold text-xs sm:text-sm px-4 py-1.5 rounded-full shadow-2xs">
+            {isTa ? '✨ இரண்டு தொகுதிகளும் சேர்த்து 1500 பக்கங்கள் · Hardbound (கடின அட்டைப் பதிப்பு)' : '✨ Two Volumes (1500 Pages) · Hardbound Edition'}
           </div>
 
         </div>
@@ -688,7 +688,7 @@ export default function PanaiLanding({ book, lang }: { book: PanaiBook; lang: st
               { label: isTa ? 'முகப்பு ஓவியம் & வடிவமைப்பு' : 'Cover Art & Design', value: isTa ? 'ரோஹிணி மணி' : 'Rohini Mani' },
               { label: isTa ? 'பதிப்பகம்' : 'Publisher', value: t(book.details.publisher) || (isTa ? 'அலர் வெளியீடு' : 'Alar Veliyeedu') },
               { label: isTa ? 'பதிப்பு வகை' : 'Edition', value: isTa ? 'மக்கள் பதிப்பு (2000 பிரதிகள் மட்டுமே)' : 'People Edition (2000 copies)' },
-              { label: isTa ? 'வடிவம்' : 'Format', value: 'Paper back · ' + (isTa ? 'இரு தொகுதிகள்' : 'Two Volumes') },
+              { label: isTa ? 'அட்டை வடிவம்' : 'Cover Format', value: t(book.details.format) || (isTa ? 'Hardbound (அட்டைப் புத்தகம் / கடின அட்டைப் பதிப்பு)' : 'Hardbound (Hardcover Edition)') },
               { label: isTa ? 'பக்கங்கள்' : 'Total Pages', value: '1500' },
               { label: isTa ? 'அளவு' : 'Size', value: isTa ? 'டெமி Size (1/8 Demy)' : 'Demy Size' },
               { label: isTa ? 'தாள் தரம்' : 'Paper Quality', value: '70 GSM நேச்சுரல் ஷேட்' },
@@ -744,26 +744,26 @@ export default function PanaiLanding({ book, lang }: { book: PanaiBook; lang: st
 
           <div className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-[#2D6A4F] uppercase tracking-wider bg-[#EBF7EE] border border-[#B7E4C7] px-3.5 py-1.5 rounded-full mb-3 sm:mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>{isTa ? 'சிறப்பு முன்பதிவு சலுகை' : 'Special Pre-order Offer'}</span>
+            <span>{isTa ? 'சிறப்புச் சலுகை' : 'Special Offer'}</span>
           </div>
 
           <h3 className="font-serif text-xl sm:text-3xl md:text-4xl font-bold text-[#181614] mb-2 sm:mb-3">
-            {isTa ? 'பழம்படு பனை முழுத் தொகுப்பை இன்றே முன்பதிவு செய்யுங்கள்' : 'Pre-order the Complete Set Today'}
+            {isTa ? 'பழம்படு பனை முழுத் தொகுப்பை இன்றே வாங்குங்கள்' : 'Order the Complete Set Today'}
           </h3>
 
           <p className="text-xs sm:text-base text-[#655E57] mb-2 max-w-md mx-auto leading-relaxed font-light">
             {isTa
-              ? 'தொகுதி 1 மற்றும் தொகுதி 2 இரண்டும் இணைந்த முழுமையான மக்கள் பதிப்பு பெருந்தொகுப்பு.'
-              : 'Both Volumes 1 & 2 together in one definitive People\'s Edition.'}
+              ? 'தொகுதி 1 மற்றும் தொகுதி 2 இரண்டும் இணைந்த முழுமையான Hardbound (கடின அட்டை) பெருந்தொகுப்பு.'
+              : 'Both Volumes 1 & 2 together in one definitive Hardbound Edition.'}
           </p>
 
-          <p className="text-[11px] sm:text-xs font-bold text-amber-900 bg-amber-50 border border-amber-200 rounded-full px-3.5 py-1 w-fit mx-auto mb-5 sm:mb-6">
-            {isTa ? 'செப்டம்பர் 01 முதல் அக்டோபர் 15 வரை மட்டுமே · 2000 பிரதிகள் மட்டுமே' : 'Sept 01 - Oct 15 Only · 2000 Copies Limit'}
+          <p className="text-[11px] sm:text-xs font-bold text-emerald-900 bg-emerald-50 border border-emerald-200 rounded-full px-3.5 py-1 w-fit mx-auto mb-5 sm:mb-6">
+            {isTa ? 'இரண்டு தொகுதிகளும் சேர்த்து 1500 பக்கங்கள் · Hardbound (அட்டைப் புத்தகம்)' : 'Two Volumes (1500 Pages) · Hardbound'}
           </p>
 
           <div className="flex items-center justify-center gap-3 mb-6 sm:mb-8">
             <span className="text-3xl sm:text-5xl font-bold text-[#2D6A4F]">
-              {isTa ? 'ரூ. ' : 'Rs. '}{book.salePrice || '750'} {isTa ? 'மட்டுமே' : 'only'}
+              {isTa ? 'ரூ. ' : 'Rs. '}{book.salePrice || '1125'} {isTa ? 'மட்டுமே' : 'only'}
             </span>
             {book.originalPrice && (
               <span className="text-lg sm:text-2xl text-[#655E57] line-through">
@@ -780,7 +780,7 @@ export default function PanaiLanding({ book, lang }: { book: PanaiBook; lang: st
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#2D6A4F] hover:bg-[#1B4332] active:bg-[#153427] text-white px-8 py-3.5 rounded-xl font-semibold text-base transition-transform hover:-translate-y-0.5 active:translate-y-0 shadow-md"
               >
-                <span>{isTa ? 'முன்பதிவு செய்க' : 'Pre-order'}</span>
+                <span>{isTa ? 'இப்போதே வாங்குக' : 'Buy Now'}</span>
                 <ExternalLink className="w-4 h-4 opacity-85" />
               </a>
             )}

@@ -104,7 +104,7 @@ export default function Hero({ dict, lang }: { dict: any, lang: string }) {
                     <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                     <span>
                       {isPanai 
-                        ? (isTa ? 'சிறப்பு வெளியீடு · முன்பதிவுத் திட்டம்' : 'Special Release · Pre-order')
+                        ? (isTa ? 'சிறப்பு வெளியீடு · இப்போது விற்பனையில்' : 'Special Release · Available Now')
                         : `${dict.hero.release || 'வெளியீடு'} 0${activeSlide + 1}`}
                     </span>
                 </div>
@@ -129,9 +129,9 @@ export default function Hero({ dict, lang }: { dict: any, lang: string }) {
 
                 {isPanai && (
                   <div className="inline-flex items-center gap-2 sm:gap-3 mb-4 md:mb-6 bg-white/10 backdrop-blur-md border border-emerald-500/30 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl">
-                    <span className="text-[11px] sm:text-xs text-neutral-300 font-medium">{isTa ? 'முன்பதிவு விலை:' : 'Pre-order:'}</span>
+                    <span className="text-[11px] sm:text-xs text-neutral-300 font-medium">{isTa ? 'சிறப்பு விலை:' : 'Special Price:'}</span>
                     <span className="text-xl sm:text-2xl font-bold text-emerald-400">
-                      {isTa ? 'ரூ. ' : 'Rs. '}{currentBook.salePrice || '750'} {isTa ? 'மட்டுமே' : 'only'}
+                      {isTa ? 'ரூ. ' : 'Rs. '}{currentBook.salePrice || '1125'} {isTa ? 'மட்டுமே' : 'only'}
                     </span>
                     {currentBook.originalPrice && (
                       <span className="text-xs sm:text-sm text-neutral-400 line-through">
