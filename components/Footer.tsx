@@ -17,7 +17,7 @@ export default function Footer({ dict, lang }: { dict: any, lang: string }) {
             <div className="mb-4">
               <Link href={homePath} className="inline-block group">
                 <Image 
-                  src="/images/alarlogo_dark.png"
+                  src="/images/alarlogo.png"
                   alt="Alar veliyeedu Logo" 
                   width={140} 
                   height={80}
