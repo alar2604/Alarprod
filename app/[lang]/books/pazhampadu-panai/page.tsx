@@ -23,13 +23,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     openGraph: {
       title: `${title} | Alar Veliyeedu`,
       description,
-      images: [book?.image || ''],
+      images: [(book as any)?.bannerImage || book?.image || ''],
     },
     twitter: {
       card: 'summary_large_image',
       title: `${title} | Alar Veliyeedu`,
       description,
-      images: [book?.image || ''],
+      images: [(book as any)?.bannerImage || book?.image || ''],
     },
   };
 }

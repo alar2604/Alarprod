@@ -15,13 +15,15 @@ export default function Footer({ dict, lang }: { dict: any, lang: string }) {
           {/* Company Info */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="mb-4">
-              <Image 
-                src="/images/alarlogo.png"
-                alt="Alar veliyeedu Logo" 
-                width={100} 
-                height={100}
-                className="h-16 md:h-20 w-auto object-contain brightness-0 invert opacity-90" 
-              />
+              <Link href={homePath} className="inline-block group">
+                <Image 
+                  src="/images/alarlogo_dark.png"
+                  alt="Alar veliyeedu Logo" 
+                  width={140} 
+                  height={80}
+                  className="h-16 md:h-20 w-auto object-contain transition-opacity group-hover:opacity-90" 
+                />
+              </Link>
             </div>
             <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed mb-5 font-light">{dict.footer.company_desc}</p>
             <div className="flex space-x-2">

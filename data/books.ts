@@ -23,8 +23,10 @@ export const books = [
     },
     image: "/images/pazhampadu_panai.webp",
     fullCoverImage: "/images/pazhampadu_panai_vol1.webp",
+    bannerImage: "/images/pazhampadu_panai_banner.webp",
     gallery: [
       "/images/pazhampadu_panai.webp",
+      "/images/pazhampadu_panai_banner.webp",
       "/images/pazhampadu_panai_vol1.webp",
       "/images/pazhampadu_panai_vol2.webp"
     ],

@@ -18,13 +18,13 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: `${title} | அலர் வெளியீடு`,
       description,
-      images: [book?.image || ''],
+      images: [(book as any)?.bannerImage || book?.image || ''],
     },
     twitter: {
       card: 'summary_large_image',
       title: `${title} | அலர் வெளியீடு`,
       description,
-      images: [book?.image || ''],
+      images: [(book as any)?.bannerImage || book?.image || ''],
     },
   };
 }

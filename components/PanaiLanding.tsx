@@ -163,7 +163,7 @@ export default function PanaiLanding({ book, lang }: { book: PanaiBook; lang: st
 
   const galleryImages = book.gallery && book.gallery.length > 0
     ? book.gallery
-    : [book.image, '/images/pazhampadu_panai_vol1.webp', '/images/pazhampadu_panai_vol2.webp'];
+    : [book.image, '/images/pazhampadu_panai_banner.webp', '/images/pazhampadu_panai_vol1.webp', '/images/pazhampadu_panai_vol2.webp'];
 
   const [selectedImage, setSelectedImage] = useState<string>(book.image);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -231,11 +231,13 @@ export default function PanaiLanding({ book, lang }: { book: PanaiBook; lang: st
           {/* Interactive Thumbnails */}
           <div className="flex items-center justify-center gap-2 sm:gap-3 mt-3 sm:mt-4">
             {galleryImages.map((imgSrc, idx) => {
-              const labels = [
-                isTa ? 'இரு தொகுதிகள்' : 'Complete Set',
-                isTa ? 'தொகுதி 1' : 'Volume 1',
-                isTa ? 'தொகுதி 2' : 'Volume 2'
-              ];
+              const getLabel = (src: string) => {
+                if (src.includes('banner')) return isTa ? 'சுவரொட்டி' : 'Poster';
+                if (src.includes('vol1')) return isTa ? 'தொகுதி 1' : 'Volume 1';
+                if (src.includes('vol2')) return isTa ? 'தொகுதி 2' : 'Volume 2';
+                return isTa ? 'இரு தொகுதிகள்' : 'Complete Set';
+              };
+              const label = getLabel(imgSrc);
               return (
                 <button
                   key={idx}
@@ -245,12 +247,12 @@ export default function PanaiLanding({ book, lang }: { book: PanaiBook; lang: st
                       ? 'border-[#2D6A4F] shadow-md scale-105 ring-2 sm:ring-4 ring-emerald-500/15'
                       : 'border-[#E7E1D8] opacity-75 hover:opacity-100 hover:border-neutral-400'
                   }`}
-                  aria-label={`View ${labels[idx] || `image ${idx + 1}`}`}
+                  aria-label={`View ${label}`}
                 >
                   <div className="relative w-12 h-16 xs:w-14 xs:h-18 sm:w-20 sm:h-24 rounded-lg sm:rounded-xl overflow-hidden bg-[#FAF8F5]">
                     <Image
                       src={imgSrc}
-                      alt={labels[idx] || `Thumbnail ${idx + 1}`}
+                      alt={label}
                       fill
                       className="object-contain p-1"
                     />
@@ -258,7 +260,7 @@ export default function PanaiLanding({ book, lang }: { book: PanaiBook; lang: st
                   <span className={`text-[9px] sm:text-xs font-semibold px-1.5 py-0.5 rounded-full ${
                     selectedImage === imgSrc ? 'bg-[#2D6A4F] text-white' : 'text-neutral-600'
                   }`}>
-                    {labels[idx] || `படம் ${idx + 1}`}
+                    {label}
                   </span>
                 </button>
               );
@@ -573,6 +575,21 @@ export default function PanaiLanding({ book, lang }: { book: PanaiBook; lang: st
           </div>
 
         </div>
+      </section>
+
+      {/* ── OFFICIAL PROMOTIONAL BANNER ── */}
+      <section className="max-w-4xl mx-auto px-4 mt-14 sm:mt-20">
+        <Reveal>
+          <div className="relative w-full aspect-[2/1] rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm border border-[#E7E1D8] bg-[#FAF8F5]">
+            <Image
+              src="/images/pazhampadu_panai_banner.webp"
+              alt={isTa ? 'பழம்படு பனை - பனைக் கதைகள் 120 வெளியீட்டுச் சுவரொட்டி' : 'Pazhampadu Panai Official Release Poster'}
+              fill
+              className="object-contain"
+              sizes="(max-width: 896px) 100vw, 896px"
+            />
+          </div>
+        </Reveal>
       </section>
 
       {/* ── LITERARY NOTE: வாழ்வியல் தளங்கள் ── */}
