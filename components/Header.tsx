@@ -98,7 +98,7 @@ export default function Header({ dict, lang }: { dict: any, lang: string }) {
               {dict.nav.coming_soon}
             </Link>
             
-            <Link href={`${langPrefix}/#our-team`} className="text-neutral-700 hover:text-neutral-950 text-sm lg:text-base font-medium transition-colors">
+            <Link href={`${langPrefix}/team`} className="text-neutral-700 hover:text-neutral-950 text-sm lg:text-base font-medium transition-colors">
               {dict.nav.our_team}
             </Link>
             
@@ -208,7 +208,7 @@ export default function Header({ dict, lang }: { dict: any, lang: string }) {
           </Link>
           
           <Link 
-            href={`${langPrefix}/#our-team`} 
+            href={`${langPrefix}/team`} 
             className="px-3 py-2.5 text-neutral-800 hover:bg-neutral-50 active:bg-neutral-100 rounded-lg font-medium text-base transition-colors" 
             onClick={() => setIsMobileMenuOpen(false)}
           >

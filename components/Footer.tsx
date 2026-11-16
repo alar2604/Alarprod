@@ -42,6 +42,7 @@ export default function Footer({ dict, lang }: { dict: any, lang: string }) {
               <li><Link href={`${homePath}#about-us`} className="text-neutral-400 hover:text-white transition-colors block py-1">{dict.nav.about}</Link></li>
               <li><Link href={`${homePath}#books`} className="text-neutral-400 hover:text-white transition-colors block py-1">{dict.nav.books}</Link></li>
               <li><Link href={`${homePath}#coming-soon`} className="text-neutral-400 hover:text-white transition-colors block py-1">{dict.nav.coming_soon}</Link></li>
+              <li><Link href={`${langPrefix}/team`} className="text-neutral-400 hover:text-white transition-colors block py-1">{dict.nav.our_team}</Link></li>
               <li><Link href={`${langPrefix}/contact`} className="text-neutral-400 hover:text-white transition-colors block py-1">{dict.nav.contact}</Link></li>
             </ul>
           </div>
